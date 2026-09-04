@@ -21,30 +21,37 @@
 
     cursor: pointer;
 
+    /* Glow / shadow */
     box-shadow: 0 0 15px rgba(255, 80, 30, 0.5);
 
+    /* Entrance animation */
+    opacity: 0;
+    animation: buttonAppear 0.25s ease forwards;
+    animation-delay: 0.25s;
+
+    /* Smooth hover transition */
     transition: all 0.3s ease;
 }
 
 .get-started:hover {
     transform: scale(1.08);
     box-shadow: 0 0 25px rgba(255, 80, 30, 0.8);
- 
- opacity: 0;
-    animation: buttonAppear 0.25s ease forwards;
-    animation-delay: 0.25s;
 }
+
+/* Button entrance animation */
 @keyframes buttonAppear {
     from {
         opacity: 0;
         transform: translateY(10px);
     }
-}
-      to {
+
+    to {
         opacity: 1;
         transform: translateY(0);
     }
-     
+}
+
+/* Mobile */
 @media (max-width: 600px) {
     .get-started {
         padding: 12px 25px;
