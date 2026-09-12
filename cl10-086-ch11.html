@@ -1,0 +1,1530 @@
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Electricity | Class 10 Science | SFALXO</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080808;
+            color: #f5f5f5;
+            line-height: 1.75;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        /* HEADER */
+
+        .header {
+            text-align: center;
+            padding: 25px 10px 40px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 45px;
+            background: linear-gradient(90deg, #ff3030, #ff7a00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header p {
+            color: #aaa;
+            font-size: 17px;
+            margin-top: 5px;
+        }
+
+        /* MAIN SECTIONS */
+
+        .section {
+            background: #111;
+            border: 1px solid #292929;
+            border-radius: 20px;
+            padding: 28px;
+            margin-bottom: 28px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+        }
+
+        h2 {
+            color: #ff5733;
+            font-size: 27px;
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #2d2d2d;
+        }
+
+        h3 {
+            color: #ff9d00;
+            margin-top: 28px;
+        }
+
+        h4 {
+            color: #ffcc66;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        ul,
+        ol {
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* DEFINITION BOX */
+
+        .definition {
+            background: #181818;
+            border-left: 4px solid #ff5733;
+            border-radius: 10px;
+            padding: 16px 18px;
+            margin: 18px 0;
+        }
+
+        .definition strong {
+            color: #ff9d00;
+        }
+
+        /* FORMULA */
+
+        .formula {
+            background: #050505;
+            border: 1px solid #292929;
+            border-left: 5px solid #ff5733;
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin: 18px 0;
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffffff;
+            overflow-x: auto;
+        }
+
+        /* IMPORTANT */
+
+        .important {
+            color: #ffcc00;
+            font-weight: bold;
+        }
+
+        .red {
+            color: #ff5757;
+            font-weight: bold;
+        }
+
+        /* DERIVATION */
+
+        .derivation {
+            background: #151515;
+            border: 1px solid #333;
+            border-radius: 14px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .derivation-title {
+            color: #ff7a00;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .step {
+            background: #0b0b0b;
+            border-radius: 8px;
+            padding: 10px 15px;
+            margin: 8px 0;
+            overflow-x: auto;
+        }
+
+        /* FACT BOX */
+
+        .fact {
+            background: linear-gradient(
+                135deg,
+                rgba(255, 48, 48, 0.08),
+                rgba(255, 122, 0, 0.08)
+            );
+
+            border: 1px solid #3a2920;
+            border-radius: 12px;
+            padding: 16px;
+            margin: 18px 0;
+        }
+
+        .fact-title {
+            color: #ff7a00;
+            font-weight: bold;
+        }
+
+        /* TABLE */
+
+        .table-container {
+            overflow-x: auto;
+            margin: 18px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th,
+        td {
+            border: 1px solid #3d3d3d;
+            padding: 13px;
+            text-align: left;
+        }
+
+        th {
+            background: #222;
+            color: #ff9d00;
+        }
+
+        td {
+            background: #111;
+        }
+
+        /* COMPARISON */
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 18px;
+        }
+
+        .comparison-box {
+            background: #161616;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 18px;
+        }
+
+        .comparison-box h3 {
+            margin-top: 0;
+        }
+
+        /* FORMULA GRID */
+
+        .formula-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .formula-card {
+            background: #151515;
+            border: 1px solid #303030;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .formula-card .big {
+            font-size: 22px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        /* FOOTER */
+
+        .footer {
+            text-align: center;
+            padding: 30px 10px;
+            color: #777;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            body {
+                padding: 10px;
+            }
+
+            .header h1 {
+                font-size: 34px;
+            }
+
+            .section {
+                padding: 19px;
+                border-radius: 15px;
+            }
+
+            h2 {
+                font-size: 23px;
+            }
+
+            h3 {
+                font-size: 19px;
+            }
+
+            p,
+            li {
+                font-size: 15px;
+            }
+
+            .formula {
+                font-size: 17px;
+            }
+
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .formula-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+        <h1>Electricity</h1>
+
+        <p>
+            Chapter 11 • Class 10 Science • Study Notes
+        </p>
+
+    </div>
+
+
+
+    <!-- SECTION 1 -->
+
+    <div class="section">
+
+        <h2>1. Electric Current and Circuit Dynamics</h2>
+
+
+        <h3>Fundamental Definition</h3>
+
+        <div class="definition">
+
+            <strong>Electric current</strong> is the rate of flow of electric
+            charges through a specific area in unit time.
+
+        </div>
+
+
+        <h3>Charge Carriers and Direction</h3>
+
+        <ul>
+
+            <li>
+                In metallic wires, <b>electrons</b> are the charge carriers.
+            </li>
+
+            <li>
+                Conventional current was defined before electrons were discovered.
+            </li>
+
+            <li>
+                Conventional current is considered to flow from the
+                <b>positive terminal to the negative terminal</b> of a cell
+                through the external circuit.
+            </li>
+
+            <li>
+                The actual flow of electrons is in the
+                <span class="important">opposite direction</span>.
+            </li>
+
+        </ul>
+
+
+        <h3>Electric Circuit</h3>
+
+        <div class="definition">
+
+            An electric circuit is a <b>continuous and closed path</b>
+            through which electric current can flow.
+
+        </div>
+
+        <p>
+            A switch acts as a conducting link between the cell and an
+            electrical component such as a bulb.
+        </p>
+
+        <p>
+            When the switch is open or the conducting path is broken,
+            current stops flowing.
+        </p>
+
+
+        <h3>Quantitative Measures of Current</h3>
+
+        <ul>
+
+            <li>SI unit of charge = <b>Coulomb (C)</b></li>
+
+            <li>
+                Charge of one electron =
+                <b>−1.6 × 10<sup>−19</sup> C</b>
+            </li>
+
+            <li>
+                1 C corresponds to approximately
+                <b>6 × 10<sup>18</sup> electrons</b> in magnitude of charge.
+            </li>
+
+        </ul>
+
+
+        <div class="formula">
+            I = Q / t
+        </div>
+
+
+        <p>Where:</p>
+
+        <ul>
+
+            <li><b>I</b> = electric current</li>
+
+            <li><b>Q</b> = net charge flowing through the conductor</li>
+
+            <li><b>t</b> = time taken</li>
+
+        </ul>
+
+
+        <div class="fact">
+
+            <div class="fact-title">1 Ampere</div>
+
+            One ampere is the current produced when
+            <b>1 coulomb of charge flows through a conductor in 1 second.</b>
+
+            <br><br>
+
+            <b>1 A = 1 C / 1 s</b>
+
+        </div>
+
+
+        <h3>Smaller Units</h3>
+
+        <ul>
+
+            <li>1 mA = 10<sup>−3</sup> A</li>
+
+            <li>1 μA = 10<sup>−6</sup> A</li>
+
+        </ul>
+
+
+        <h3>Measurement of Current</h3>
+
+        <div class="definition">
+
+            An <b>ammeter</b> is used to measure electric current.
+
+            <br><br>
+
+            It is always connected in <span class="important">series</span>
+            with the circuit.
+
+        </div>
+
+    </div>
+
+
+
+    <!-- SECTION 2 -->
+
+    <div class="section">
+
+        <h2>2. Electric Potential and Potential Difference</h2>
+
+
+        <h3>Electric Pressure</h3>
+
+        <p>
+            Just as water flows through a pipe because of a pressure difference,
+            electric charges require a difference in
+            <b>electric pressure</b> to move through a conductor.
+        </p>
+
+
+        <h3>Source of Potential Difference</h3>
+
+        <p>
+            A battery, consisting of one or more cells, produces potential
+            difference through chemical action.
+        </p>
+
+        <p>
+            The cell uses its stored chemical energy to maintain the potential
+            difference and drive charges through an external circuit.
+        </p>
+
+
+        <h3>Definition</h3>
+
+        <div class="definition">
+
+            The potential difference between two points is the
+            <b>work done to move a unit charge</b> from one point to another.
+
+        </div>
+
+
+        <div class="formula">
+            V = W / Q
+        </div>
+
+
+        <ul>
+
+            <li><b>V</b> = potential difference</li>
+
+            <li><b>W</b> = work done</li>
+
+            <li><b>Q</b> = charge</li>
+
+        </ul>
+
+
+        <h3>One Volt</h3>
+
+        <div class="fact">
+
+            A potential difference of <b>1 volt</b> exists when
+            <b>1 joule</b> of work is required to move
+            <b>1 coulomb</b> of charge.
+
+            <br><br>
+
+            <b>1 V = 1 J / 1 C</b>
+
+        </div>
+
+
+        <h3>Measurement of Potential Difference</h3>
+
+        <p>
+            A <b>voltmeter</b> measures potential difference.
+        </p>
+
+        <p>
+            It is always connected in
+            <span class="important">parallel</span>
+            across the two points whose potential difference is being measured.
+        </p>
+
+    </div>
+
+
+
+    <!-- SECTION 3 -->
+
+    <div class="section">
+
+        <h2>3. Circuit Diagram Symbols</h2>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <tr>
+
+                    <th>Component</th>
+
+                    <th>Representation / Function</th>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>Electric Cell</td>
+
+                    <td>
+                        A long line represents the positive terminal and
+                        a short line represents the negative terminal.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>Battery</td>
+
+                    <td>
+                        Combination of multiple cells.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>Open Switch</td>
+
+                    <td>
+                        Circuit is broken and current cannot flow.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>Closed Switch</td>
+
+                    <td>
+                        Circuit is complete and current can flow.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>Wire Joint</td>
+
+                    <td>
+                        Indicates that wires are electrically connected.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>Crossing Wires</td>
+
+                    <td>
+                        Wires crossing without a joint are not electrically connected.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>Electric Bulb</td>
+
+                    <td>
+                        Converts electrical energy mainly into light and heat.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>Resistor</td>
+
+                    <td>
+                        A component having resistance R.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>Rheostat</td>
+
+                    <td>
+                        Variable resistance used to regulate current.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>Ammeter</td>
+
+                    <td>
+                        Measures current and is connected in series.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>Voltmeter</td>
+
+                    <td>
+                        Measures potential difference and is connected in parallel.
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- SECTION 4 -->
+
+    <div class="section">
+
+        <h2>4. Ohm's Law and Resistance</h2>
+
+
+        <h3>Ohm's Law</h3>
+
+        <div class="definition">
+
+            At constant temperature, the potential difference across a
+            metallic conductor is directly proportional to the current
+            flowing through it.
+
+        </div>
+
+
+        <div class="formula">
+
+            V ∝ I
+
+            <br><br>
+
+            V = IR
+
+        </div>
+
+
+        <h3>V-I Graph</h3>
+
+        <p>
+            For an ohmic metallic conductor at constant temperature,
+            a graph of potential difference <b>V</b> against current
+            <b>I</b> is a straight line passing through the origin.
+        </p>
+
+
+        <h3>Resistance</h3>
+
+        <div class="definition">
+
+            Resistance is the property of a conductor that
+            <b>opposes the flow of electric charges.</b>
+
+        </div>
+
+
+        <div class="fact">
+
+            <div class="fact-title">One Ohm</div>
+
+            The resistance of a conductor is 1 Ω when a potential
+            difference of 1 V produces a current of 1 A.
+
+            <br><br>
+
+            <b>1 Ω = 1 V / 1 A</b>
+
+        </div>
+
+
+        <h3>Conductors and Resistance</h3>
+
+        <ul>
+
+            <li>
+                <b>Good conductors:</b> Offer relatively low resistance.
+            </li>
+
+            <li>
+                <b>Resistors:</b> Components designed to provide appreciable resistance.
+            </li>
+
+            <li>
+                <b>Poor conductors:</b> Offer greater resistance than good conductors
+                of comparable dimensions.
+            </li>
+
+            <li>
+                <b>Insulators:</b> Offer very high resistance.
+            </li>
+
+        </ul>
+
+    </div>
+
+
+
+    <!-- SECTION 5 -->
+
+    <div class="section">
+
+        <h2>5. Detailed Factors Affecting Resistance</h2>
+
+
+        <p>
+            Experimental observations show that the resistance of a uniform
+            metallic conductor depends on its length, cross-sectional area,
+            and the nature of the material.
+        </p>
+
+
+        <h3>1. Length</h3>
+
+        <p>
+            Resistance is directly proportional to the length of the conductor.
+        </p>
+
+        <div class="formula">
+            R ∝ l
+        </div>
+
+        <p>
+            Therefore, if the length of a wire is doubled, its resistance
+            also doubles, provided other factors remain unchanged.
+        </p>
+
+
+        <h3>2. Area of Cross-section</h3>
+
+        <p>
+            Resistance is inversely proportional to the cross-sectional area.
+        </p>
+
+        <div class="formula">
+            R ∝ 1 / A
+        </div>
+
+        <p>
+            Therefore, a thicker wire offers less resistance than a thinner
+            wire of the same material and length.
+        </p>
+
+
+        <h3>3. Nature of Material</h3>
+
+        <p>
+            Different materials possess different electrical resistive properties.
+        </p>
+
+
+        <h3>Electrical Resistivity</h3>
+
+        <p>
+            Combining the dependence on length and area gives:
+        </p>
+
+
+        <div class="formula">
+
+            R = ρl / A
+
+        </div>
+
+
+        <p>
+            Here, <b>ρ (rho)</b> is called the resistivity of the material.
+        </p>
+
+
+        <ul>
+
+            <li>SI unit of resistivity = <b>Ω m</b></li>
+
+            <li>
+                Resistivity is a characteristic property of the material.
+            </li>
+
+        </ul>
+
+
+        <h3>Typical Resistivity Ranges</h3>
+
+        <div class="table-container">
+
+            <table>
+
+                <tr>
+
+                    <th>Material Type</th>
+
+                    <th>Approximate Resistivity</th>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>Conductors</td>
+
+                    <td>
+                        10<sup>−8</sup> to 10<sup>−6</sup> Ω m
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>Insulators</td>
+
+                    <td>
+                        10<sup>12</sup> to 10<sup>17</sup> Ω m
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>Silver</td>
+
+                    <td>
+                        Approximately 1.60 × 10<sup>−8</sup> Ω m
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+
+        <h3>Alloys</h3>
+
+        <p>
+            Alloys generally have higher resistivity than their constituent
+            metals and do not oxidise readily at high temperatures.
+        </p>
+
+        <p>
+            Because of these properties, alloys are commonly used in heating
+            devices such as irons and toasters.
+        </p>
+
+
+        <h3>Transmission Lines</h3>
+
+        <p>
+            Copper and aluminium are commonly used in electrical transmission
+            because they have relatively low resistivity.
+        </p>
+
+    </div>
+
+
+
+    <!-- SECTION 6 -->
+
+    <div class="section">
+
+        <h2>6. Resistance of Resistor Systems</h2>
+
+
+        <h3>A. Resistors in Series</h3>
+
+        <p>
+            In a series combination, resistors are connected one after another.
+        </p>
+
+
+        <div class="fact">
+
+            <div class="fact-title">Current in Series</div>
+
+            The <b>same current</b> flows through every resistor.
+
+        </div>
+
+
+        <h4>Potential Difference</h4>
+
+        <div class="formula">
+
+            V = V<sub>1</sub> + V<sub>2</sub> + V<sub>3</sub>
+
+        </div>
+
+
+        <h4>Derivation of Equivalent Resistance</h4>
+
+        <div class="derivation">
+
+            <div class="derivation-title">
+                Series Combination Derivation
+            </div>
+
+
+            <div class="step">
+                From Ohm's Law:
+                <b>V = IR</b>
+            </div>
+
+
+            <div class="step">
+                Total voltage:
+                <b>V = V<sub>1</sub> + V<sub>2</sub> + V<sub>3</sub>
+                </b>
+            </div>
+
+
+            <div class="step">
+                Therefore:
+                <b>IR<sub>s</sub> =
+                IR<sub>1</sub> + IR<sub>2</sub> + IR<sub>3</sub></b>
+            </div>
+
+
+            <div class="step">
+                Dividing by I:
+                <b>R<sub>s</sub> =
+                R<sub>1</sub> + R<sub>2</sub> + R<sub>3</sub></b>
+            </div>
+
+        </div>
+
+
+        <div class="formula">
+
+            R<sub>s</sub> =
+            R<sub>1</sub> +
+            R<sub>2</sub> +
+            R<sub>3</sub>
+
+        </div>
+
+
+        <div class="fact">
+
+            <div class="fact-title">Key Fact</div>
+
+            Equivalent resistance in series is
+            <b>greater than any individual resistance</b>.
+
+        </div>
+
+
+
+        <h3>B. Resistors in Parallel</h3>
+
+        <p>
+            In a parallel combination, resistors are connected between
+            the same two points.
+        </p>
+
+
+        <div class="fact">
+
+            <div class="fact-title">Potential Difference in Parallel</div>
+
+            The potential difference across each resistor is
+            <b>the same</b>.
+
+        </div>
+
+
+        <h4>Current</h4>
+
+        <div class="formula">
+
+            I = I<sub>1</sub> +
+            I<sub>2</sub> +
+            I<sub>3</sub>
+
+        </div>
+
+
+        <h4>Derivation of Equivalent Resistance</h4>
+
+        <div class="derivation">
+
+            <div class="derivation-title">
+                Parallel Combination Derivation
+            </div>
+
+
+            <div class="step">
+                From Ohm's Law:
+                <b>I = V / R</b>
+            </div>
+
+
+            <div class="step">
+                Total current:
+                <b>I = I<sub>1</sub> +
+                I<sub>2</sub> +
+                I<sub>3</sub></b>
+            </div>
+
+
+            <div class="step">
+                Therefore:
+                <b>
+                    V/R<sub>p</sub> =
+                    V/R<sub>1</sub> +
+                    V/R<sub>2</sub> +
+                    V/R<sub>3</sub>
+                </b>
+            </div>
+
+
+            <div class="step">
+                Dividing by V:
+                <b>
+                    1/R<sub>p</sub> =
+                    1/R<sub>1</sub> +
+                    1/R<sub>2</sub> +
+                    1/R<sub>3</sub>
+                </b>
+            </div>
+
+        </div>
+
+
+        <div class="formula">
+
+            1/R<sub>p</sub> =
+            1/R<sub>1</sub> +
+            1/R<sub>2</sub> +
+            1/R<sub>3</sub>
+
+        </div>
+
+
+        <div class="fact">
+
+            <div class="fact-title">Key Fact</div>
+
+            Equivalent resistance in parallel is
+            <b>lower than the smallest individual resistance</b>.
+
+        </div>
+
+
+
+        <h3>C. Practical Comparison</h3>
+
+
+        <div class="comparison">
+
+
+            <div class="comparison-box">
+
+                <h3>Series</h3>
+
+                <ul>
+
+                    <li>Same current through all components.</li>
+
+                    <li>Total resistance increases.</li>
+
+                    <li>
+                        Failure of one component can break the entire circuit.
+                    </li>
+
+                    <li>
+                        Components requiring different currents cannot
+                        operate independently.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="comparison-box">
+
+                <h3>Parallel</h3>
+
+                <ul>
+
+                    <li>Same potential difference across each branch.</li>
+
+                    <li>Total resistance decreases.</li>
+
+                    <li>Branches can operate independently.</li>
+
+                    <li>
+                        Current divides according to the resistance
+                        of each branch.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- SECTION 7 -->
+
+    <div class="section">
+
+        <h2>7. Heating Effect of Electric Current</h2>
+
+
+        <h3>Concept</h3>
+
+        <p>
+            When current flows through a resistor, electrical energy can be
+            converted into heat energy.
+        </p>
+
+
+        <p>
+            In a purely resistive circuit, the electrical energy supplied
+            by the source is entirely dissipated as heat.
+        </p>
+
+
+        <h3>Energy Input and Power</h3>
+
+        <div class="derivation">
+
+            <div class="derivation-title">
+                Derivation
+            </div>
+
+
+            <div class="step">
+                Power = Energy / Time
+            </div>
+
+
+            <div class="step">
+                P = VQ / t
+            </div>
+
+
+            <div class="step">
+                Since Q/t = I
+            </div>
+
+
+            <div class="step">
+                <b>P = VI</b>
+            </div>
+
+
+            <div class="step">
+                Therefore, energy consumed in time t:
+                <b>E = VIt</b>
+            </div>
+
+        </div>
+
+
+        <h3>Joule's Law of Heating</h3>
+
+        <div class="formula">
+
+            H = I<sup>2</sup>Rt
+
+        </div>
+
+
+        <p>
+            According to Joule's law, the heat produced is:
+        </p>
+
+        <ul>
+
+            <li>
+                Directly proportional to <b>I²</b>.
+            </li>
+
+            <li>
+                Directly proportional to <b>R</b>.
+            </li>
+
+            <li>
+                Directly proportional to <b>t</b>.
+            </li>
+
+        </ul>
+
+
+        <h3>Practical Applications</h3>
+
+        <ul>
+
+            <li>Electric irons</li>
+
+            <li>Toasters</li>
+
+            <li>Electric heaters</li>
+
+            <li>Heating coils</li>
+
+        </ul>
+
+
+        <h3>Electric Bulb</h3>
+
+        <p>
+            The filament of an electric bulb becomes extremely hot and emits
+            visible light.
+        </p>
+
+        <p>
+            Tungsten is used because it has a very high melting point of
+            approximately <b>3380°C</b>.
+        </p>
+
+        <p>
+            Bulbs are filled with inactive gases such as
+            <b>nitrogen or argon</b> to reduce degradation of the filament.
+        </p>
+
+
+        <h3>Electric Fuse</h3>
+
+        <div class="definition">
+
+            An electric fuse is a safety device connected in
+            <b>series</b> with a circuit.
+
+        </div>
+
+        <p>
+            If the current exceeds the safe limit, the fuse wire heats up,
+            melts and breaks the circuit.
+        </p>
+
+        <p>
+            Fuse ratings may include values such as
+            <b>1 A, 5 A and 10 A</b>, depending on the intended circuit.
+        </p>
+
+    </div>
+
+
+
+    <!-- SECTION 8 -->
+
+    <div class="section">
+
+        <h2>8. Electric Power</h2>
+
+
+        <div class="definition">
+
+            <strong>Electric power</strong> is the rate at which electrical
+            energy is consumed or dissipated.
+
+        </div>
+
+
+        <h3>Important Formulae</h3>
+
+
+        <div class="formula-grid">
+
+
+            <div class="formula-card">
+
+                <div class="big">
+                    P = VI
+                </div>
+
+            </div>
+
+
+            <div class="formula-card">
+
+                <div class="big">
+                    P = I²R
+                </div>
+
+            </div>
+
+
+            <div class="formula-card">
+
+                <div class="big">
+                    P = V²/R
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <h3>SI Unit</h3>
+
+        <p>
+            The SI unit of electric power is the <b>watt (W)</b>.
+        </p>
+
+
+        <div class="fact">
+
+            <div class="fact-title">One Watt</div>
+
+            A device consumes one watt of power when it operates
+            with a potential difference of 1 V and current of 1 A.
+
+            <br><br>
+
+            <b>1 W = 1 V × 1 A</b>
+
+        </div>
+
+
+        <h3>Commercial Unit of Electrical Energy</h3>
+
+        <p>
+            The commercial unit of electrical energy is the
+            <b>kilowatt-hour (kWh)</b>.
+        </p>
+
+        <p>
+            It is commonly called one <b>"unit"</b> of electricity.
+        </p>
+
+
+        <div class="formula">
+
+            1 kWh = 3.6 × 10<sup>6</sup> J
+
+        </div>
+
+
+        <h3>Important Concept</h3>
+
+        <div class="definition">
+
+            Electrons are <b>not consumed</b> by electrical appliances.
+
+            <br><br>
+
+            What we pay for is the
+            <b>electrical energy</b> transferred or consumed by the appliances.
+
+        </div>
+
+    </div>
+
+
+
+    <!-- QUICK REVISION -->
+
+    <div class="section">
+
+        <h2>⚡ Quick Formula Revision</h2>
+
+
+        <div class="formula">
+
+            I = Q / t
+        </div>
+
+        <div class="formula">
+
+            V = W / Q
+        </div>
+
+        <div class="formula">
+
+            V = IR
+        </div>
+
+        <div class="formula">
+
+            R = ρl / A
+        </div>
+
+        <div class="formula">
+
+            R<sub>s</sub> =
+            R<sub>1</sub> +
+            R<sub>2</sub> +
+            R<sub>3</sub>
+        </div>
+
+        <div class="formula">
+
+            1/R<sub>p</sub> =
+            1/R<sub>1</sub> +
+            1/R<sub>2</sub> +
+            1/R<sub>3</sub>
+        </div>
+
+        <div class="formula">
+
+            H = I²Rt
+        </div>
+
+        <div class="formula">
+
+            P = VI = I²R = V²/R
+        </div>
+
+        <div class="formula">
+
+            1 kWh = 3.6 × 10<sup>6</sup> J
+        </div>
+
+    </div>
+
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        <p>
+            SFALXO • Class 10 Science
+        </p>
+
+        <p>
+            Electricity — Chapter 11
+        </p>
+
+    </div>
+
+
+</div>
+
+</body>
+
+</html>
+```
