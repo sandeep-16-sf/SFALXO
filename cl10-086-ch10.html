@@ -1,0 +1,879 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The Human Eye and the Colourful World</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #080808;
+      color: #f5f5f5;
+      line-height: 1.75;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .header {
+      text-align: center;
+      padding: 25px 10px 40px;
+    }
+
+    .header h1 {
+      font-size: 43px;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #ff3030, #ff7a00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .header p {
+      color: #aaa;
+      font-size: 17px;
+    }
+
+    .section {
+      background: #111;
+      border: 1px solid #292929;
+      border-radius: 20px;
+      padding: 28px;
+      margin-bottom: 28px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+    }
+
+    h2 {
+      color: #ff5733;
+      font-size: 27px;
+      margin-top: 0;
+      border-bottom: 2px solid #2d2d2d;
+      padding-bottom: 10px;
+    }
+
+    h3 {
+      color: #ff9d00;
+      margin-top: 28px;
+      font-size: 21px;
+    }
+
+    p {
+      margin: 12px 0;
+    }
+
+    ul {
+      padding-left: 25px;
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    strong {
+      color: #ffb15c;
+    }
+
+    .definition {
+      background: #181818;
+      border-left: 4px solid #ff5733;
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin: 18px 0;
+    }
+
+    .fact {
+      background: linear-gradient(
+        135deg,
+        rgba(255, 48, 48, 0.08),
+        rgba(255, 122, 0, 0.08)
+      );
+      border: 1px solid #3a2920;
+      border-radius: 12px;
+      padding: 16px;
+      margin: 18px 0;
+    }
+
+    .important {
+      background: #0b0b0b;
+      border: 1px solid #333;
+      border-left: 5px solid #ff9d00;
+      border-radius: 10px;
+      padding: 15px 18px;
+      margin: 18px 0;
+    }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 20px 0;
+    }
+
+    .comparison-card {
+      background: #181818;
+      border: 1px solid #333;
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .comparison-card h3 {
+      margin-top: 0;
+      color: #ff5733;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      margin: 20px 0;
+    }
+
+    table {
+      width: 100%;
+      min-width: 700px;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 1px solid #3d3d3d;
+      padding: 13px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #222;
+      color: #ff9d00;
+    }
+
+    td {
+      background: #121212;
+    }
+
+    .formula {
+      background: #050505;
+      border: 1px solid #292929;
+      border-left: 5px solid #ff5733;
+      border-radius: 10px;
+      padding: 15px 20px;
+      margin: 18px 0;
+      font-size: 20px;
+      font-weight: bold;
+      overflow-x: auto;
+    }
+
+    .color-spectrum {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 15px 0;
+    }
+
+    .color-spectrum span {
+      padding: 9px 14px;
+      border-radius: 8px;
+      background: #222;
+      border: 1px solid #444;
+      font-weight: bold;
+    }
+
+    .revision-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .revision-card {
+      background: #181818;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .revision-card h3 {
+      margin-top: 0;
+      font-size: 19px;
+    }
+
+    footer {
+      text-align: center;
+      color: #777;
+      padding: 25px 10px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 10px;
+      }
+
+      .header h1 {
+        font-size: 32px;
+      }
+
+      .header p {
+        font-size: 15px;
+      }
+
+      .section {
+        padding: 19px;
+        border-radius: 15px;
+      }
+
+      h2 {
+        font-size: 23px;
+      }
+
+      h3 {
+        font-size: 19px;
+      }
+
+      p,
+      li {
+        font-size: 15px;
+      }
+
+      .comparison {
+        grid-template-columns: 1fr;
+      }
+
+      .revision-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .formula {
+        font-size: 17px;
+      }
+
+      .color-spectrum span {
+        padding: 8px 10px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header class="header">
+      <h1>The Human Eye and the Colourful World</h1>
+      <p>Complete Class 10 Science Notes</p>
+    </header>
+
+    <!-- SECTION 1 -->
+    <section class="section">
+      <h2>1. Anatomy and Function of the Human Eye</h2>
+
+      <div class="definition">
+        The human eye is an exceptionally sensitive sense organ that works similarly to a
+        <strong>camera</strong>. It uses a lens system to form images on a light-sensitive screen.
+      </div>
+
+      <h3>Important Parts of the Human Eye</h3>
+
+      <ul>
+        <li>
+          <strong>Cornea:</strong>
+          A thin, transparent membrane forming a bulge on the front of the eyeball.
+          Most of the refraction of light entering the eye occurs at the outer surface
+          of the cornea.
+        </li>
+
+        <li>
+          <strong>Eyeball:</strong>
+          The eyeball is roughly spherical and has a diameter of approximately
+          <strong>2.3 cm</strong>.
+        </li>
+
+        <li>
+          <strong>Iris and Pupil:</strong>
+          The iris is a dark muscular diaphragm situated behind the cornea.
+          It adjusts the size of the pupil. The pupil regulates the amount of light
+          entering the eye.
+        </li>
+
+        <li>
+          <strong>Crystalline Lens:</strong>
+          It is made of fibrous, jelly-like material. It makes finer adjustments
+          in focal length to focus objects at different distances. It forms an
+          <strong>inverted real image</strong> on the retina.
+        </li>
+
+        <li>
+          <strong>Retina:</strong>
+          A delicate membrane containing a very large number of light-sensitive cells.
+          These cells become activated by light and generate electrical signals.
+        </li>
+
+        <li>
+          <strong>Optic Nerve and Brain:</strong>
+          The optic nerve carries electrical signals from the retina to the brain.
+          The brain interprets these signals, allowing us to perceive objects in
+          an upright form.
+        </li>
+      </ul>
+
+      <div class="fact">
+        <strong>Camera Analogy:</strong>
+        The crystalline lens acts like the camera lens, the retina acts like the
+        camera screen, and the brain processes the received image.
+      </div>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section class="section">
+      <h2>2. Power of Accommodation</h2>
+
+      <div class="definition">
+        <strong>Accommodation</strong> is the ability of the eye lens to adjust its
+        focal length with the help of the ciliary muscles.
+      </div>
+
+      <div class="comparison">
+
+        <div class="comparison-card">
+          <h3>Distant Vision</h3>
+          <ul>
+            <li>Ciliary muscles relax.</li>
+            <li>The lens becomes thin.</li>
+            <li>Curvature of the lens decreases.</li>
+            <li>Focal length increases.</li>
+            <li>Faraway objects are focused clearly.</li>
+          </ul>
+        </div>
+
+        <div class="comparison-card">
+          <h3>Nearby Vision</h3>
+          <ul>
+            <li>Ciliary muscles contract.</li>
+            <li>The lens becomes thicker.</li>
+            <li>Curvature of the lens increases.</li>
+            <li>Focal length decreases.</li>
+            <li>Nearby objects are focused clearly.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <h3>Limits of Vision</h3>
+
+      <ul>
+        <li>
+          <strong>Near Point:</strong>
+          The minimum distance at which an object can be seen clearly and comfortably
+          without strain. For a normal young adult, it is approximately
+          <strong>25 cm</strong>.
+        </li>
+
+        <li>
+          <strong>Far Point:</strong>
+          The farthest point up to which an object can be seen clearly.
+          For a normal eye, it is <strong>infinity</strong>.
+        </li>
+      </ul>
+
+      <div class="important">
+        The ability of the eye to change its focal length is possible because of
+        the flexibility of the crystalline lens and the action of the ciliary muscles.
+      </div>
+    </section>
+
+    <!-- SECTION 3 -->
+    <section class="section">
+      <h2>3. Defects of Vision and Their Correction</h2>
+
+      <div class="definition">
+        Refractive defects occur when the eye loses its normal power of accommodation,
+        causing images to form at incorrect positions and resulting in blurred vision.
+      </div>
+
+      <h3>Myopia — Near-sightedness</h3>
+
+      <ul>
+        <li><strong>Condition:</strong> Nearby objects are clear, but distant objects appear blurred.</li>
+        <li>
+          <strong>Cause:</strong>
+          The image forms in front of the retina because of excessive curvature of
+          the eye lens or an elongated eyeball.
+        </li>
+        <li>
+          <strong>Correction:</strong>
+          A concave lens of suitable power is used to bring the image back onto the retina.
+        </li>
+      </ul>
+
+      <div class="important">
+        <strong>Myopia is corrected using a concave lens.</strong>
+      </div>
+
+      <h3>Hypermetropia — Far-sightedness</h3>
+
+      <ul>
+        <li>
+          <strong>Condition:</strong>
+          Distant objects are clear, but nearby objects appear blurred.
+          The near point is farther than 25 cm.
+        </li>
+        <li>
+          <strong>Cause:</strong>
+          The image forms behind the retina because the focal length is too long
+          or the eyeball is too short.
+        </li>
+        <li>
+          <strong>Correction:</strong>
+          A convex lens provides the additional focusing power required.
+        </li>
+      </ul>
+
+      <div class="important">
+        <strong>Hypermetropia is corrected using a convex lens.</strong>
+      </div>
+
+      <h3>Presbyopia</h3>
+
+      <ul>
+        <li>
+          Presbyopia is an age-related defect of vision.
+        </li>
+        <li>
+          The near point recedes due to weakening of the ciliary muscles and
+          reduced flexibility of the eye lens.
+        </li>
+        <li>
+          It is commonly corrected using <strong>bifocal lenses</strong>.
+        </li>
+      </ul>
+
+      <div class="comparison">
+
+        <div class="comparison-card">
+          <h3>Upper Portion</h3>
+          Concave lens for distant vision.
+        </div>
+
+        <div class="comparison-card">
+          <h3>Lower Portion</h3>
+          Convex lens for nearby vision.
+        </div>
+
+      </div>
+
+      <h3>Cataract</h3>
+
+      <ul>
+        <li>
+          In old age, the crystalline lens may become milky and cloudy.
+        </li>
+        <li>
+          This condition is called cataract.
+        </li>
+        <li>
+          It can lead to partial or complete loss of vision.
+        </li>
+        <li>
+          Vision can generally be restored through <strong>cataract surgery</strong>.
+        </li>
+      </ul>
+
+      <h3>Comparison of Vision Defects</h3>
+
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Defect</th>
+            <th>Clear Vision</th>
+            <th>Image Formation</th>
+            <th>Cause</th>
+            <th>Correction</th>
+          </tr>
+
+          <tr>
+            <td>Myopia</td>
+            <td>Nearby objects</td>
+            <td>In front of retina</td>
+            <td>Long eyeball or excessive lens curvature</td>
+            <td>Concave lens</td>
+          </tr>
+
+          <tr>
+            <td>Hypermetropia</td>
+            <td>Distant objects</td>
+            <td>Behind retina</td>
+            <td>Short eyeball or insufficient lens power</td>
+            <td>Convex lens</td>
+          </tr>
+
+          <tr>
+            <td>Presbyopia</td>
+            <td>Difficulty seeing nearby objects</td>
+            <td>Near point moves farther away</td>
+            <td>Weak ciliary muscles and less flexible lens</td>
+            <td>Bifocal or suitable corrective lenses</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+
+    <!-- SECTION 4 -->
+    <section class="section">
+      <h2>4. Refraction and Dispersion through a Prism</h2>
+
+      <h3>Prism Refraction</h3>
+
+      <p>
+        A triangular glass prism has two triangular bases and three rectangular
+        lateral surfaces.
+      </p>
+
+      <ul>
+        <li>
+          <strong>Angle of Prism (∠A):</strong>
+          The angle between the two lateral refracting surfaces of the prism.
+        </li>
+
+        <li>
+          <strong>Angle of Deviation (∠D):</strong>
+          The angle through which the emergent ray is deviated from its original path
+          due to refraction through the prism.
+        </li>
+      </ul>
+
+      <h3>Dispersion of White Light</h3>
+
+      <div class="definition">
+        <strong>Dispersion</strong> is the splitting of white light into its component
+        colours when it passes through a prism.
+      </div>
+
+      <p>The seven colours are represented by the word:</p>
+
+      <div class="color-spectrum">
+        <span>Violet</span>
+        <span>Indigo</span>
+        <span>Blue</span>
+        <span>Green</span>
+        <span>Yellow</span>
+        <span>Orange</span>
+        <span>Red</span>
+      </div>
+
+      <ul>
+        <li>Different colours bend through different angles.</li>
+        <li><strong>Red light bends the least.</strong></li>
+        <li><strong>Violet light bends the most.</strong></li>
+      </ul>
+
+      <h3>Newton’s Experiment</h3>
+
+      <p>
+        Isaac Newton used an inverted second prism to recombine the dispersed
+        colours into white light.
+      </p>
+
+      <div class="fact">
+        Newton’s experiment proved that sunlight is composed of seven colours
+        and that a prism does not create colours; it only separates them.
+      </div>
+
+      <h3>Rainbow Formation</h3>
+
+      <p>
+        A rainbow is a natural spectrum formed due to the combined effects of:
+      </p>
+
+      <ul>
+        <li>Dispersion</li>
+        <li>Refraction</li>
+        <li>Internal reflection</li>
+      </ul>
+
+      <p>
+        Raindrops act as tiny prisms that split sunlight into its component colours.
+      </p>
+
+      <div class="important">
+        A rainbow is always formed in the direction
+        <strong>opposite to the Sun</strong>.
+      </div>
+    </section>
+
+    <!-- SECTION 5 -->
+    <section class="section">
+      <h2>5. Atmospheric Refraction Phenomena</h2>
+
+      <div class="definition">
+        Atmospheric refraction is the bending of light as it passes through layers
+        of the Earth's atmosphere having different refractive indices.
+      </div>
+
+      <h3>Twinkling of Stars</h3>
+
+      <ul>
+        <li>
+          Starlight undergoes continuous refraction while passing through the atmosphere.
+        </li>
+        <li>
+          Stars are point-sized sources of light.
+        </li>
+        <li>
+          Their apparent position and brightness keep changing due to changing
+          atmospheric conditions.
+        </li>
+        <li>
+          This fluctuation in brightness is called twinkling.
+        </li>
+      </ul>
+
+      <h3>Why Planets Do Not Twinkle</h3>
+
+      <ul>
+        <li>
+          Planets are extended sources of light.
+        </li>
+        <li>
+          They appear as collections of many point-sized sources.
+        </li>
+        <li>
+          The fluctuations from different points average out.
+        </li>
+        <li>
+          Therefore, planets generally do not twinkle.
+        </li>
+      </ul>
+
+      <h3>Advance Sunrise and Delayed Sunset</h3>
+
+      <p>
+        Due to atmospheric refraction, the Sun is visible approximately:
+      </p>
+
+      <ul>
+        <li><strong>2 minutes before</strong> actual sunrise.</li>
+        <li><strong>2 minutes after</strong> actual sunset.</li>
+      </ul>
+
+      <div class="fact">
+        The atmosphere bends sunlight around the horizon, allowing us to see the
+        Sun even when it is technically below the horizon.
+      </div>
+    </section>
+
+    <!-- SECTION 6 -->
+    <section class="section">
+      <h2>6. Scattering of Light</h2>
+
+      <h3>Tyndall Effect</h3>
+
+      <div class="definition">
+        The scattering of light by colloidal particles such as dust, smoke,
+        and water droplets is called the <strong>Tyndall Effect</strong>.
+      </div>
+
+      <p>
+        It makes the path of a beam of light visible.
+      </p>
+
+      <h3>Why Does the Sky Appear Blue?</h3>
+
+      <ul>
+        <li>
+          Fine particles in the atmosphere scatter shorter wavelengths more strongly.
+        </li>
+        <li>
+          Blue light has a shorter wavelength than red light.
+        </li>
+        <li>
+          Therefore, blue light is scattered more effectively in all directions.
+        </li>
+        <li>
+          This makes the sky appear blue.
+        </li>
+      </ul>
+
+      <div class="important">
+        If Earth had no atmosphere, there would be no scattering of sunlight
+        and the sky would appear dark.
+      </div>
+
+      <h3>Why Are Danger Signals Red?</h3>
+
+      <ul>
+        <li>
+          Red light has the longest wavelength among visible colours.
+        </li>
+        <li>
+          It is scattered the least by fog, smoke, and dust.
+        </li>
+        <li>
+          Hence, red light remains visible from a greater distance.
+        </li>
+      </ul>
+
+      <h3>Why Does the Sun Appear Reddish at Sunrise and Sunset?</h3>
+
+      <ul>
+        <li>
+          During sunrise and sunset, sunlight travels through a thicker layer
+          of the atmosphere.
+        </li>
+        <li>
+          Most of the blue light is scattered away before reaching our eyes.
+        </li>
+        <li>
+          The remaining light is rich in red and orange colours.
+        </li>
+        <li>
+          Therefore, the Sun appears reddish.
+        </li>
+      </ul>
+
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Phenomenon</th>
+            <th>Reason</th>
+          </tr>
+
+          <tr>
+            <td>Blue sky</td>
+            <td>Greater scattering of shorter blue wavelengths</td>
+          </tr>
+
+          <tr>
+            <td>Red danger signals</td>
+            <td>Red light is scattered the least</td>
+          </tr>
+
+          <tr>
+            <td>Reddish sunrise and sunset</td>
+            <td>Blue light is scattered away through a longer atmospheric path</td>
+          </tr>
+
+          <tr>
+            <td>Tyndall Effect</td>
+            <td>Scattering by colloidal particles</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+
+    <!-- SECTION 7 -->
+    <section class="section">
+      <h2>7. Eye Donation — Think It Over</h2>
+
+      <div class="fact">
+        Eye donation is a noble act that can help restore vision to people suffering
+        from corneal blindness.
+      </div>
+
+      <h3>Important Facts</h3>
+
+      <ul>
+        <li>
+          <strong>Timeframe:</strong>
+          Eyes should be removed within approximately <strong>4–6 hours</strong>
+          after death.
+        </li>
+
+        <li>
+          <strong>Eligibility:</strong>
+          People of any age or sex can donate their eyes. Even people with
+          diabetes or hypertension may donate.
+        </li>
+
+        <li>
+          <strong>Ineligibility:</strong>
+          People suffering from certain communicable diseases such as
+          <strong>AIDS, rabies, or tetanus</strong> cannot donate.
+        </li>
+
+        <li>
+          <strong>Impact:</strong>
+          One pair of donated eyes can help restore vision to up to
+          <strong>four corneal-blind people</strong>.
+        </li>
+      </ul>
+
+      <div class="important">
+        Eye donation does not restore the complete eyeball to another person.
+        The donated corneas are used to restore vision in people with corneal blindness.
+      </div>
+    </section>
+
+    <!-- QUICK REVISION -->
+    <section class="section">
+      <h2>Quick Revision</h2>
+
+      <div class="revision-grid">
+
+        <div class="revision-card">
+          <h3>Near Point</h3>
+          25 cm for a normal young adult.
+        </div>
+
+        <div class="revision-card">
+          <h3>Far Point</h3>
+          Infinity for a normal eye.
+        </div>
+
+        <div class="revision-card">
+          <h3>Myopia</h3>
+          Corrected using a concave lens.
+        </div>
+
+        <div class="revision-card">
+          <h3>Hypermetropia</h3>
+          Corrected using a convex lens.
+        </div>
+
+        <div class="revision-card">
+          <h3>Presbyopia</h3>
+          Usually corrected using bifocal lenses.
+        </div>
+
+        <div class="revision-card">
+          <h3>Least Scattered Colour</h3>
+          Red.
+        </div>
+
+        <div class="revision-card">
+          <h3>Most Deviated Colour</h3>
+          Violet.
+        </div>
+
+        <div class="revision-card">
+          <h3>Sky Colour</h3>
+          Blue due to scattering.
+        </div>
+
+        <div class="revision-card">
+          <h3>Rainbow Direction</h3>
+          Opposite to the Sun.
+        </div>
+
+        <div class="revision-card">
+          <h3>Eye Donation Time</h3>
+          Within 4–6 hours after death.
+        </div>
+
+      </div>
+    </section>
+
+    <footer>
+      © SFALXO | Class 10 Science Notes
+    </footer>
+
+  </div>
+
+</body>
+</html>
