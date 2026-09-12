@@ -1,0 +1,1227 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Life Processes</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #080808;
+      color: #f5f5f5;
+      line-height: 1.75;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .header {
+      text-align: center;
+      padding: 25px 10px 40px;
+    }
+
+    .header h1 {
+      font-size: 43px;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #ff3030, #ff7a00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .header p {
+      color: #aaa;
+      font-size: 17px;
+    }
+
+    .section {
+      background: #111;
+      border: 1px solid #292929;
+      border-radius: 20px;
+      padding: 28px;
+      margin-bottom: 28px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+    }
+
+    h2 {
+      color: #ff5733;
+      font-size: 27px;
+      margin-top: 0;
+      border-bottom: 2px solid #2d2d2d;
+      padding-bottom: 10px;
+    }
+
+    h3 {
+      color: #ff9d00;
+      margin-top: 28px;
+      font-size: 21px;
+    }
+
+    p {
+      margin: 12px 0;
+    }
+
+    ul {
+      padding-left: 25px;
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    strong {
+      color: #ffb15c;
+    }
+
+    .definition {
+      background: #181818;
+      border-left: 4px solid #ff5733;
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin: 18px 0;
+    }
+
+    .fact {
+      background: linear-gradient(
+        135deg,
+        rgba(255, 48, 48, 0.08),
+        rgba(255, 122, 0, 0.08)
+      );
+      border: 1px solid #3a2920;
+      border-radius: 12px;
+      padding: 16px;
+      margin: 18px 0;
+    }
+
+    .important {
+      background: #0b0b0b;
+      border: 1px solid #333;
+      border-left: 5px solid #ff9d00;
+      border-radius: 10px;
+      padding: 15px 18px;
+      margin: 18px 0;
+    }
+
+    .formula {
+      background: #050505;
+      border: 1px solid #292929;
+      border-left: 5px solid #ff5733;
+      border-radius: 10px;
+      padding: 15px 20px;
+      margin: 18px 0;
+      font-size: 19px;
+      font-weight: bold;
+      overflow-x: auto;
+    }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 20px 0;
+    }
+
+    .comparison-card {
+      background: #181818;
+      border: 1px solid #333;
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .comparison-card h3 {
+      margin-top: 0;
+      color: #ff5733;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      margin: 20px 0;
+    }
+
+    table {
+      width: 100%;
+      min-width: 750px;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 1px solid #3d3d3d;
+      padding: 13px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #222;
+      color: #ff9d00;
+    }
+
+    td {
+      background: #121212;
+    }
+
+    .process-box {
+      background: #151515;
+      border: 1px solid #333;
+      border-radius: 14px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .process-step {
+      background: #0b0b0b;
+      border-radius: 8px;
+      padding: 11px 15px;
+      margin: 9px 0;
+    }
+
+    .revision-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .revision-card {
+      background: #181818;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .revision-card h3 {
+      margin-top: 0;
+      font-size: 19px;
+    }
+
+    footer {
+      text-align: center;
+      color: #777;
+      padding: 25px 10px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 10px;
+      }
+
+      .header h1 {
+        font-size: 32px;
+      }
+
+      .header p {
+        font-size: 15px;
+      }
+
+      .section {
+        padding: 19px;
+        border-radius: 15px;
+      }
+
+      h2 {
+        font-size: 23px;
+      }
+
+      h3 {
+        font-size: 19px;
+      }
+
+      p,
+      li {
+        font-size: 15px;
+      }
+
+      .comparison {
+        grid-template-columns: 1fr;
+      }
+
+      .revision-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .formula {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header class="header">
+      <h1>Life Processes</h1>
+      <p>Complete Class 10 Science Notes</p>
+    </header>
+
+    <!-- SECTION 1 -->
+    <section class="section">
+      <h2>I. The Fundamental Nature of Life</h2>
+
+      <div class="definition">
+        Visible movement such as growth, running, or breathing is not the only
+        criterion of life. According to biologists, continuous
+        <strong>invisible molecular movement</strong> is the true requirement
+        for maintaining life.
+      </div>
+
+      <h3>Why Molecular Movement Is Necessary</h3>
+
+      <ul>
+        <li>
+          Living organisms are highly organised structures made of cells,
+          tissues, and organelles.
+        </li>
+
+        <li>
+          These structures naturally tend to break down due to environmental
+          effects and chemical changes.
+        </li>
+
+        <li>
+          Organisms must continuously repair and maintain these structures
+          through molecular movements.
+        </li>
+
+        <li>
+          Without maintenance, the organised structure of the organism would
+          eventually collapse and life would stop.
+        </li>
+      </ul>
+
+      <h3>Life Processes</h3>
+
+      <div class="definition">
+        <strong>Life processes</strong> are the basic maintenance activities
+        required to keep an organism alive, even when it is inactive or asleep.
+      </div>
+
+      <p>The major life processes include:</p>
+
+      <ul>
+        <li>Nutrition</li>
+        <li>Respiration</li>
+        <li>Transportation</li>
+        <li>Excretion</li>
+      </ul>
+
+      <h3>Energy and Carbon Basis of Life</h3>
+
+      <ul>
+        <li>
+          Maintenance activities require energy from external sources,
+          generally obtained through food.
+        </li>
+
+        <li>
+          Life on Earth is primarily carbon-based.
+        </li>
+
+        <li>
+          Most food substances contain carbon-based molecules.
+        </li>
+
+        <li>
+          Complex chemical reactions, especially oxidation-reduction reactions,
+          break down food molecules into a common usable energy form.
+        </li>
+      </ul>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section class="section">
+      <h2>II. Nutrition</h2>
+
+      <div class="definition">
+        Nutrition is the process by which organisms obtain food and use it
+        for energy, growth, repair, and maintenance.
+      </div>
+
+      <h3>A. Autotrophic Nutrition</h3>
+
+      <div class="definition">
+        Autotrophic nutrition is the process in which organisms synthesise
+        complex, high-energy organic substances from simple inorganic substances
+        such as carbon dioxide and water using an external energy source.
+      </div>
+
+      <h3>Photosynthesis Equation</h3>
+
+      <div class="formula">
+        6CO<sub>2</sub> + 12H<sub>2</sub>O
+        <span style="color:#ff9d00;">→</span>
+        C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>
+        + 6O<sub>2</sub> + 6H<sub>2</sub>O
+        <br>
+        <small>In the presence of sunlight and chlorophyll</small>
+      </div>
+
+      <h3>Three Main Events of Photosynthesis</h3>
+
+      <div class="process-box">
+        <div class="process-step">
+          <strong>1. Absorption:</strong>
+          Chlorophyll present in chloroplasts captures light energy.
+        </div>
+
+        <div class="process-step">
+          <strong>2. Conversion and Splitting:</strong>
+          Light energy is converted into chemical energy and water molecules
+          are split into hydrogen and oxygen.
+        </div>
+
+        <div class="process-step">
+          <strong>3. Reduction:</strong>
+          Carbon dioxide is reduced to form carbohydrates such as glucose.
+        </div>
+      </div>
+
+      <h3>Temporal Variation in Desert Plants</h3>
+
+      <p>
+        Desert plants often take in carbon dioxide during the night and prepare
+        an intermediate compound. During the day, this intermediate is acted
+        upon by the chemical energy obtained from sunlight.
+      </p>
+
+      <h3>Leaf Anatomy</h3>
+
+      <p>A typical leaf cross-section contains:</p>
+
+      <ul>
+        <li>Waxy cuticle</li>
+        <li>Upper epidermis</li>
+        <li>Lower epidermis</li>
+        <li>Air spaces</li>
+        <li>Vascular bundles</li>
+        <li>Xylem</li>
+        <li>Phloem</li>
+      </ul>
+
+      <h3>Stomata and Guard Cells</h3>
+
+      <div class="definition">
+        <strong>Stomata</strong> are tiny pores present on leaves that allow
+        exchange of gases between the plant and the atmosphere.
+      </div>
+
+      <ul>
+        <li>
+          Guard cells regulate the opening and closing of stomata.
+        </li>
+
+        <li>
+          When water enters guard cells, they swell and the stomatal pore opens.
+        </li>
+
+        <li>
+          When guard cells lose water, they shrink and the pore closes.
+        </li>
+
+        <li>
+          Closing stomata helps plants conserve water.
+        </li>
+      </ul>
+
+      <h3>Storage of Food</h3>
+
+      <div class="comparison">
+
+        <div class="comparison-card">
+          <h3>Plants</h3>
+          Store unused food energy as <strong>starch</strong>.
+        </div>
+
+        <div class="comparison-card">
+          <h3>Humans</h3>
+          Store excess food energy as <strong>glycogen</strong>.
+        </div>
+
+      </div>
+
+      <h3>Mineral Requirements</h3>
+
+      <p>
+        Plants absorb several minerals from the soil, including:
+      </p>
+
+      <ul>
+        <li>Nitrogen</li>
+        <li>Phosphorus</li>
+        <li>Iron</li>
+        <li>Magnesium</li>
+      </ul>
+
+      <div class="important">
+        Nitrogen is essential for protein synthesis. Plants absorb nitrogen
+        mainly as inorganic nitrates and nitrites or as organic compounds
+        prepared by bacteria.
+      </div>
+
+      <h3>B. Heterotrophic Nutrition</h3>
+
+      <div class="definition">
+        Heterotrophic organisms cannot synthesise their own food and depend
+        on other organisms for nutrition.
+      </div>
+
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Mode</th>
+            <th>Description</th>
+            <th>Examples</th>
+          </tr>
+
+          <tr>
+            <td>Saprophytic</td>
+            <td>
+              Food is broken down outside the body and then absorbed.
+            </td>
+            <td>Fungi, bread moulds, yeast, mushrooms</td>
+          </tr>
+
+          <tr>
+            <td>Holozoic</td>
+            <td>
+              Whole food material is taken in and digested internally.
+            </td>
+            <td>Humans and other animals</td>
+          </tr>
+
+          <tr>
+            <td>Parasitic</td>
+            <td>
+              Nutrition is obtained from a living host without immediately
+              killing it.
+            </td>
+            <td>Cuscuta, ticks, lice, leeches, tapeworms</td>
+          </tr>
+        </table>
+      </div>
+
+      <h3>Nutrition in Unicellular Organisms</h3>
+
+      <h4>Amoeba</h4>
+
+      <ul>
+        <li>Amoeba uses temporary finger-like projections called pseudopodia.</li>
+        <li>Pseudopodia surround food and form a food vacuole.</li>
+        <li>Digestive enzymes break complex substances into simpler substances.</li>
+        <li>The digested nutrients diffuse into the cytoplasm.</li>
+      </ul>
+
+      <h4>Paramoecium</h4>
+
+      <ul>
+        <li>Paramoecium has a definite body shape.</li>
+        <li>It uses cilia for movement.</li>
+        <li>Cilia sweep food towards a specific intake region.</li>
+      </ul>
+    </section>
+
+    <!-- SECTION 3 -->
+    <section class="section">
+      <h2>III. Human Digestive System</h2>
+
+      <div class="definition">
+        The human alimentary canal is a continuous tube through which food
+        passes and is digested, absorbed, and finally eliminated.
+      </div>
+
+      <h3>Mouth</h3>
+
+      <ul>
+        <li>Teeth crush food into smaller particles.</li>
+        <li>Salivary glands release saliva.</li>
+        <li>Salivary amylase breaks starch into simpler sugars.</li>
+        <li>The muscular tongue mixes food with saliva.</li>
+      </ul>
+
+      <h3>Oesophagus</h3>
+
+      <p>
+        The oesophagus pushes food towards the stomach through rhythmic
+        muscular contractions called <strong>peristaltic movements</strong>.
+      </p>
+
+      <h3>Stomach</h3>
+
+      <p>Gastric glands release:</p>
+
+      <ul>
+        <li>
+          <strong>Hydrochloric Acid (HCl):</strong>
+          Creates an acidic medium.
+        </li>
+
+        <li>
+          <strong>Pepsin:</strong>
+          Digests proteins.
+        </li>
+
+        <li>
+          <strong>Mucus:</strong>
+          Protects the stomach lining from acid.
+        </li>
+      </ul>
+
+      <p>
+        The exit of food from the stomach is controlled by a
+        <strong>sphincter muscle</strong>.
+      </p>
+
+      <h3>Small Intestine</h3>
+
+      <div class="definition">
+        The small intestine is the main site of complete digestion and
+        absorption of nutrients.
+      </div>
+
+      <ul>
+        <li>
+          Herbivores generally have longer small intestines because cellulose
+          requires more time for digestion.
+        </li>
+
+        <li>
+          Carnivores generally have shorter small intestines.
+        </li>
+      </ul>
+
+      <h3>Role of Liver</h3>
+
+      <ul>
+        <li>The liver produces bile juice.</li>
+        <li>Bile makes the food mixture alkaline.</li>
+        <li>Bile salts emulsify fats into smaller globules.</li>
+      </ul>
+
+      <h3>Role of Pancreas</h3>
+
+      <ul>
+        <li><strong>Trypsin:</strong> Digests proteins.</li>
+        <li><strong>Lipase:</strong> Digests emulsified fats.</li>
+      </ul>
+
+      <h3>Intestinal Juice</h3>
+
+      <p>Intestinal enzymes complete digestion by converting:</p>
+
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Food Component</th>
+            <th>Final Product</th>
+          </tr>
+
+          <tr>
+            <td>Proteins</td>
+            <td>Amino acids</td>
+          </tr>
+
+          <tr>
+            <td>Carbohydrates</td>
+            <td>Glucose and other simple sugars</td>
+          </tr>
+
+          <tr>
+            <td>Fats</td>
+            <td>Fatty acids and glycerol</td>
+          </tr>
+        </table>
+      </div>
+
+      <h3>Absorption through Villi</h3>
+
+      <ul>
+        <li>
+          The inner wall of the small intestine contains numerous finger-like
+          projections called villi.
+        </li>
+
+        <li>
+          Villi greatly increase the surface area for absorption.
+        </li>
+
+        <li>
+          Blood vessels inside the villi transport absorbed nutrients.
+        </li>
+
+        <li>
+          These nutrients are used for energy, growth, tissue formation,
+          and repair.
+        </li>
+      </ul>
+
+      <h3>Large Intestine</h3>
+
+      <ul>
+        <li>The large intestine absorbs water from unabsorbed food.</li>
+        <li>Remaining waste is passed out through the anus.</li>
+        <li>The anal sphincter controls the elimination of faeces.</li>
+      </ul>
+    </section>
+
+    <!-- SECTION 4 -->
+    <section class="section">
+      <h2>IV. Respiration</h2>
+
+      <div class="definition">
+        Respiration is the process of breaking down food molecules to release
+        usable energy for life activities.
+      </div>
+
+      <h3>Common First Step</h3>
+
+      <p>
+        In the cytoplasm, one six-carbon glucose molecule breaks down into
+        two three-carbon molecules of pyruvate.
+      </p>
+
+      <div class="formula">
+        Glucose (6C) → 2 Pyruvate molecules (3C each)
+      </div>
+
+      <h3>Different Pathways of Pyruvate Breakdown</h3>
+
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Condition</th>
+            <th>Location</th>
+            <th>Products</th>
+            <th>Energy Output</th>
+          </tr>
+
+          <tr>
+            <td>Anaerobic respiration in yeast</td>
+            <td>Cytoplasm</td>
+            <td>Ethanol + CO<sub>2</sub> + Energy</td>
+            <td>Low</td>
+          </tr>
+
+          <tr>
+            <td>Anaerobic respiration in human muscles</td>
+            <td>Cytoplasm</td>
+            <td>Lactic acid + Energy</td>
+            <td>Low</td>
+          </tr>
+
+          <tr>
+            <td>Aerobic respiration</td>
+            <td>Mitochondria</td>
+            <td>CO<sub>2</sub> + H<sub>2</sub>O + Energy</td>
+            <td>High</td>
+          </tr>
+        </table>
+      </div>
+
+      <h3>Fermentation in Yeast</h3>
+
+      <div class="formula">
+        Pyruvate → Ethanol + CO<sub>2</sub> + Energy
+      </div>
+
+      <h3>Anaerobic Respiration in Human Muscles</h3>
+
+      <div class="formula">
+        Pyruvate → Lactic Acid + Energy
+      </div>
+
+      <p>
+        Lactic acid accumulation during oxygen shortage may cause muscle cramps.
+      </p>
+
+      <h3>Aerobic Respiration</h3>
+
+      <div class="formula">
+        Pyruvate + Oxygen → CO<sub>2</sub> + H<sub>2</sub>O + Large Amount of Energy
+      </div>
+
+      <h3>ATP — Energy Currency of the Cell</h3>
+
+      <div class="definition">
+        ATP stands for Adenosine Triphosphate. It is the primary energy
+        currency used by cells.
+      </div>
+
+      <p>
+        ATP is synthesised from ADP and inorganic phosphate.
+      </p>
+
+      <div class="formula">
+        ADP + Pi + Energy → ATP
+      </div>
+
+      <p>
+        Breaking the terminal phosphate bond of ATP releases approximately
+        <strong>30.5 kJ/mol</strong> of energy.
+      </p>
+
+      <h3>Respiratory Surfaces</h3>
+
+      <ul>
+        <li>
+          Plants exchange gases mainly through stomata.
+        </li>
+
+        <li>
+          Carbon dioxide elimination is more significant at night, while
+          oxygen release is more significant during the day.
+        </li>
+
+        <li>
+          Aquatic organisms breathe faster because water contains less
+          dissolved oxygen than air.
+        </li>
+
+        <li>
+          Terrestrial organisms have large respiratory surfaces located
+          inside the body for protection.
+        </li>
+      </ul>
+
+      <h3>Human Respiratory System</h3>
+
+      <div class="process-box">
+        <div class="process-step">
+          Nostrils → Throat → Trachea → Bronchi → Bronchioles → Alveoli
+        </div>
+      </div>
+
+      <ul>
+        <li>
+          Nostrils contain hairs and mucus that filter dust and germs.
+        </li>
+
+        <li>
+          The trachea is supported by rings of cartilage to prevent collapse.
+        </li>
+
+        <li>
+          Bronchi divide into smaller bronchioles.
+        </li>
+
+        <li>
+          Bronchioles end in tiny air sacs called alveoli.
+        </li>
+
+        <li>
+          The alveoli provide a respiratory surface of approximately
+          <strong>80 m²</strong>.
+        </li>
+      </ul>
+
+      <h3>Transport of Respiratory Gases</h3>
+
+      <ul>
+        <li>
+          Haemoglobin in red blood cells has a high affinity for oxygen.
+        </li>
+
+        <li>
+          Carbon dioxide is more soluble in water than oxygen.
+        </li>
+
+        <li>
+          Therefore, most carbon dioxide is transported in dissolved form.
+        </li>
+      </ul>
+
+      <h3>Role of Cilia</h3>
+
+      <p>
+        Cilia are hair-like structures in the upper respiratory tract that
+        remove dust and germs. Smoking damages or destroys these cilia.
+      </p>
+    </section>
+
+    <!-- SECTION 5 -->
+    <section class="section">
+      <h2>V. Transportation Systems</h2>
+
+      <h3>A. Human Circulatory System</h3>
+
+      <h3>Blood Composition</h3>
+
+      <ul>
+        <li>
+          <strong>Plasma:</strong>
+          Transports food, carbon dioxide, and nitrogenous wastes.
+        </li>
+
+        <li>
+          <strong>Red Blood Corpuscles:</strong>
+          Transport oxygen using haemoglobin.
+        </li>
+      </ul>
+
+      <h3>The Heart</h3>
+
+      <div class="definition">
+        The heart is a muscular pumping organ approximately the size of a fist.
+      </div>
+
+      <h3>Right Side of the Heart</h3>
+
+      <ul>
+        <li>Receives deoxygenated blood through the vena cava.</li>
+        <li>Pumps this blood to the lungs through the pulmonary artery.</li>
+      </ul>
+
+      <h3>Left Side of the Heart</h3>
+
+      <ul>
+        <li>Receives oxygenated blood through the pulmonary veins.</li>
+        <li>Pumps oxygenated blood to the body through the aorta.</li>
+      </ul>
+
+      <h3>Heart Chambers and Valves</h3>
+
+      <ul>
+        <li>The heart has four chambers.</li>
+        <li>Ventricles have thicker walls than atria.</li>
+        <li>Thicker ventricular walls help pump blood at higher pressure.</li>
+        <li>Valves prevent the backward flow of blood.</li>
+      </ul>
+
+      <h3>Double Circulation</h3>
+
+      <div class="definition">
+        In double circulation, blood passes through the heart twice during
+        one complete cycle of circulation.
+      </div>
+
+      <p>
+        Four-chambered hearts in birds and mammals allow complete separation
+        of oxygenated and deoxygenated blood, making circulation highly efficient.
+      </p>
+
+      <h3>Blood Pressure</h3>
+
+      <div class="formula">
+        Normal Blood Pressure = 120/80 mm of Hg
+      </div>
+
+      <ul>
+        <li><strong>120:</strong> Systolic pressure</li>
+        <li><strong>80:</strong> Diastolic pressure</li>
+        <li>Measured using a sphygmomanometer.</li>
+      </ul>
+
+      <h3>Blood Vessels</h3>
+
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Blood Vessel</th>
+            <th>Structure</th>
+            <th>Function</th>
+          </tr>
+
+          <tr>
+            <td>Arteries</td>
+            <td>Thick and elastic walls</td>
+            <td>Carry blood away from the heart under high pressure</td>
+          </tr>
+
+          <tr>
+            <td>Veins</td>
+            <td>Thin walls and valves</td>
+            <td>Carry blood towards the heart</td>
+          </tr>
+
+          <tr>
+            <td>Capillaries</td>
+            <td>Walls one cell thick</td>
+            <td>Allow exchange of materials between blood and tissues</td>
+          </tr>
+        </table>
+      </div>
+
+      <h3>Platelets</h3>
+
+      <p>
+        Platelets help clot blood at injury sites and prevent excessive blood loss.
+      </p>
+
+      <h3>Lymph</h3>
+
+      <ul>
+        <li>Lymph is a colourless fluid containing relatively little protein.</li>
+        <li>It drains excess fluid from tissues.</li>
+        <li>It transports absorbed fats from the intestine.</li>
+      </ul>
+
+      <h3>B. Transportation in Plants</h3>
+
+      <h3>Xylem — Transport of Water and Minerals</h3>
+
+      <p>
+        Xylem transports water and dissolved minerals from roots to other
+        parts of the plant.
+      </p>
+
+      <h4>Root Pressure</h4>
+
+      <ul>
+        <li>
+          Root cells actively absorb ions from the soil.
+        </li>
+
+        <li>
+          This creates a concentration gradient.
+        </li>
+
+        <li>
+          Water enters the roots and is pushed upward.
+        </li>
+
+        <li>
+          Root pressure is especially significant at night.
+        </li>
+      </ul>
+
+      <h4>Transpiration Pull</h4>
+
+      <ul>
+        <li>
+          Water evaporates from the stomata of leaves.
+        </li>
+
+        <li>
+          Evaporation creates suction or tension in the water column.
+        </li>
+
+        <li>
+          This pulls water upward from the roots.
+        </li>
+
+        <li>
+          Transpiration pull is the major force during the day.
+        </li>
+      </ul>
+
+      <h3>Phloem — Translocation</h3>
+
+      <p>
+        Phloem transports sucrose and amino acids from leaves to storage organs
+        such as roots and fruits, as well as to growing regions.
+      </p>
+
+      <ul>
+        <li>
+          ATP is used to actively load sucrose into phloem tissue.
+        </li>
+
+        <li>
+          This increases the osmotic pressure inside the phloem.
+        </li>
+
+        <li>
+          Water enters the phloem, creating pressure that pushes food towards
+          lower-pressure regions.
+        </li>
+      </ul>
+    </section>
+
+    <!-- SECTION 6 -->
+    <section class="section">
+      <h2>VI. Excretion</h2>
+
+      <div class="definition">
+        Excretion is the process of removing harmful metabolic wastes from
+        the body.
+      </div>
+
+      <h3>Human Excretory System</h3>
+
+      <p>The human excretory system consists of:</p>
+
+      <ul>
+        <li>A pair of kidneys</li>
+        <li>Ureters</li>
+        <li>Urinary bladder</li>
+        <li>Urethra</li>
+      </ul>
+
+      <h3>The Nephron</h3>
+
+      <div class="definition">
+        The nephron is the basic structural and functional unit of the kidney.
+      </div>
+
+      <ul>
+        <li>
+          It contains a network of capillaries called the
+          <strong>glomerulus</strong>.
+        </li>
+
+        <li>
+          The glomerulus lies inside a cup-shaped structure called
+          <strong>Bowman’s capsule</strong>.
+        </li>
+      </ul>
+
+      <h3>Filtration and Reabsorption</h3>
+
+      <ul>
+        <li>
+          Approximately <strong>180 litres</strong> of filtrate may be formed
+          in the kidneys daily.
+        </li>
+
+        <li>
+          Only about <strong>1–2 litres</strong> of urine are finally excreted.
+        </li>
+
+        <li>
+          Useful substances are selectively reabsorbed into the blood.
+        </li>
+      </ul>
+
+      <p>Substances reabsorbed include:</p>
+
+      <ul>
+        <li>Glucose</li>
+        <li>Amino acids</li>
+        <li>Required salts</li>
+        <li>Most of the water</li>
+      </ul>
+
+      <h3>Urinary Bladder</h3>
+
+      <p>
+        The urinary bladder is a muscular sac that stores urine.
+        Its emptying is controlled by nervous signals.
+      </p>
+
+      <h3>Artificial Kidney — Haemodialysis</h3>
+
+      <div class="definition">
+        Haemodialysis is a process in which an artificial kidney removes
+        nitrogenous wastes from the blood using semi-permeable tubes and
+        dialysing fluid.
+      </div>
+
+      <ul>
+        <li>Waste materials move out of the blood by diffusion.</li>
+        <li>The dialysing fluid helps maintain the concentration gradient.</li>
+        <li>Unlike natural kidneys, an artificial kidney does not selectively reabsorb useful substances.</li>
+      </ul>
+
+      <h3>Excretion in Plants</h3>
+
+      <ul>
+        <li>
+          Plants release oxygen and excess water through gaseous exchange
+          and transpiration.
+        </li>
+
+        <li>
+          Wastes may be stored inside vacuoles.
+        </li>
+
+        <li>
+          Wastes may accumulate in ageing leaves, which later fall off.
+        </li>
+
+        <li>
+          Some wastes are stored as resins and gums in old xylem.
+        </li>
+
+        <li>
+          Certain wastes are released directly into the surrounding soil.
+        </li>
+      </ul>
+    </section>
+
+    <!-- QUICK REVISION -->
+    <section class="section">
+      <h2>Quick Revision</h2>
+
+      <div class="revision-grid">
+
+        <div class="revision-card">
+          <h3>Life Processes</h3>
+          Nutrition, respiration, transportation, and excretion.
+        </div>
+
+        <div class="revision-card">
+          <h3>Photosynthesis</h3>
+          Uses CO₂, water, sunlight, and chlorophyll.
+        </div>
+
+        <div class="revision-card">
+          <h3>Plant Storage</h3>
+          Plants store food as starch.
+        </div>
+
+        <div class="revision-card">
+          <h3>Human Storage</h3>
+          Humans store excess glucose as glycogen.
+        </div>
+
+        <div class="revision-card">
+          <h3>Common Respiration Step</h3>
+          Glucose breaks into two pyruvate molecules.
+        </div>
+
+        <div class="revision-card">
+          <h3>ATP Energy</h3>
+          Approximately 30.5 kJ/mol.
+        </div>
+
+        <div class="revision-card">
+          <h3>Alveoli Area</h3>
+          Approximately 80 m².
+        </div>
+
+        <div class="revision-card">
+          <h3>Normal Blood Pressure</h3>
+          120/80 mm of Hg.
+        </div>
+
+        <div class="revision-card">
+          <h3>Water Transport</h3>
+          Xylem transports water and minerals.
+        </div>
+
+        <div class="revision-card">
+          <h3>Food Transport</h3>
+          Phloem transports sucrose and amino acids.
+        </div>
+
+        <div class="revision-card">
+          <h3>Nephron</h3>
+          Basic filtration unit of the kidney.
+        </div>
+
+        <div class="revision-card">
+          <h3>Daily Filtrate</h3>
+          Approximately 180 L formed, but only 1–2 L urine excreted.
+        </div>
+
+      </div>
+    </section>
+
+    <footer>
+      © SFALXO | Class 10 Science Notes
+    </footer>
+
+  </div>
+
+</body>
+</html>
