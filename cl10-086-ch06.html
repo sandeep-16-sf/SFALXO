@@ -1,0 +1,1150 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Control and Coordination | SFALXO</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #080808;
+      color: #f5f5f5;
+      line-height: 1.75;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .header {
+      text-align: center;
+      padding: 25px 10px 40px;
+    }
+
+    .header h1 {
+      font-size: 43px;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #ff3030, #ff7a00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .header p {
+      color: #aaa;
+      font-size: 17px;
+    }
+
+    .section {
+      background: #111;
+      border: 1px solid #292929;
+      border-radius: 20px;
+      padding: 28px;
+      margin-bottom: 28px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+    }
+
+    h2 {
+      color: #ff5733;
+      font-size: 27px;
+      margin-top: 0;
+      border-bottom: 2px solid #2d2d2d;
+      padding-bottom: 10px;
+    }
+
+    h3 {
+      color: #ff9d00;
+      margin-top: 28px;
+      font-size: 21px;
+    }
+
+    h4 {
+      color: #ffb15c;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin: 12px 0;
+    }
+
+    ul {
+      padding-left: 25px;
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    strong {
+      color: #ffb15c;
+    }
+
+    .definition {
+      background: #181818;
+      border-left: 4px solid #ff5733;
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin: 18px 0;
+    }
+
+    .fact {
+      background: linear-gradient(
+        135deg,
+        rgba(255, 48, 48, 0.08),
+        rgba(255, 122, 0, 0.08)
+      );
+      border: 1px solid #3a2920;
+      border-radius: 12px;
+      padding: 16px;
+      margin: 18px 0;
+    }
+
+    .important {
+      background: #0b0b0b;
+      border: 1px solid #333;
+      border-left: 5px solid #ff9d00;
+      border-radius: 10px;
+      padding: 15px 18px;
+      margin: 18px 0;
+    }
+
+    .formula {
+      background: #050505;
+      border: 1px solid #292929;
+      border-left: 5px solid #ff5733;
+      border-radius: 10px;
+      padding: 15px 20px;
+      margin: 18px 0;
+      font-size: 18px;
+      font-weight: bold;
+      overflow-x: auto;
+    }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 20px 0;
+    }
+
+    .comparison-card {
+      background: #181818;
+      border: 1px solid #333;
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .comparison-card h3 {
+      margin-top: 0;
+      color: #ff5733;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      margin: 20px 0;
+    }
+
+    table {
+      width: 100%;
+      min-width: 700px;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 1px solid #3d3d3d;
+      padding: 13px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #222;
+      color: #ff9d00;
+    }
+
+    td {
+      background: #121212;
+    }
+
+    .process-box {
+      background: #151515;
+      border: 1px solid #333;
+      border-radius: 14px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .process-step {
+      background: #0b0b0b;
+      border-radius: 8px;
+      padding: 11px 15px;
+      margin: 9px 0;
+    }
+
+    .revision-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .revision-card {
+      background: #181818;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .revision-card h3 {
+      margin-top: 0;
+      font-size: 19px;
+    }
+
+    footer {
+      text-align: center;
+      color: #777;
+      padding: 25px 10px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 10px;
+      }
+
+      .header h1 {
+        font-size: 32px;
+      }
+
+      .header p {
+        font-size: 15px;
+      }
+
+      .section {
+        padding: 19px;
+        border-radius: 15px;
+      }
+
+      h2 {
+        font-size: 23px;
+      }
+
+      h3 {
+        font-size: 19px;
+      }
+
+      p,
+      li {
+        font-size: 15px;
+      }
+
+      .comparison {
+        grid-template-columns: 1fr;
+      }
+
+      .revision-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .formula {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header class="header">
+      <h1>Control and Coordination</h1>
+      <p>Complete Class 10 Science Notes | SFALXO</p>
+    </header>
+
+
+    <!-- INTRODUCTION -->
+    <section class="section">
+      <h2>1. The Nature and Necessity of Movement</h2>
+
+      <p>
+        Movement is an important characteristic of living organisms. It may occur
+        because of growth or due to a response to changes in the surroundings.
+      </p>
+
+      <div class="definition">
+        <strong>Movement:</strong>
+        A change in position or activity of an organism or one of its parts.
+      </div>
+
+      <h3>Types of Movement</h3>
+
+      <div class="comparison">
+        <div class="comparison-card">
+          <h3>Growth-Dependent Movement</h3>
+          <p>
+            Movements caused by growth in a particular direction.
+          </p>
+          <p>
+            <strong>Example:</strong> A germinating seed pushing through the soil.
+          </p>
+        </div>
+
+        <div class="comparison-card">
+          <h3>Growth-Independent Movement</h3>
+          <p>
+            Movements that do not result from growth.
+          </p>
+          <p>
+            <strong>Examples:</strong> A cat running or buffaloes chewing cud.
+          </p>
+        </div>
+      </div>
+
+      <h3>Movement as a Response</h3>
+
+      <p>
+        Movements are controlled responses to environmental changes. These
+        responses generally help the organism survive or perform necessary
+        functions.
+      </p>
+
+      <ul>
+        <li>
+          <strong>Sunlight:</strong> Plants grow towards light to increase
+          photosynthesis.
+        </li>
+        <li>
+          <strong>Protection:</strong> We withdraw our hand from a hot object
+          and blink in bright light.
+        </li>
+        <li>
+          <strong>Functional needs:</strong> Buffaloes chew cud to help break
+          down tough food.
+        </li>
+      </ul>
+
+      <div class="important">
+        Different environmental changes require different responses. Therefore,
+        organisms need specialised tissues for recognising stimuli and
+        coordinating suitable actions.
+      </div>
+    </section>
+
+
+    <!-- ANIMAL NERVOUS SYSTEM -->
+    <section class="section">
+      <h2>2. Animal Nervous System</h2>
+
+      <p>
+        In animals, coordination is mainly carried out by two specialised tissues:
+      </p>
+
+      <ul>
+        <li><strong>Nervous tissue</strong> for receiving and transmitting information.</li>
+        <li><strong>Muscular tissue</strong> for producing movement.</li>
+      </ul>
+
+      <h3>Sensory Receptors</h3>
+
+      <p>
+        Receptors are specialised nerve-cell endings that detect changes in the
+        environment. They are present in sense organs such as the eyes, ears,
+        nose, tongue and skin.
+      </p>
+
+      <ul>
+        <li>
+          <strong>Gustatory receptors:</strong> Detect taste.
+        </li>
+        <li>
+          <strong>Olfactory receptors:</strong> Detect smell.
+        </li>
+      </ul>
+
+      <div class="fact">
+        Taste and smell work together. This is why food may taste different
+        when the nose is blocked.
+      </div>
+
+      <h3>The Neuron</h3>
+
+      <p>
+        The neuron is the structural and functional unit of the nervous system.
+      </p>
+
+      <div class="process-box">
+        <h4>Main Parts of a Neuron</h4>
+
+        <div class="process-step">
+          <strong>Dendrites:</strong> Receive information or stimuli.
+        </div>
+
+        <div class="process-step">
+          <strong>Cell body:</strong> Contains the nucleus and coordinates
+          cellular activities.
+        </div>
+
+        <div class="process-step">
+          <strong>Axon:</strong> Carries the electrical impulse away from the
+          cell body.
+        </div>
+
+        <div class="process-step">
+          <strong>Nerve ending:</strong> Releases chemicals to transmit the
+          signal to the next cell.
+        </div>
+      </div>
+
+      <h3>Transmission of a Nerve Impulse</h3>
+
+      <div class="process-box">
+        <div class="process-step">
+          1. Information is received at the dendritic tip.
+        </div>
+
+        <div class="process-step">
+          2. A chemical reaction generates an electrical impulse.
+        </div>
+
+        <div class="process-step">
+          3. The impulse travels through the dendrite and cell body.
+        </div>
+
+        <div class="process-step">
+          4. The impulse moves along the axon.
+        </div>
+
+        <div class="process-step">
+          5. Chemicals are released at the nerve ending.
+        </div>
+
+        <div class="process-step">
+          6. These chemicals cross the gap and start a new electrical impulse
+          in the next neuron.
+        </div>
+      </div>
+
+      <h3>Synapse</h3>
+
+      <div class="definition">
+        A <strong>synapse</strong> is the small gap between two neurons across
+        which chemical signals transmit the nerve impulse.
+      </div>
+
+      <h3>Neuromuscular Junction</h3>
+
+      <p>
+        A neuromuscular junction is a similar connection between a neuron and
+        a muscle cell. It allows a nerve impulse to produce muscular movement.
+      </p>
+    </section>
+
+
+    <!-- REFLEX ACTION -->
+    <section class="section">
+      <h2>3. Reflex Actions and Reflex Arc</h2>
+
+      <div class="definition">
+        <strong>Reflex action:</strong>
+        A sudden and automatic response to a stimulus that occurs without
+        conscious thinking.
+      </div>
+
+      <h3>Why Are Reflex Actions Necessary?</h3>
+
+      <p>
+        Thinking involves complex networks of neurons in the fore-brain.
+        This process takes time. In dangerous situations, waiting for conscious
+        thinking may result in injury.
+      </p>
+
+      <p>
+        Therefore, quick responses are coordinated through the spinal cord.
+      </p>
+
+      <h3>Reflex Arc</h3>
+
+      <p>
+        The pathway followed by a nerve impulse during a reflex action is called
+        the reflex arc.
+      </p>
+
+      <div class="formula">
+        Receptor → Sensory Neuron → Relay Neuron → Motor Neuron → Effector
+      </div>
+
+      <div class="process-box">
+        <h4>Example: Withdrawing the Hand from a Hot Object</h4>
+
+        <div class="process-step">
+          1. Heat or pain receptors in the skin detect the stimulus.
+        </div>
+
+        <div class="process-step">
+          2. The sensory neuron carries the impulse to the spinal cord.
+        </div>
+
+        <div class="process-step">
+          3. A relay neuron in the spinal cord passes the impulse onward.
+        </div>
+
+        <div class="process-step">
+          4. The motor neuron carries the impulse to the arm muscle.
+        </div>
+
+        <div class="process-step">
+          5. The muscle contracts and the hand is withdrawn.
+        </div>
+      </div>
+
+      <div class="important">
+        Reflex arcs evolved because the brain's thinking process is not fast
+        enough to handle certain immediate dangers.
+      </div>
+    </section>
+
+
+    <!-- CNS AND PNS -->
+    <section class="section">
+      <h2>4. Human Brain and Nervous System</h2>
+
+      <p>
+        The brain is the main coordinating centre of the human body.
+      </p>
+
+      <div class="comparison">
+        <div class="comparison-card">
+          <h3>Central Nervous System</h3>
+          <p>
+            Consists of the:
+          </p>
+          <ul>
+            <li>Brain</li>
+            <li>Spinal cord</li>
+          </ul>
+        </div>
+
+        <div class="comparison-card">
+          <h3>Peripheral Nervous System</h3>
+          <p>
+            Connects the central nervous system to the rest of the body through:
+          </p>
+          <ul>
+            <li>Cranial nerves</li>
+            <li>Spinal nerves</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Protection of the Nervous System</h3>
+
+      <ul>
+        <li>
+          The brain is protected by the bony <strong>cranium</strong> or skull.
+        </li>
+        <li>
+          The brain is surrounded by a fluid-filled protective covering that
+          absorbs shocks.
+        </li>
+        <li>
+          The spinal cord is protected by the <strong>vertebral column</strong>.
+        </li>
+      </ul>
+    </section>
+
+
+    <!-- BRAIN REGIONS -->
+    <section class="section">
+      <h2>5. Functional Regions of the Brain</h2>
+
+      <h3>Fore-brain</h3>
+
+      <p>
+        The fore-brain is the main thinking and voluntary control centre.
+      </p>
+
+      <ul>
+        <li>Controls voluntary actions.</li>
+        <li>Contains areas responsible for hearing, smell and sight.</li>
+        <li>Contains association areas that interpret sensory information.</li>
+        <li>Uses memory and information from different receptors.</li>
+        <li>Contains motor areas controlling voluntary movements.</li>
+        <li>Includes a centre related to hunger and feeling full.</li>
+      </ul>
+
+      <h3>Mid-brain</h3>
+
+      <p>
+        The mid-brain helps control several involuntary responses and connects
+        different parts of the brain.
+      </p>
+
+      <h3>Hind-brain</h3>
+
+      <p>
+        The hind-brain controls many involuntary activities and helps maintain
+        balance and coordination.
+      </p>
+
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Part</th>
+            <th>Main Functions</th>
+          </tr>
+
+          <tr>
+            <td><strong>Medulla</strong></td>
+            <td>
+              Controls involuntary actions such as blood pressure, salivation
+              and vomiting.
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>Cerebellum</strong></td>
+            <td>
+              Maintains posture, balance and precision of voluntary movements.
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>Mid-brain</strong></td>
+            <td>
+              Controls certain involuntary responses and helps coordinate
+              signals.
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="fact">
+        Activities such as riding a bicycle, writing neatly and picking up a
+        pencil require the cerebellum for precision and balance.
+      </div>
+    </section>
+
+
+    <!-- MUSCLE MOVEMENT -->
+    <section class="section">
+      <h2>6. How Do Muscles Produce Movement?</h2>
+
+      <p>
+        Muscles produce movement by shortening their cells.
+      </p>
+
+      <p>
+        Special proteins present inside muscle cells change their shape and
+        arrangement when stimulated by electrical impulses from nerves.
+      </p>
+
+      <div class="process-box">
+        <div class="process-step">
+          Nervous electrical impulse reaches the muscle.
+        </div>
+
+        <div class="process-step">
+          Special muscle proteins respond to the impulse.
+        </div>
+
+        <div class="process-step">
+          The muscle cells shorten.
+        </div>
+
+        <div class="process-step">
+          The attached body part moves.
+        </div>
+      </div>
+    </section>
+
+
+    <!-- PLANT COORDINATION -->
+    <section class="section">
+      <h2>7. Coordination in Plants</h2>
+
+      <p>
+        Plants do not possess a nervous system or muscles. However, they respond
+        to stimuli using electrical and chemical methods.
+      </p>
+
+      <h3>Immediate Plant Responses</h3>
+
+      <p>
+        Some plant movements are rapid and do not depend on growth.
+      </p>
+
+      <div class="definition">
+        <strong>Example:</strong>
+        The leaves of <em>Mimosa pudica</em> fold when touched.
+      </div>
+
+      <p>
+        This movement occurs because plant cells change their water content.
+        Cells swell or shrink, causing movement in a different part of the plant
+        from the point of touch.
+      </p>
+
+      <h3>Growth-Related Plant Responses</h3>
+
+      <p>
+        Directional growth movements in response to stimuli are called
+        <strong>tropic movements</strong>.
+      </p>
+
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Type of Tropism</th>
+            <th>Stimulus</th>
+            <th>Example</th>
+          </tr>
+
+          <tr>
+            <td><strong>Phototropism</strong></td>
+            <td>Light</td>
+            <td>Shoots grow towards light; roots generally grow away from light.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Geotropism</strong></td>
+            <td>Gravity</td>
+            <td>Roots grow towards gravity; shoots grow away from gravity.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Hydrotropism</strong></td>
+            <td>Water</td>
+            <td>Roots grow towards water.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Chemotropism</strong></td>
+            <td>Chemicals</td>
+            <td>Pollen tubes grow towards ovules.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Thigmotropism</strong></td>
+            <td>Touch</td>
+            <td>Tendrils coil around a support.</td>
+          </tr>
+        </table>
+      </div>
+
+      <h3>Thigmotropism in Tendrils</h3>
+
+      <p>
+        When a tendril touches a support, the side in contact grows more slowly
+        than the outer side. This unequal growth causes the tendril to bend,
+        circle and cling to the support.
+      </p>
+    </section>
+
+
+    <!-- PLANT HORMONES -->
+    <section class="section">
+      <h2>8. Plant Hormones</h2>
+
+      <p>
+        Plant hormones, also called phytohormones, are chemical substances
+        produced in one part of a plant and transported to their site of action
+        mainly by diffusion.
+      </p>
+
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Hormone</th>
+            <th>Source or Location</th>
+            <th>Function</th>
+          </tr>
+
+          <tr>
+            <td><strong>Auxin</strong></td>
+            <td>Shoot tip</td>
+            <td>
+              Promotes cell elongation and helps shoots bend towards light.
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>Gibberellins</strong></td>
+            <td>Growing regions</td>
+            <td>Promote stem growth.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Cytokinins</strong></td>
+            <td>Fruits and seeds</td>
+            <td>Promote cell division.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Abscisic Acid</strong></td>
+            <td>Various plant parts</td>
+            <td>
+              Acts as a growth inhibitor and causes wilting of leaves.
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <h3>Role of Auxin in Phototropism</h3>
+
+      <div class="process-box">
+        <div class="process-step">
+          1. Auxin is produced at the shoot tip.
+        </div>
+
+        <div class="process-step">
+          2. Light causes auxin to accumulate more on the shady side.
+        </div>
+
+        <div class="process-step">
+          3. Cells on the shady side elongate more.
+        </div>
+
+        <div class="process-step">
+          4. The shoot bends towards the light.
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ANIMAL HORMONES -->
+    <section class="section">
+      <h2>9. Animal Hormones and Endocrine System</h2>
+
+      <p>
+        Nervous impulses are fast but reach only cells connected by nervous
+        tissue. Hormones provide chemical communication through the blood and
+        can affect target organs for a longer duration.
+      </p>
+
+      <div class="definition">
+        <strong>Hormones:</strong>
+        Chemical messengers secreted by endocrine glands and transported through
+        the blood to specific target organs.
+      </div>
+
+      <h3>Important Animal Hormones</h3>
+
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Hormone</th>
+            <th>Gland</th>
+            <th>Function</th>
+          </tr>
+
+          <tr>
+            <td><strong>Adrenaline</strong></td>
+            <td>Adrenal glands</td>
+            <td>Prepares the body for emergency situations.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Thyroxine</strong></td>
+            <td>Thyroid gland</td>
+            <td>Regulates metabolism of carbohydrates, proteins and fats.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Growth Hormone</strong></td>
+            <td>Pituitary gland</td>
+            <td>Controls growth and development.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Testosterone</strong></td>
+            <td>Testes</td>
+            <td>Produces male pubertal changes.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Oestrogen</strong></td>
+            <td>Ovaries</td>
+            <td>Produces female pubertal changes.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Insulin</strong></td>
+            <td>Pancreas</td>
+            <td>Regulates blood glucose level.</td>
+          </tr>
+        </table>
+      </div>
+
+      <h3>Adrenaline: Fight-or-Flight Hormone</h3>
+
+      <p>
+        Adrenaline is secreted during stress, fear, anger or emergencies.
+      </p>
+
+      <ul>
+        <li>Increases heart rate.</li>
+        <li>Increases breathing rate.</li>
+        <li>Increases blood supply to skeletal muscles.</li>
+        <li>Diverts blood away from the skin and digestive system.</li>
+        <li>Helps the body prepare for immediate action.</li>
+      </ul>
+
+      <h3>Thyroxine</h3>
+
+      <p>
+        Thyroxine is secreted by the thyroid gland and controls the metabolism
+        of carbohydrates, proteins and fats.
+      </p>
+
+      <div class="important">
+        Iodine is essential for the production of thyroxine. Iodine deficiency
+        may cause enlargement of the thyroid gland, known as
+        <strong>goitre</strong>.
+      </div>
+
+      <h3>Growth Hormone</h3>
+
+      <ul>
+        <li>Secreted by the pituitary gland.</li>
+        <li>Deficiency during childhood may cause dwarfism.</li>
+        <li>Excess secretion may cause gigantism.</li>
+      </ul>
+
+      <h3>Puberty Hormones</h3>
+
+      <ul>
+        <li>
+          <strong>Testosterone:</strong> Secreted by testes and produces male
+          secondary sexual characteristics.
+        </li>
+        <li>
+          <strong>Oestrogen:</strong> Secreted by ovaries and produces female
+          secondary sexual characteristics.
+        </li>
+      </ul>
+
+      <h3>Insulin</h3>
+
+      <p>
+        Insulin is secreted by the pancreas and controls the amount of glucose
+        in the blood.
+      </p>
+
+      <div class="fact">
+        Lack of insulin can result in increased blood glucose levels and may
+        cause diabetes.
+      </div>
+
+      <h3>Hypothalamus and Pituitary Gland</h3>
+
+      <p>
+        The hypothalamus releases releasing hormones that stimulate the pituitary
+        gland to secrete its hormones.
+      </p>
+
+      <p>
+        For example, Growth Hormone Releasing Factor stimulates the pituitary
+        gland to release growth hormone.
+      </p>
+    </section>
+
+
+    <!-- FEEDBACK -->
+    <section class="section">
+      <h2>10. Feedback Mechanism</h2>
+
+      <p>
+        Hormone secretion must be controlled carefully so that the correct
+        quantity is released at the correct time.
+      </p>
+
+      <div class="process-box">
+        <h4>Example: Regulation of Blood Sugar</h4>
+
+        <div class="process-step">
+          1. Blood glucose level rises.
+        </div>
+
+        <div class="process-step">
+          2. Pancreatic cells detect the increase.
+        </div>
+
+        <div class="process-step">
+          3. More insulin is secreted.
+        </div>
+
+        <div class="process-step">
+          4. Cells take up more glucose and blood sugar decreases.
+        </div>
+
+        <div class="process-step">
+          5. As glucose reaches a normal level, insulin secretion is reduced.
+        </div>
+      </div>
+
+      <div class="definition">
+        <strong>Feedback mechanism:</strong>
+        A regulatory process in which the level of a substance controls the
+        further release of a hormone responsible for regulating it.
+      </div>
+    </section>
+
+
+    <!-- COMPARISON -->
+    <section class="section">
+      <h2>11. Nervous Control vs Hormonal Control</h2>
+
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Feature</th>
+            <th>Nervous Control</th>
+            <th>Hormonal Control</th>
+          </tr>
+
+          <tr>
+            <td>Type of signal</td>
+            <td>Electrical impulses and chemicals</td>
+            <td>Chemical hormones</td>
+          </tr>
+
+          <tr>
+            <td>Transport</td>
+            <td>Through neurons</td>
+            <td>Through blood</td>
+          </tr>
+
+          <tr>
+            <td>Speed</td>
+            <td>Very fast</td>
+            <td>Usually slower</td>
+          </tr>
+
+          <tr>
+            <td>Duration</td>
+            <td>Usually short-lived</td>
+            <td>Often longer-lasting</td>
+          </tr>
+
+          <tr>
+            <td>Area of effect</td>
+            <td>Specific connected cells</td>
+            <td>Target organs throughout the body</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+
+
+    <!-- QUICK REVISION -->
+    <section class="section">
+      <h2>12. Quick Revision</h2>
+
+      <div class="revision-grid">
+
+        <div class="revision-card">
+          <h3>Neuron</h3>
+          <p>
+            Structural and functional unit of the nervous system.
+          </p>
+        </div>
+
+        <div class="revision-card">
+          <h3>Synapse</h3>
+          <p>
+            Gap between two neurons through which chemical signals pass.
+          </p>
+        </div>
+
+        <div class="revision-card">
+          <h3>Reflex Arc</h3>
+          <p>
+            Receptor → Sensory neuron → Relay neuron → Motor neuron → Effector.
+          </p>
+        </div>
+
+        <div class="revision-card">
+          <h3>Fore-brain</h3>
+          <p>
+            Thinking, interpretation and voluntary actions.
+          </p>
+        </div>
+
+        <div class="revision-card">
+          <h3>Cerebellum</h3>
+          <p>
+            Balance, posture and precision of movement.
+          </p>
+        </div>
+
+        <div class="revision-card">
+          <h3>Medulla</h3>
+          <p>
+            Controls involuntary actions such as blood pressure and vomiting.
+          </p>
+        </div>
+
+        <div class="revision-card">
+          <h3>Auxin</h3>
+          <p>
+            Promotes cell elongation and phototropic bending.
+          </p>
+        </div>
+
+        <div class="revision-card">
+          <h3>Adrenaline</h3>
+          <p>
+            Emergency hormone responsible for the fight-or-flight response.
+          </p>
+        </div>
+
+        <div class="revision-card">
+          <h3>Thyroxine</h3>
+          <p>
+            Controls metabolism and requires iodine.
+          </p>
+        </div>
+
+        <div class="revision-card">
+          <h3>Insulin</h3>
+          <p>
+            Regulates blood glucose level.
+          </p>
+        </div>
+
+        <div class="revision-card">
+          <h3>Phototropism</h3>
+          <p>
+            Growth movement in response to light.
+          </p>
+        </div>
+
+        <div class="revision-card">
+          <h3>Feedback Mechanism</h3>
+          <p>
+            Controls the quantity and timing of hormone secretion.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <footer>
+      © SFALXO | Class 10 Science Notes | Control and Coordination
+    </footer>
+
+  </div>
+
+</body>
+</html>
