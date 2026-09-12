@@ -1,0 +1,1292 @@
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Light - Reflection and Refraction | Class 10 | SFALXO</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080808;
+            color: #f5f5f5;
+            line-height: 1.75;
+        }
+
+        .container {
+            max-width: 1080px;
+            margin: auto;
+        }
+
+        /* HEADER */
+
+        .header {
+            text-align: center;
+            padding: 25px 10px 40px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 43px;
+            background: linear-gradient(90deg, #ff3030, #ff7a00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header p {
+            color: #aaa;
+            font-size: 17px;
+            margin-top: 7px;
+        }
+
+        /* SECTIONS */
+
+        .section {
+            background: #111;
+            border: 1px solid #292929;
+            border-radius: 20px;
+            padding: 28px;
+            margin-bottom: 28px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+        }
+
+        h2 {
+            color: #ff5733;
+            font-size: 27px;
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #2d2d2d;
+        }
+
+        h3 {
+            color: #ff9d00;
+            margin-top: 28px;
+        }
+
+        h4 {
+            color: #ffcc66;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        ul,
+        ol {
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* DEFINITION */
+
+        .definition {
+            background: #181818;
+            border-left: 4px solid #ff5733;
+            border-radius: 10px;
+            padding: 16px 18px;
+            margin: 18px 0;
+        }
+
+        .definition strong {
+            color: #ff9d00;
+        }
+
+        /* FORMULA */
+
+        .formula {
+            background: #050505;
+            border: 1px solid #292929;
+            border-left: 5px solid #ff5733;
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin: 18px 0;
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+            overflow-x: auto;
+        }
+
+        /* FACT BOX */
+
+        .fact {
+            background: linear-gradient(
+                135deg,
+                rgba(255, 48, 48, 0.08),
+                rgba(255, 122, 0, 0.08)
+            );
+
+            border: 1px solid #3a2920;
+            border-radius: 12px;
+            padding: 16px;
+            margin: 18px 0;
+        }
+
+        .fact-title {
+            color: #ff7a00;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .important {
+            color: #ffcc00;
+            font-weight: bold;
+        }
+
+        /* DERIVATION */
+
+        .derivation {
+            background: #151515;
+            border: 1px solid #333;
+            border-radius: 14px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .derivation-title {
+            color: #ff7a00;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .step {
+            background: #0b0b0b;
+            border-radius: 8px;
+            padding: 10px 15px;
+            margin: 8px 0;
+            overflow-x: auto;
+        }
+
+        /* TABLES */
+
+        .table-container {
+            overflow-x: auto;
+            margin: 18px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 650px;
+        }
+
+        th,
+        td {
+            border: 1px solid #3d3d3d;
+            padding: 13px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background: #222;
+            color: #ff9d00;
+        }
+
+        td {
+            background: #111;
+        }
+
+        /* COMPARISON */
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 18px;
+        }
+
+        .comparison-box {
+            background: #161616;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 18px;
+        }
+
+        .comparison-box h3 {
+            margin-top: 0;
+        }
+
+        /* FORMULA GRID */
+
+        .formula-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .formula-card {
+            background: #151515;
+            border: 1px solid #303030;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .formula-card .big {
+            font-size: 21px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .formula-card small {
+            color: #aaa;
+        }
+
+        /* FOOTER */
+
+        .footer {
+            text-align: center;
+            padding: 30px 10px;
+            color: #777;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            body {
+                padding: 10px;
+            }
+
+            .header h1 {
+                font-size: 32px;
+            }
+
+            .section {
+                padding: 19px;
+                border-radius: 15px;
+            }
+
+            h2 {
+                font-size: 23px;
+            }
+
+            h3 {
+                font-size: 19px;
+            }
+
+            p,
+            li {
+                font-size: 15px;
+            }
+
+            .formula {
+                font-size: 17px;
+            }
+
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .formula-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+        <h1>Light: Reflection and Refraction</h1>
+
+        <p>
+            Class 10 Science • Detailed Study Notes
+        </p>
+
+    </div>
+
+
+
+    <!-- SECTION 1 -->
+
+    <div class="section">
+
+        <h2>1. The Nature of Light</h2>
+
+
+        <h3>Visibility of Objects</h3>
+
+        <div class="definition">
+
+            Objects become visible because they reflect light falling on them.
+            When this reflected light enters our eyes, we perceive the object.
+
+        </div>
+
+
+        <h3>Propagation of Light</h3>
+
+        <p>
+            Light generally travels in straight lines. This can be observed
+            when small light sources produce sharp shadows of opaque objects.
+        </p>
+
+
+        <h3>Theories of Light</h3>
+
+        <ul>
+
+            <li>
+                <b>Ray Optics:</b> Treats light as travelling along straight-line paths
+                called rays.
+            </li>
+
+            <li>
+                <b>Wave Theory:</b> Required to explain phenomena such as diffraction,
+                where light bends around very small obstacles.
+            </li>
+
+            <li>
+                <b>Particle Theory:</b> Explains the interaction of light with matter
+                as a stream of particles.
+            </li>
+
+            <li>
+                <b>Modern Quantum Theory:</b> Light exhibits both wave-like and
+                particle-like characteristics.
+            </li>
+
+        </ul>
+
+
+        <div class="fact">
+
+            <div class="fact-title">Important Concept</div>
+
+            Light cannot be described completely as only a wave or only a particle.
+            It exhibits <b>wave-particle duality</b>.
+
+        </div>
+
+    </div>
+
+
+
+    <!-- SECTION 2 -->
+
+    <div class="section">
+
+        <h2>2. Reflection of Light</h2>
+
+
+        <h3>Reflection from Mirrors</h3>
+
+        <p>
+            Highly polished surfaces, such as mirrors, reflect most of the
+            incident light falling on them.
+        </p>
+
+
+        <h3>Laws of Reflection</h3>
+
+        <div class="definition">
+
+            <b>First Law:</b> The angle of incidence is equal to the angle
+            of reflection.
+
+            <br><br>
+
+            <b>∠i = ∠r</b>
+
+            <br><br>
+
+            <b>Second Law:</b> The incident ray, the normal at the point
+            of incidence, and the reflected ray all lie in the same plane.
+
+        </div>
+
+
+        <h3>Image Formed by a Plane Mirror</h3>
+
+        <ul>
+
+            <li>The image is always <b>virtual and erect</b>.</li>
+
+            <li>The image is of the <b>same size</b> as the object.</li>
+
+            <li>
+                The image distance behind the mirror equals the object
+                distance in front of the mirror.
+            </li>
+
+            <li>The image is <b>laterally inverted</b>.</li>
+
+        </ul>
+
+
+        <div class="fact">
+
+            <div class="fact-title">Lateral Inversion</div>
+
+            The left side of an object appears as the right side in its
+            mirror image, and vice versa.
+
+        </div>
+
+    </div>
+
+
+
+    <!-- SECTION 3 -->
+
+    <div class="section">
+
+        <h2>3. Spherical Mirrors: Core Concepts</h2>
+
+
+        <h3>Types of Spherical Mirrors</h3>
+
+
+        <div class="comparison">
+
+
+            <div class="comparison-box">
+
+                <h3>Concave Mirror</h3>
+
+                <p>
+                    A spherical mirror whose reflecting surface is curved
+                    inwards, facing the centre of the sphere.
+                </p>
+
+            </div>
+
+
+            <div class="comparison-box">
+
+                <h3>Convex Mirror</h3>
+
+                <p>
+                    A spherical mirror whose reflecting surface is curved
+                    outwards.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <h3>Important Terminology</h3>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <tr>
+
+                    <th>Term</th>
+
+                    <th>Meaning</th>
+
+                </tr>
+
+
+                <tr>
+
+                    <td><b>Pole (P)</b></td>
+
+                    <td>
+                        The centre of the reflecting surface of the mirror.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td><b>Centre of Curvature (C)</b></td>
+
+                    <td>
+                        The centre of the sphere of which the mirror is a part.
+                        It is not located on the mirror surface.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td><b>Radius of Curvature (R)</b></td>
+
+                    <td>
+                        The distance between the pole and the centre of curvature.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td><b>Principal Axis</b></td>
+
+                    <td>
+                        The straight line passing through P and C.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td><b>Principal Focus (F)</b></td>
+
+                    <td>
+                        The point where parallel rays converge, or from which
+                        they appear to diverge.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td><b>Focal Length (f)</b></td>
+
+                    <td>
+                        The distance between the pole and the principal focus.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td><b>Aperture</b></td>
+
+                    <td>
+                        The diameter of the circular outline of the reflecting surface.
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+
+        <div class="formula">
+
+            R = 2f
+
+        </div>
+
+        <p>
+            For spherical mirrors of small aperture, the radius of curvature
+            is approximately twice the focal length.
+        </p>
+
+    </div>
+
+
+
+    <!-- SECTION 4 -->
+
+    <div class="section">
+
+        <h2>4. Image Formation by Spherical Mirrors</h2>
+
+
+        <h3>Concave Mirror</h3>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <tr>
+
+                    <th>Object Position</th>
+
+                    <th>Image Position</th>
+
+                    <th>Size</th>
+
+                    <th>Nature</th>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>At infinity</td>
+
+                    <td>At focus F</td>
+
+                    <td>Highly diminished</td>
+
+                    <td>Real and inverted</td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>Beyond C</td>
+
+                    <td>Between F and C</td>
+
+                    <td>Diminished</td>
+
+                    <td>Real and inverted</td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>At C</td>
+
+                    <td>At C</td>
+
+                    <td>Same size</td>
+
+                    <td>Real and inverted</td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>Between C and F</td>
+
+                    <td>Beyond C</td>
+
+                    <td>Enlarged</td>
+
+                    <td>Real and inverted</td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>At F</td>
+
+                    <td>At infinity</td>
+
+                    <td>Highly enlarged</td>
+
+                    <td>Real and inverted</td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>Between P and F</td>
+
+                    <td>Behind the mirror</td>
+
+                    <td>Enlarged</td>
+
+                    <td>Virtual and erect</td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+
+        <h3>Convex Mirror</h3>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <tr>
+
+                    <th>Object Position</th>
+
+                    <th>Image Position</th>
+
+                    <th>Size</th>
+
+                    <th>Nature</th>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>At infinity</td>
+
+                    <td>At F behind the mirror</td>
+
+                    <td>Highly diminished</td>
+
+                    <td>Virtual and erect</td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>Between infinity and P</td>
+
+                    <td>Between P and F behind the mirror</td>
+
+                    <td>Diminished</td>
+
+                    <td>Virtual and erect</td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+
+        <div class="fact">
+
+            <div class="fact-title">Remember</div>
+
+            A convex mirror always forms a <b>virtual, erect and diminished</b>
+            image, regardless of the object's position.
+
+        </div>
+
+    </div>
+
+
+
+    <!-- SECTION 5 -->
+
+    <div class="section">
+
+        <h2>5. Practical Applications of Mirrors</h2>
+
+
+        <h3>Concave Mirrors</h3>
+
+        <ul>
+
+            <li>
+                <b>Torches and searchlights:</b> Produce powerful parallel beams
+                when the source is placed at the focus.
+            </li>
+
+            <li>
+                <b>Vehicle headlights:</b> Used to obtain parallel beams of light.
+            </li>
+
+            <li>
+                <b>Shaving mirrors:</b> Produce enlarged images of the face
+                when the face is placed within the focal length.
+            </li>
+
+            <li>
+                <b>Dentists:</b> Used to obtain enlarged images of teeth.
+            </li>
+
+            <li>
+                <b>Solar furnaces:</b> Concentrate sunlight at a point to produce
+                high temperatures.
+            </li>
+
+        </ul>
+
+
+        <h3>Convex Mirrors</h3>
+
+        <p>
+            Convex mirrors are used as rear-view or wing mirrors in vehicles.
+        </p>
+
+        <div class="definition">
+
+            They provide an <b>erect image</b> and a
+            <b>wider field of view</b> because of their outward curvature.
+
+        </div>
+
+    </div>
+
+
+
+    <!-- SECTION 6 -->
+
+    <div class="section">
+
+        <h2>6. Reflection Formula and Sign Convention</h2>
+
+
+        <h3>New Cartesian Sign Convention</h3>
+
+        <ul>
+
+            <li>
+                The object is placed on the <b>left side</b> of the mirror.
+            </li>
+
+            <li>
+                All distances are measured from the pole of the mirror.
+            </li>
+
+            <li>
+                Distances measured to the right are positive.
+            </li>
+
+            <li>
+                Distances measured to the left are negative.
+            </li>
+
+            <li>
+                Heights above the principal axis are positive.
+            </li>
+
+            <li>
+                Heights below the principal axis are negative.
+            </li>
+
+        </ul>
+
+
+        <h3>Mirror Formula</h3>
+
+        <div class="formula">
+
+            1/v + 1/u = 1/f
+
+        </div>
+
+
+        <p>
+            Where:
+        </p>
+
+        <ul>
+
+            <li><b>u</b> = object distance</li>
+
+            <li><b>v</b> = image distance</li>
+
+            <li><b>f</b> = focal length</li>
+
+        </ul>
+
+
+        <h3>Magnification</h3>
+
+        <div class="formula">
+
+            m = h' / h = −v / u
+
+        </div>
+
+
+        <ul>
+
+            <li><b>m</b> = magnification</li>
+
+            <li><b>h'</b> = height of image</li>
+
+            <li><b>h</b> = height of object</li>
+
+        </ul>
+
+
+        <div class="fact">
+
+            <div class="fact-title">Sign of Magnification</div>
+
+            Negative magnification generally indicates a
+            <b>real and inverted</b> image.
+
+            <br><br>
+
+            Positive magnification indicates a
+            <b>virtual and erect</b> image.
+
+        </div>
+
+    </div>
+
+
+
+    <!-- SECTION 7 -->
+
+    <div class="section">
+
+        <h2>7. Refraction of Light</h2>
+
+
+        <h3>Definition</h3>
+
+        <div class="definition">
+
+            Refraction is the change in direction of light when it travels
+            obliquely from one transparent medium to another due to a change
+            in its speed.
+
+        </div>
+
+
+        <h3>Laws of Refraction</h3>
+
+        <ol>
+
+            <li>
+                The incident ray, refracted ray and the normal at the point
+                of incidence all lie in the same plane.
+            </li>
+
+            <li>
+                The ratio of the sine of the angle of incidence to the sine
+                of the angle of refraction is constant for a given pair of media.
+            </li>
+
+        </ol>
+
+
+        <h3>Snell's Law</h3>
+
+        <div class="formula">
+
+            sin i / sin r = constant
+
+        </div>
+
+
+        <h3>Refractive Index</h3>
+
+        <p>
+            The refractive index describes how much light slows down when
+            entering a medium.
+        </p>
+
+
+        <div class="formula">
+
+            n₂₁ = Speed of light in medium 1 / Speed of light in medium 2
+
+        </div>
+
+
+        <h3>Absolute Refractive Index</h3>
+
+        <div class="formula">
+
+            n = c / v
+
+        </div>
+
+
+        <ul>
+
+            <li><b>c</b> = speed of light in vacuum</li>
+
+            <li>
+                c ≈ 3 × 10<sup>8</sup> m/s
+            </li>
+
+            <li><b>v</b> = speed of light in the medium</li>
+
+        </ul>
+
+
+        <h3>Optical Density and Bending of Light</h3>
+
+
+        <div class="comparison">
+
+
+            <div class="comparison-box">
+
+                <h3>Rarer → Denser</h3>
+
+                <p>
+                    Light slows down and bends
+                    <b>towards the normal</b>.
+                </p>
+
+            </div>
+
+
+            <div class="comparison-box">
+
+                <h3>Denser → Rarer</h3>
+
+                <p>
+                    Light speeds up and bends
+                    <b>away from the normal</b>.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- SECTION 8 -->
+
+    <div class="section">
+
+        <h2>8. Refraction by Spherical Lenses</h2>
+
+
+        <h3>Types of Lenses</h3>
+
+
+        <div class="comparison">
+
+
+            <div class="comparison-box">
+
+                <h3>Convex Lens</h3>
+
+                <p>
+                    A converging lens that is thicker at the middle
+                    and thinner at the edges.
+                </p>
+
+                <p>
+                    It converges parallel rays to a principal focus.
+                </p>
+
+            </div>
+
+
+            <div class="comparison-box">
+
+                <h3>Concave Lens</h3>
+
+                <p>
+                    A diverging lens that is thinner at the middle
+                    and thicker at the edges.
+                </p>
+
+                <p>
+                    It causes parallel rays to diverge as if they
+                    originate from a focus.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <h3>Lens Formula</h3>
+
+        <div class="formula">
+
+            1/v − 1/u = 1/f
+
+        </div>
+
+
+        <h3>Magnification</h3>
+
+        <div class="formula">
+
+            m = h' / h = v / u
+
+        </div>
+
+
+        <h3>Power of a Lens</h3>
+
+        <div class="definition">
+
+            The power of a lens is the reciprocal of its focal length
+            measured in metres.
+
+        </div>
+
+
+        <div class="formula">
+
+            P = 1/f
+
+        </div>
+
+
+        <ul>
+
+            <li>SI unit = <b>Dioptre (D)</b></li>
+
+            <li>1 D = 1 m<sup>−1</sup></li>
+
+            <li>Convex lens has <b>positive power</b>.</li>
+
+            <li>Concave lens has <b>negative power</b>.</li>
+
+        </ul>
+
+
+        <h3>Combination of Lenses</h3>
+
+        <p>
+            When lenses are placed in contact, their powers add up.
+        </p>
+
+        <div class="formula">
+
+            P = P₁ + P₂ + P₃ + ...
+
+        </div>
+
+
+        <div class="fact">
+
+            <div class="fact-title">Important Reminder</div>
+
+            Focal length must be expressed in <b>metres</b> when calculating
+            the power of a lens in dioptres.
+
+        </div>
+
+    </div>
+
+
+
+    <!-- QUICK REVISION -->
+
+    <div class="section">
+
+        <h2>⚡ Quick Formula Revision</h2>
+
+
+        <div class="formula-grid">
+
+
+            <div class="formula-card">
+
+                <div class="big">∠i = ∠r</div>
+
+                <small>Laws of reflection</small>
+
+            </div>
+
+
+            <div class="formula-card">
+
+                <div class="big">R = 2f</div>
+
+                <small>Spherical mirror</small>
+
+            </div>
+
+
+            <div class="formula-card">
+
+                <div class="big">1/v + 1/u = 1/f</div>
+
+                <small>Mirror formula</small>
+
+            </div>
+
+
+            <div class="formula-card">
+
+                <div class="big">m = −v/u</div>
+
+                <small>Mirror magnification</small>
+
+            </div>
+
+
+            <div class="formula-card">
+
+                <div class="big">n = c/v</div>
+
+                <small>Refractive index</small>
+
+            </div>
+
+
+            <div class="formula-card">
+
+                <div class="big">1/v − 1/u = 1/f</div>
+
+                <small>Lens formula</small>
+
+            </div>
+
+
+            <div class="formula-card">
+
+                <div class="big">m = v/u</div>
+
+                <small>Lens magnification</small>
+
+            </div>
+
+
+            <div class="formula-card">
+
+                <div class="big">P = 1/f</div>
+
+                <small>Power of lens</small>
+
+            </div>
+
+
+            <div class="formula-card">
+
+                <div class="big">P = P₁ + P₂ + ...</div>
+
+                <small>Lens combination</small>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        <p>
+            SFALXO • Class 10 Science
+        </p>
+
+        <p>
+            Light: Reflection and Refraction
+        </p>
+
+    </div>
+
+
+</div>
+
+</body>
+
+</html>
+
