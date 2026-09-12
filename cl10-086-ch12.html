@@ -1,0 +1,811 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Magnetic Effects of Electric Current</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #080808;
+      color: #f5f5f5;
+      line-height: 1.75;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .header {
+      text-align: center;
+      padding: 25px 10px 40px;
+    }
+
+    .header h1 {
+      font-size: 43px;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #ff3030, #ff7a00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .header p {
+      color: #aaa;
+      font-size: 17px;
+    }
+
+    .section {
+      background: #111;
+      border: 1px solid #292929;
+      border-radius: 20px;
+      padding: 28px;
+      margin-bottom: 28px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+    }
+
+    h2 {
+      color: #ff5733;
+      font-size: 27px;
+      margin-top: 0;
+      border-bottom: 2px solid #2d2d2d;
+      padding-bottom: 10px;
+    }
+
+    h3 {
+      color: #ff9d00;
+      margin-top: 28px;
+      font-size: 21px;
+    }
+
+    p {
+      margin: 12px 0;
+    }
+
+    ul {
+      padding-left: 25px;
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    strong {
+      color: #ffb15c;
+    }
+
+    .definition {
+      background: #181818;
+      border-left: 4px solid #ff5733;
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin: 18px 0;
+    }
+
+    .fact {
+      background: linear-gradient(
+        135deg,
+        rgba(255, 48, 48, 0.08),
+        rgba(255, 122, 0, 0.08)
+      );
+      border: 1px solid #3a2920;
+      border-radius: 12px;
+      padding: 16px;
+      margin: 18px 0;
+    }
+
+    .important {
+      background: #0b0b0b;
+      border: 1px solid #333;
+      border-left: 5px solid #ff9d00;
+      border-radius: 10px;
+      padding: 15px 18px;
+      margin: 18px 0;
+    }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 20px 0;
+    }
+
+    .comparison-card {
+      background: #181818;
+      border: 1px solid #333;
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .comparison-card h3 {
+      margin-top: 0;
+      color: #ff5733;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      margin: 20px 0;
+    }
+
+    table {
+      width: 100%;
+      min-width: 700px;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 1px solid #3d3d3d;
+      padding: 13px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #222;
+      color: #ff9d00;
+    }
+
+    td {
+      background: #121212;
+    }
+
+    .rule-box {
+      background: #151515;
+      border: 1px solid #333;
+      border-radius: 14px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .rule-box h3 {
+      margin-top: 0;
+      color: #ff5733;
+    }
+
+    .rule-item {
+      background: #0b0b0b;
+      border-radius: 8px;
+      padding: 10px 15px;
+      margin: 9px 0;
+    }
+
+    .formula {
+      background: #050505;
+      border: 1px solid #292929;
+      border-left: 5px solid #ff5733;
+      border-radius: 10px;
+      padding: 15px 20px;
+      margin: 18px 0;
+      font-size: 20px;
+      font-weight: bold;
+      overflow-x: auto;
+    }
+
+    .revision-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .revision-card {
+      background: #181818;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .revision-card h3 {
+      margin-top: 0;
+      font-size: 19px;
+    }
+
+    footer {
+      text-align: center;
+      color: #777;
+      padding: 25px 10px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 10px;
+      }
+
+      .header h1 {
+        font-size: 32px;
+      }
+
+      .header p {
+        font-size: 15px;
+      }
+
+      .section {
+        padding: 19px;
+        border-radius: 15px;
+      }
+
+      h2 {
+        font-size: 23px;
+      }
+
+      h3 {
+        font-size: 19px;
+      }
+
+      p,
+      li {
+        font-size: 15px;
+      }
+
+      .comparison {
+        grid-template-columns: 1fr;
+      }
+
+      .revision-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .formula {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header class="header">
+      <h1>Magnetic Effects of Electric Current</h1>
+      <p>Complete Class 10 Science Notes</p>
+    </header>
+
+    <!-- SECTION 1 -->
+    <section class="section">
+      <h2>I. The Discovery of Electromagnetism</h2>
+
+      <h3>The Oersted Connection — 1820</h3>
+
+      <div class="definition">
+        Hans Christian Oersted accidentally observed that a compass needle was
+        deflected when placed near a metallic wire carrying electric current.
+      </div>
+
+      <ul>
+        <li>
+          <strong>Observation:</strong>
+          A current-carrying wire produces a magnetic effect around it.
+        </li>
+
+        <li>
+          <strong>Significance:</strong>
+          Electricity and magnetism are not separate phenomena; they are closely linked.
+        </li>
+
+        <li>
+          <strong>Legacy:</strong>
+          This discovery became the foundation of several modern technologies,
+          including radio, television, and fibre-optic communication systems.
+        </li>
+
+        <li>
+          The unit of magnetic field strength called the
+          <strong>oersted</strong> is named after Hans Christian Oersted.
+        </li>
+      </ul>
+
+      <div class="fact">
+        Oersted’s experiment established that an electric current can produce
+        a magnetic field.
+      </div>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section class="section">
+      <h2>II. Magnetic Fields and Magnetic Field Lines</h2>
+
+      <div class="definition">
+        A <strong>magnetic field</strong> is the region around a magnet where
+        its magnetic influence or force can be detected.
+      </div>
+
+      <p>
+        Magnetic field is a <strong>vector quantity</strong>, meaning it has both
+        magnitude and direction.
+      </p>
+
+      <h3>Compass Needle</h3>
+
+      <p>
+        A compass needle is a tiny bar magnet. Its north-seeking pole points
+        towards the geographical north, while its south-seeking pole points
+        towards the geographical south.
+      </p>
+
+      <h3>Properties of Magnetic Field Lines</h3>
+
+      <ul>
+        <li>
+          <strong>Direction:</strong>
+          Outside a magnet, magnetic field lines emerge from the North pole
+          and enter the South pole.
+        </li>
+
+        <li>
+          <strong>Inside the Magnet:</strong>
+          Field lines travel from South to North, forming closed curves.
+        </li>
+
+        <li>
+          <strong>Strength:</strong>
+          The closer the field lines are to one another, the stronger the
+          magnetic field.
+        </li>
+
+        <li>
+          The magnetic field is strongest near the poles where the lines are
+          most crowded.
+        </li>
+
+        <li>
+          <strong>Non-Intersection Rule:</strong>
+          Two magnetic field lines never intersect each other.
+        </li>
+      </ul>
+
+      <div class="important">
+        If two magnetic field lines crossed, a compass needle placed at that
+        point would have to point in two different directions simultaneously,
+        which is impossible.
+      </div>
+
+      <div class="fact">
+        Magnetic field lines are imaginary lines used to represent the
+        direction and relative strength of a magnetic field.
+      </div>
+    </section>
+
+    <!-- SECTION 3 -->
+    <section class="section">
+      <h2>III. Magnetic Fields Produced by Current-Carrying Conductors</h2>
+
+      <h3>A. Straight Wire Conductor</h3>
+
+      <div class="definition">
+        The magnetic field around a straight current-carrying conductor consists
+        of concentric circular field lines centred on the wire.
+      </div>
+
+      <h3>Factors Affecting Magnetic Field Strength</h3>
+
+      <ul>
+        <li>
+          <strong>Current:</strong>
+          The magnetic field becomes stronger when the current through the
+          conductor increases.
+        </li>
+
+        <li>
+          Greater current produces greater deflection of a nearby compass needle.
+        </li>
+
+        <li>
+          <strong>Distance:</strong>
+          Magnetic field strength decreases as the distance from the wire increases.
+        </li>
+
+        <li>
+          The field lines become more widely spaced farther away from the conductor.
+        </li>
+      </ul>
+
+      <div class="rule-box">
+        <h3>Right-Hand Thumb Rule</h3>
+
+        <p>
+          To determine the direction of the magnetic field around a straight
+          current-carrying wire:
+        </p>
+
+        <div class="rule-item">
+          Point the thumb of your right hand in the direction of current.
+        </div>
+
+        <div class="rule-item">
+          The curled fingers indicate the direction of magnetic field lines.
+        </div>
+      </div>
+
+      <h3>B. Circular Loop</h3>
+
+      <ul>
+        <li>
+          At every point on a circular wire, the magnetic field lines are circular.
+        </li>
+
+        <li>
+          Near the centre of the loop, these circular field lines appear almost
+          as straight, parallel lines.
+        </li>
+
+        <li>
+          The magnetic field becomes stronger when the number of turns is increased.
+        </li>
+      </ul>
+
+      <div class="formula">
+        Magnetic field of a coil with n turns = n × magnetic field of one turn
+      </div>
+
+      <div class="fact">
+        The fields produced by each turn act in the same direction and add
+        together, making the total magnetic field stronger.
+      </div>
+
+      <h3>C. Solenoid</h3>
+
+      <div class="definition">
+        A <strong>solenoid</strong> is a cylinder-shaped coil consisting of
+        many closely wound circular turns of insulated copper wire.
+      </div>
+
+      <h3>Magnetic Field Inside a Solenoid</h3>
+
+      <ul>
+        <li>
+          The field lines inside a solenoid are parallel straight lines.
+        </li>
+
+        <li>
+          This indicates that the magnetic field inside the solenoid is
+          <strong>uniform</strong>.
+        </li>
+
+        <li>
+          A uniform magnetic field has the same strength and direction at every point.
+        </li>
+      </ul>
+
+      <h3>Magnetic Field Outside a Solenoid</h3>
+
+      <ul>
+        <li>
+          The magnetic field pattern outside a solenoid resembles that of a bar magnet.
+        </li>
+
+        <li>
+          One end of the solenoid behaves as a North pole.
+        </li>
+
+        <li>
+          The other end behaves as a South pole.
+        </li>
+      </ul>
+
+      <h3>Electromagnet</h3>
+
+      <div class="important">
+        When a soft iron core is placed inside a current-carrying solenoid,
+        the strong magnetic field magnetises the core and forms an
+        <strong>electromagnet</strong>.
+      </div>
+    </section>
+
+    <!-- SECTION 4 -->
+    <section class="section">
+      <h2>IV. Force on Conductors Placed in Magnetic Fields</h2>
+
+      <h3>Ampere’s Law</h3>
+
+      <div class="definition">
+        Andre Marie Ampere proposed that if a current-carrying conductor exerts
+        a force on a magnet, then the magnet must exert an equal and opposite
+        force on the conductor.
+      </div>
+
+      <h3>Maximum Force</h3>
+
+      <p>
+        The force on a current-carrying conductor is maximum when the direction
+        of current and the direction of the magnetic field are at
+        <strong>90° to each other</strong>.
+      </p>
+
+      <div class="rule-box">
+        <h3>Fleming’s Left-Hand Rule</h3>
+
+        <p>
+          Stretch the thumb, forefinger, and middle finger of your left hand
+          mutually perpendicular to one another.
+        </p>
+
+        <div class="rule-item">
+          <strong>Forefinger:</strong> Direction of magnetic field
+        </div>
+
+        <div class="rule-item">
+          <strong>Middle Finger:</strong> Direction of current
+        </div>
+
+        <div class="rule-item">
+          <strong>Thumb:</strong> Direction of motion or force
+        </div>
+      </div>
+
+      <h3>Direction of Conventional Current</h3>
+
+      <p>
+        Conventional current is considered to flow in the direction opposite
+        to the movement of electrons.
+      </p>
+
+      <div class="important">
+        If an electron moves from left to right, the conventional current is
+        considered to flow from right to left because an electron carries
+        negative charge.
+      </div>
+    </section>
+
+    <!-- SECTION 5 -->
+    <section class="section">
+      <h2>V. Biological Magnetism and Medical Applications</h2>
+
+      <div class="definition">
+        Nerve impulses in the human body are weak electric currents.
+        These currents produce weak magnetic fields.
+      </div>
+
+      <h3>Magnetic Fields in the Human Body</h3>
+
+      <ul>
+        <li>
+          The human heart produces a significant magnetic field.
+        </li>
+
+        <li>
+          The brain also produces measurable magnetic fields due to electrical
+          activity in nerve cells.
+        </li>
+
+        <li>
+          These magnetic fields can provide useful information about the
+          functioning of internal organs.
+        </li>
+      </ul>
+
+      <h3>MRI — Magnetic Resonance Imaging</h3>
+
+      <div class="fact">
+        Magnetic Resonance Imaging, or MRI, uses magnetic fields and radio waves
+        to obtain detailed images of internal body structures for medical diagnosis.
+      </div>
+    </section>
+
+    <!-- SECTION 6 -->
+    <section class="section">
+      <h2>VI. Domestic Electric Circuits and Safety</h2>
+
+      <h3>Power Supply in India</h3>
+
+      <div class="formula">
+        Standard domestic supply: 220 V, 50 Hz
+      </div>
+
+      <h3>Wires Used in Domestic Circuits</h3>
+
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Wire</th>
+            <th>Colour</th>
+            <th>Function</th>
+          </tr>
+
+          <tr>
+            <td>Live Wire</td>
+            <td>Red</td>
+            <td>
+              Carries the potential of approximately 220 V.
+            </td>
+          </tr>
+
+          <tr>
+            <td>Neutral Wire</td>
+            <td>Black</td>
+            <td>
+              Completes the circuit. The potential difference between live
+              and neutral wires is 220 V.
+            </td>
+          </tr>
+
+          <tr>
+            <td>Earth Wire</td>
+            <td>Green</td>
+            <td>
+              Connected to a metal plate buried deep in the ground and
+              provides a safe path for leakage current.
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <h3>Circuit Ratings</h3>
+
+      <div class="comparison">
+
+        <div class="comparison-card">
+          <h3>5 Ampere Circuit</h3>
+          <p>
+            Used for light appliances such as:
+          </p>
+          <ul>
+            <li>Bulbs</li>
+            <li>Fans</li>
+            <li>Small electrical devices</li>
+          </ul>
+        </div>
+
+        <div class="comparison-card">
+          <h3>15 Ampere Circuit</h3>
+          <p>
+            Used for heavy appliances such as:
+          </p>
+          <ul>
+            <li>Geysers</li>
+            <li>Air conditioners</li>
+            <li>Other high-power appliances</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <h3>Short-Circuiting</h3>
+
+      <div class="definition">
+        Short-circuiting occurs when the live and neutral wires come into
+        direct contact, usually due to damaged insulation.
+      </div>
+
+      <ul>
+        <li>
+          The resistance suddenly becomes very low.
+        </li>
+
+        <li>
+          A very large current flows through the circuit.
+        </li>
+
+        <li>
+          This may cause overheating, sparks, fire, or damage to appliances.
+        </li>
+      </ul>
+
+      <h3>Overloading</h3>
+
+      <div class="definition">
+        Overloading occurs when too many appliances are connected to a single
+        socket or when the supply voltage suddenly increases.
+      </div>
+
+      <ul>
+        <li>
+          The current drawn becomes greater than the safe limit.
+        </li>
+
+        <li>
+          Excessive current causes heating of the wires.
+        </li>
+
+        <li>
+          It may damage electrical appliances or cause fire.
+        </li>
+      </ul>
+
+      <h3>Electric Fuse</h3>
+
+      <div class="fact">
+        An electric fuse is a safety device that melts when excessive current
+        flows through it, breaking the circuit and protecting electrical equipment.
+      </div>
+
+      <p>
+        The fuse works because of the <strong>heating effect of electric current</strong>,
+        also known as Joule heating.
+      </p>
+
+      <h3>Earthing</h3>
+
+      <div class="important">
+        Earthing protects users from electric shock by providing a
+        low-resistance path for leakage current from the metallic body of
+        an appliance directly to the ground.
+      </div>
+    </section>
+
+    <!-- QUICK REVISION -->
+    <section class="section">
+      <h2>Quick Revision</h2>
+
+      <div class="revision-grid">
+
+        <div class="revision-card">
+          <h3>Oersted’s Discovery</h3>
+          Electric current produces a magnetic field.
+        </div>
+
+        <div class="revision-card">
+          <h3>Field Lines Outside Magnet</h3>
+          North pole to South pole.
+        </div>
+
+        <div class="revision-card">
+          <h3>Field Lines Inside Magnet</h3>
+          South pole to North pole.
+        </div>
+
+        <div class="revision-card">
+          <h3>Straight Wire Field</h3>
+          Concentric circles.
+        </div>
+
+        <div class="revision-card">
+          <h3>Right-Hand Thumb Rule</h3>
+          Thumb gives current direction; curled fingers give magnetic field direction.
+        </div>
+
+        <div class="revision-card">
+          <h3>Solenoid Field</h3>
+          Uniform and parallel inside.
+        </div>
+
+        <div class="revision-card">
+          <h3>Fleming’s Left-Hand Rule</h3>
+          Forefinger: Field, Middle finger: Current, Thumb: Force.
+        </div>
+
+        <div class="revision-card">
+          <h3>Indian Domestic Supply</h3>
+          220 V and 50 Hz.
+        </div>
+
+        <div class="revision-card">
+          <h3>Heavy Appliances</h3>
+          Usually connected to 15 A circuits.
+        </div>
+
+        <div class="revision-card">
+          <h3>Light Appliances</h3>
+          Usually connected to 5 A circuits.
+        </div>
+
+        <div class="revision-card">
+          <h3>Fuse Function</h3>
+          Melts during excessive current and breaks the circuit.
+        </div>
+
+        <div class="revision-card">
+          <h3>Earthing Function</h3>
+          Provides a low-resistance path to ground and prevents electric shock.
+        </div>
+
+      </div>
+    </section>
+
+    <footer>
+      © SFALXO | Class 10 Science Notes
+    </footer>
+
+  </div>
+
+</body>
+</html>
