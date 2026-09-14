@@ -1,0 +1,1087 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Chemical Reactions and Equations | SFALXO</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #080808;
+      color: #f5f5f5;
+      line-height: 1.75;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .header {
+      text-align: center;
+      padding: 25px 10px 40px;
+    }
+
+    .header h1 {
+      font-size: 43px;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #ff3030, #ff7a00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .header p {
+      color: #aaa;
+      font-size: 17px;
+    }
+
+    .section {
+      background: #111;
+      border: 1px solid #292929;
+      border-radius: 20px;
+      padding: 28px;
+      margin-bottom: 28px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+    }
+
+    h2 {
+      color: #ff5733;
+      font-size: 27px;
+      margin-top: 0;
+      border-bottom: 2px solid #2d2d2d;
+      padding-bottom: 10px;
+    }
+
+    h3 {
+      color: #ff9d00;
+      margin-top: 28px;
+      font-size: 21px;
+    }
+
+    h4 {
+      color: #ffb15c;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin: 12px 0;
+    }
+
+    ul {
+      padding-left: 25px;
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    strong {
+      color: #ffb15c;
+    }
+
+    .definition {
+      background: #181818;
+      border-left: 4px solid #ff5733;
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin: 18px 0;
+    }
+
+    .fact {
+      background: linear-gradient(
+        135deg,
+        rgba(255, 48, 48, 0.08),
+        rgba(255, 122, 0, 0.08)
+      );
+      border: 1px solid #3a2920;
+      border-radius: 12px;
+      padding: 16px;
+      margin: 18px 0;
+    }
+
+    .important {
+      background: #0b0b0b;
+      border: 1px solid #333;
+      border-left: 5px solid #ff9d00;
+      border-radius: 10px;
+      padding: 15px 18px;
+      margin: 18px 0;
+    }
+
+    .formula {
+      background: #050505;
+      border: 1px solid #292929;
+      border-left: 5px solid #ff5733;
+      border-radius: 10px;
+      padding: 15px 20px;
+      margin: 18px 0;
+      font-size: 18px;
+      font-weight: bold;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 20px 0;
+    }
+
+    .comparison-card {
+      background: #181818;
+      border: 1px solid #333;
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .comparison-card h3 {
+      margin-top: 0;
+      color: #ff5733;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      margin: 20px 0;
+    }
+
+    table {
+      width: 100%;
+      min-width: 720px;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 1px solid #3d3d3d;
+      padding: 13px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #222;
+      color: #ff9d00;
+    }
+
+    td {
+      background: #121212;
+    }
+
+    .process-box {
+      background: #151515;
+      border: 1px solid #333;
+      border-radius: 14px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .process-step {
+      background: #0b0b0b;
+      border-radius: 8px;
+      padding: 11px 15px;
+      margin: 9px 0;
+    }
+
+    .revision-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .revision-card {
+      background: #181818;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .revision-card h3 {
+      margin-top: 0;
+      font-size: 19px;
+    }
+
+    footer {
+      text-align: center;
+      color: #777;
+      padding: 25px 10px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 10px;
+      }
+
+      .header h1 {
+        font-size: 32px;
+      }
+
+      .header p {
+        font-size: 15px;
+      }
+
+      .section {
+        padding: 19px;
+        border-radius: 15px;
+      }
+
+      h2 {
+        font-size: 23px;
+      }
+
+      h3 {
+        font-size: 19px;
+      }
+
+      p,
+      li {
+        font-size: 15px;
+      }
+
+      .comparison {
+        grid-template-columns: 1fr;
+      }
+
+      .revision-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .formula {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header class="header">
+      <h1>Chemical Reactions and Equations</h1>
+      <p>Complete Class 10 Science Notes | SFALXO</p>
+    </header>
+
+
+    <!-- FUNDAMENTALS -->
+    <section class="section">
+      <h2>1. What Is a Chemical Reaction?</h2>
+
+      <div class="definition">
+        <strong>Chemical Reaction:</strong>
+        A process in which one or more substances undergo a chemical change
+        to form new substances with different properties and identities.
+      </div>
+
+      <p>
+        During a chemical reaction, the original substances are converted into
+        new substances. The products formed have properties different from
+        those of the reactants.
+      </p>
+
+      <h3>Common Indicators of a Chemical Reaction</h3>
+
+      <ul>
+        <li>Change in state.</li>
+        <li>Change in colour.</li>
+        <li>Evolution of a gas.</li>
+        <li>Change in temperature.</li>
+        <li>Formation of a precipitate.</li>
+      </ul>
+
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Observation</th>
+            <th>Example</th>
+          </tr>
+
+          <tr>
+            <td><strong>Change in colour</strong></td>
+            <td>
+              Green ferrous sulphate crystals change colour on heating.
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>Evolution of gas</strong></td>
+            <td>
+              Zinc reacts with dilute sulphuric acid and releases hydrogen gas.
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>Change in temperature</strong></td>
+            <td>
+              Zinc reacting with acid or calcium oxide reacting with water
+              releases heat.
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>Formation of solid</strong></td>
+            <td>
+              Some reactions produce an insoluble solid called a precipitate.
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <h3>Magnesium Ribbon Experiment</h3>
+
+      <p>
+        Magnesium ribbon is cleaned with sandpaper before burning because it
+        develops a thin protective layer of magnesium oxide on its surface.
+      </p>
+
+      <div class="process-box">
+        <div class="process-step">
+          1. Clean the magnesium ribbon using sandpaper.
+        </div>
+
+        <div class="process-step">
+          2. Hold it with tongs and burn it in air.
+        </div>
+
+        <div class="process-step">
+          3. It burns with a dazzling white flame.
+        </div>
+
+        <div class="process-step">
+          4. A white powder of magnesium oxide is formed.
+        </div>
+      </div>
+
+      <div class="formula">
+        2Mg(s) + O₂(g) → 2MgO(s)
+      </div>
+
+      <div class="fact">
+        Magnesium oxide is a new substance with properties different from
+        magnesium and oxygen.
+      </div>
+    </section>
+
+
+    <!-- EQUATIONS -->
+    <section class="section">
+      <h2>2. Chemical Equations</h2>
+
+      <p>
+        A chemical reaction can be represented using chemical symbols and
+        formulae. This representation is called a chemical equation.
+      </p>
+
+      <h3>Skeletal Equation</h3>
+
+      <p>
+        A skeletal equation is an unbalanced chemical equation in which the
+        number of atoms of each element may not be equal on both sides.
+      </p>
+
+      <div class="formula">
+        Mg + O₂ → MgO
+      </div>
+
+      <h3>Balanced Chemical Equation</h3>
+
+      <p>
+        A balanced chemical equation contains an equal number of atoms of
+        every element on both the reactant and product sides.
+      </p>
+
+      <div class="formula">
+        2Mg + O₂ → 2MgO
+      </div>
+
+      <div class="definition">
+        <strong>Law of Conservation of Mass:</strong>
+        Mass can neither be created nor destroyed during a chemical reaction.
+        Therefore, the total mass of reactants equals the total mass of products.
+      </div>
+
+      <h3>Rules for Balancing Equations</h3>
+
+      <div class="process-box">
+        <div class="process-step">
+          1. Write the correct skeletal equation.
+        </div>
+
+        <div class="process-step">
+          2. Count the atoms of every element on both sides.
+        </div>
+
+        <div class="process-step">
+          3. Start balancing the compound containing the maximum number of atoms.
+        </div>
+
+        <div class="process-step">
+          4. Adjust only the coefficients placed before formulae.
+        </div>
+
+        <div class="process-step">
+          5. Never change the subscripts inside a chemical formula.
+        </div>
+
+        <div class="process-step">
+          6. Check that all atoms are equal on both sides.
+        </div>
+      </div>
+
+      <div class="important">
+        Changing a subscript changes the substance itself. Only coefficients
+        should be changed while balancing an equation.
+      </div>
+    </section>
+
+
+    <!-- SYMBOLS -->
+    <section class="section">
+      <h2>3. Information Conveyed by a Chemical Equation</h2>
+
+      <h3>Physical State Symbols</h3>
+
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Symbol</th>
+            <th>Meaning</th>
+          </tr>
+
+          <tr>
+            <td><strong>(s)</strong></td>
+            <td>Solid</td>
+          </tr>
+
+          <tr>
+            <td><strong>(l)</strong></td>
+            <td>Liquid</td>
+          </tr>
+
+          <tr>
+            <td><strong>(g)</strong></td>
+            <td>Gas</td>
+          </tr>
+
+          <tr>
+            <td><strong>(aq)</strong></td>
+            <td>Aqueous solution dissolved in water</td>
+          </tr>
+        </table>
+      </div>
+
+      <h3>Reaction Conditions</h3>
+
+      <p>
+        Conditions such as temperature, pressure, sunlight, electricity or
+        catalysts may be written above or below the reaction arrow.
+      </p>
+
+      <ul>
+        <li><strong>Δ:</strong> Heating</li>
+        <li><strong>Sunlight:</strong> Photochemical reaction</li>
+        <li><strong>Electricity:</strong> Electrolytic decomposition</li>
+        <li><strong>Chlorophyll/Sunlight:</strong> Used in photosynthesis</li>
+        <li><strong>Pressure:</strong> May be written when required</li>
+      </ul>
+
+      <div class="fact">
+        Water vapour is represented as H₂O(g), while liquid water is represented
+        as H₂O(l).
+      </div>
+    </section>
+
+
+    <!-- COMBINATION -->
+    <section class="section">
+      <h2>4. Combination Reactions</h2>
+
+      <div class="definition">
+        <strong>Combination Reaction:</strong>
+        A reaction in which two or more reactants combine to form a single
+        product.
+      </div>
+
+      <div class="formula">
+        A + B → AB
+      </div>
+
+      <h3>Quick Lime and Water</h3>
+
+      <p>
+        Calcium oxide, commonly called quick lime, reacts vigorously with water
+        to form calcium hydroxide or slaked lime.
+      </p>
+
+      <div class="formula">
+        CaO(s) + H₂O(l) → Ca(OH)₂(aq) + Heat
+      </div>
+
+      <p>
+        Since heat is released, this is an exothermic combination reaction.
+      </p>
+
+      <h3>Whitewashing Reaction</h3>
+
+      <p>
+        Slaked lime is applied to walls during whitewashing. It reacts slowly
+        with carbon dioxide in the atmosphere to form a hard, shiny layer of
+        calcium carbonate.
+      </p>
+
+      <div class="formula">
+        Ca(OH)₂ + CO₂ → CaCO₃ + H₂O
+      </div>
+
+      <div class="fact">
+        Calcium carbonate is also the main chemical component of marble.
+        The whitewashed surface becomes shiny after approximately two to
+        three days.
+      </div>
+    </section>
+
+
+    <!-- EXOTHERMIC ENDOTHERMIC -->
+    <section class="section">
+      <h2>5. Exothermic and Endothermic Reactions</h2>
+
+      <div class="comparison">
+        <div class="comparison-card">
+          <h3>Exothermic Reaction</h3>
+
+          <p>
+            A reaction in which heat is released into the surroundings.
+          </p>
+
+          <ul>
+            <li>Releases energy.</li>
+            <li>Surroundings become warmer.</li>
+            <li>Often produces a rise in temperature.</li>
+          </ul>
+        </div>
+
+        <div class="comparison-card">
+          <h3>Endothermic Reaction</h3>
+
+          <p>
+            A reaction in which energy is absorbed from the surroundings.
+          </p>
+
+          <ul>
+            <li>Absorbs heat, light or electrical energy.</li>
+            <li>Surroundings may become cooler.</li>
+            <li>Often requires continuous energy input.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Examples of Exothermic Reactions</h3>
+
+      <ul>
+        <li>Respiration.</li>
+        <li>Burning of natural gas.</li>
+        <li>Reaction of calcium oxide with water.</li>
+        <li>Decomposition of vegetable matter into compost.</li>
+      </ul>
+
+      <h3>Respiration as an Exothermic Process</h3>
+
+      <div class="formula">
+        C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + Energy
+      </div>
+
+      <p>
+        Energy is released when glucose reacts with oxygen inside body cells.
+      </p>
+    </section>
+
+
+    <!-- DECOMPOSITION -->
+    <section class="section">
+      <h2>6. Decomposition Reactions</h2>
+
+      <div class="definition">
+        <strong>Decomposition Reaction:</strong>
+        A reaction in which a single reactant breaks down into two or more
+        simpler products.
+      </div>
+
+      <div class="formula">
+        AB → A + B
+      </div>
+
+      <h3>Types of Decomposition Reactions</h3>
+
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Type</th>
+            <th>Energy Source</th>
+            <th>Example</th>
+          </tr>
+
+          <tr>
+            <td><strong>Thermal Decomposition</strong></td>
+            <td>Heat</td>
+            <td>Decomposition of ferrous sulphate or limestone</td>
+          </tr>
+
+          <tr>
+            <td><strong>Electrolytic Decomposition</strong></td>
+            <td>Electricity</td>
+            <td>Electrolysis of water</td>
+          </tr>
+
+          <tr>
+            <td><strong>Photolytic Decomposition</strong></td>
+            <td>Sunlight</td>
+            <td>Decomposition of silver chloride</td>
+          </tr>
+        </table>
+      </div>
+
+      <h3>Thermal Decomposition of Ferrous Sulphate</h3>
+
+      <p>
+        Ferrous sulphate crystals are green. On heating, they first lose water
+        and then decompose to form ferric oxide and sulphur oxides.
+      </p>
+
+      <div class="formula">
+        2FeSO₄(s) → Fe₂O₃(s) + SO₂(g) + SO₃(g)
+      </div>
+
+      <ul>
+        <li>Green crystals change colour.</li>
+        <li>A brown solid of ferric oxide is formed.</li>
+        <li>Gases with the smell of burning sulphur are released.</li>
+      </ul>
+
+      <h3>Thermal Decomposition of Lead Nitrate</h3>
+
+      <div class="formula">
+        2Pb(NO₃)₂(s) → 2PbO(s) + 4NO₂(g) + O₂(g)
+      </div>
+
+      <p>
+        Brown fumes of nitrogen dioxide are observed.
+      </p>
+
+      <h3>Thermal Decomposition of Limestone</h3>
+
+      <div class="formula">
+        CaCO₃(s) → CaO(s) + CO₂(g)
+      </div>
+
+      <p>
+        This reaction is important in the manufacture of cement.
+      </p>
+
+      <h3>Electrolysis of Water</h3>
+
+      <div class="formula">
+        2H₂O(l) → 2H₂(g) + O₂(g)
+      </div>
+
+      <p>
+        Hydrogen and oxygen are produced in the volume ratio of 2:1 because
+        water contains two hydrogen atoms for every one oxygen atom.
+      </p>
+
+      <h3>Photolytic Decomposition</h3>
+
+      <div class="formula">
+        2AgCl(s) → 2Ag(s) + Cl₂(g)
+      </div>
+
+      <div class="formula">
+        2AgBr(s) → 2Ag(s) + Br₂(g)
+      </div>
+
+      <p>
+        Silver chloride and silver bromide decompose in sunlight to form grey
+        silver. These reactions are used in traditional black-and-white
+        photography.
+      </p>
+    </section>
+
+
+    <!-- DISPLACEMENT -->
+    <section class="section">
+      <h2>7. Displacement Reactions</h2>
+
+      <div class="definition">
+        <strong>Displacement Reaction:</strong>
+        A reaction in which a more reactive element displaces a less reactive
+        element from its compound.
+      </div>
+
+      <div class="formula">
+        A + BC → AC + B
+      </div>
+
+      <h3>Iron Nail and Copper Sulphate Experiment</h3>
+
+      <p>
+        When an iron nail is placed in blue copper sulphate solution, iron
+        displaces copper because iron is more reactive than copper.
+      </p>
+
+      <div class="formula">
+        Fe(s) + CuSO₄(aq) → FeSO₄(aq) + Cu(s)
+      </div>
+
+      <h3>Observations</h3>
+
+      <ul>
+        <li>A reddish-brown coating of copper forms on the iron nail.</li>
+        <li>The blue colour of copper sulphate solution fades.</li>
+        <li>The solution becomes pale green due to iron sulphate formation.</li>
+      </ul>
+
+      <div class="fact">
+        Zinc and lead can also displace copper from copper salts because they
+        are more reactive than copper.
+      </div>
+    </section>
+
+
+    <!-- DOUBLE DISPLACEMENT -->
+    <section class="section">
+      <h2>8. Double Displacement and Precipitation Reactions</h2>
+
+      <div class="definition">
+        <strong>Double Displacement Reaction:</strong>
+        A reaction in which two compounds exchange ions to form two new compounds.
+      </div>
+
+      <div class="formula">
+        AB + CD → AD + CB
+      </div>
+
+      <h3>Precipitation Reaction</h3>
+
+      <p>
+        A precipitation reaction is a reaction in which an insoluble solid,
+        called a precipitate, is formed.
+      </p>
+
+      <div class="formula">
+        Na₂SO₄(aq) + BaCl₂(aq) → BaSO₄(s) + 2NaCl(aq)
+      </div>
+
+      <ul>
+        <li>Barium sulphate is formed as a white precipitate.</li>
+        <li>Sodium chloride remains dissolved in the solution.</li>
+        <li>The reaction involves exchange of ions.</li>
+      </ul>
+
+      <div class="important">
+        The insoluble solid formed during a chemical reaction is called a
+        precipitate.
+      </div>
+    </section>
+
+
+    <!-- OXIDATION REDUCTION -->
+    <section class="section">
+      <h2>9. Oxidation, Reduction and Redox Reactions</h2>
+
+      <h3>Oxidation</h3>
+
+      <div class="definition">
+        Oxidation is the gain of oxygen or loss of hydrogen by a substance.
+      </div>
+
+      <h3>Reduction</h3>
+
+      <div class="definition">
+        Reduction is the loss of oxygen or gain of hydrogen by a substance.
+      </div>
+
+      <h3>Redox Reaction</h3>
+
+      <p>
+        A reaction in which oxidation and reduction occur simultaneously is
+        called a redox reaction.
+      </p>
+
+      <div class="formula">
+        CuO + H₂ → Cu + H₂O
+      </div>
+
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Substance</th>
+            <th>Change</th>
+            <th>Process</th>
+          </tr>
+
+          <tr>
+            <td>CuO</td>
+            <td>Loses oxygen and becomes copper</td>
+            <td>Reduction</td>
+          </tr>
+
+          <tr>
+            <td>H₂</td>
+            <td>Gains oxygen and becomes water</td>
+            <td>Oxidation</td>
+          </tr>
+        </table>
+      </div>
+
+      <h3>Heating Copper Powder</h3>
+
+      <p>
+        Copper powder reacts with oxygen on heating and develops a black coating
+        of copper(II) oxide.
+      </p>
+
+      <div class="formula">
+        2Cu + O₂ → 2CuO
+      </div>
+
+      <div class="fact">
+        The black colour indicates the formation of copper(II) oxide.
+      </div>
+    </section>
+
+
+    <!-- DAILY LIFE -->
+    <section class="section">
+      <h2>10. Effects of Oxidation in Daily Life</h2>
+
+      <h3>Corrosion</h3>
+
+      <div class="definition">
+        <strong>Corrosion:</strong>
+        The slow deterioration of metals due to reactions with substances in
+        the environment, such as oxygen, moisture and acids.
+      </div>
+
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Metal</th>
+            <th>Corrosion Product</th>
+            <th>Appearance</th>
+          </tr>
+
+          <tr>
+            <td>Iron</td>
+            <td>Rust</td>
+            <td>Reddish-brown coating</td>
+          </tr>
+
+          <tr>
+            <td>Silver</td>
+            <td>Silver sulphide or related compounds</td>
+            <td>Black coating</td>
+          </tr>
+
+          <tr>
+            <td>Copper</td>
+            <td>Basic copper carbonate</td>
+            <td>Green coating</td>
+          </tr>
+        </table>
+      </div>
+
+      <h3>Examples of Corrosion</h3>
+
+      <ul>
+        <li>Rusting of iron objects.</li>
+        <li>Blackening of silver articles.</li>
+        <li>Formation of a green coating on copper surfaces.</li>
+      </ul>
+
+      <h3>Rancidity</h3>
+
+      <div class="definition">
+        <strong>Rancidity:</strong>
+        The oxidation of fats and oils in food, causing unpleasant smell and
+        taste.
+      </div>
+
+      <p>
+        Rancidity reduces the quality of food and may make it unsuitable for
+        consumption.
+      </p>
+
+      <h3>Methods to Prevent Rancidity</h3>
+
+      <ul>
+        <li>Adding antioxidants to food.</li>
+        <li>Keeping food in airtight containers.</li>
+        <li>Refrigerating food when appropriate.</li>
+        <li>Packaging food in an inert atmosphere.</li>
+        <li>Flushing packets of chips with nitrogen gas.</li>
+      </ul>
+
+      <div class="fact">
+        Nitrogen is relatively unreactive and prevents oxygen from coming into
+        contact with fats and oils in packaged food.
+      </div>
+    </section>
+
+
+    <!-- REACTION SUMMARY -->
+    <section class="section">
+      <h2>11. Summary of Reaction Types</h2>
+
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Reaction Type</th>
+            <th>General Form</th>
+            <th>Example</th>
+          </tr>
+
+          <tr>
+            <td><strong>Combination</strong></td>
+            <td>A + B → AB</td>
+            <td>CaO + H₂O → Ca(OH)₂</td>
+          </tr>
+
+          <tr>
+            <td><strong>Decomposition</strong></td>
+            <td>AB → A + B</td>
+            <td>CaCO₃ → CaO + CO₂</td>
+          </tr>
+
+          <tr>
+            <td><strong>Displacement</strong></td>
+            <td>A + BC → AC + B</td>
+            <td>Fe + CuSO₄ → FeSO₄ + Cu</td>
+          </tr>
+
+          <tr>
+            <td><strong>Double Displacement</strong></td>
+            <td>AB + CD → AD + CB</td>
+            <td>Na₂SO₄ + BaCl₂ → BaSO₄ + 2NaCl</td>
+          </tr>
+
+          <tr>
+            <td><strong>Redox</strong></td>
+            <td>Oxidation and reduction together</td>
+            <td>CuO + H₂ → Cu + H₂O</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+
+
+    <!-- QUICK REVISION -->
+    <section class="section">
+      <h2>12. Quick Revision</h2>
+
+      <div class="revision-grid">
+
+        <div class="revision-card">
+          <h3>Chemical Reaction</h3>
+          <p>
+            A process in which new substances with new properties are formed.
+          </p>
+        </div>
+
+        <div class="revision-card">
+          <h3>Balanced Equation</h3>
+          <p>
+            Equal number of atoms of each element on both sides.
+          </p>
+        </div>
+
+        <div class="revision-card">
+          <h3>Combination</h3>
+          <p>
+            Two or more reactants form one product.
+          </p>
+        </div>
+
+        <div class="revision-card">
+          <h3>Decomposition</h3>
+          <p>
+            One reactant breaks into simpler products.
+          </p>
+        </div>
+
+        <div class="revision-card">
+          <h3>Displacement</h3>
+          <p>
+            A more reactive element displaces a less reactive element.
+          </p>
+        </div>
+
+        <div class="revision-card">
+          <h3>Precipitation</h3>
+          <p>
+            Formation of an insoluble solid during a reaction.
+          </p>
+        </div>
+
+        <div class="revision-card">
+          <h3>Oxidation</h3>
+          <p>
+            Gain of oxygen or loss of hydrogen.
+          </p>
+        </div>
+
+        <div class="revision-card">
+          <h3>Reduction</h3>
+          <p>
+            Loss of oxygen or gain of hydrogen.
+          </p>
+        </div>
+
+        <div class="revision-card">
+          <h3>Corrosion</h3>
+          <p>
+            Slow deterioration of metals due to environmental reactions.
+          </p>
+        </div>
+
+        <div class="revision-card">
+          <h3>Rancidity</h3>
+          <p>
+            Oxidation of fats and oils causing bad smell and taste.
+          </p>
+        </div>
+
+        <div class="revision-card">
+          <h3>Exothermic</h3>
+          <p>
+            Releases heat energy.
+          </p>
+        </div>
+
+        <div class="revision-card">
+          <h3>Endothermic</h3>
+          <p>
+            Absorbs energy from the surroundings.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <footer>
+      © SFALXO | Class 10 Science Notes | Chemical Reactions and Equations
+    </footer>
+
+  </div>
+
+</body>
+</html>
