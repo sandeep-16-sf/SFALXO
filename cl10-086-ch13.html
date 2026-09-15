@@ -1,0 +1,676 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Our Environment</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #080808;
+      color: #f5f5f5;
+      line-height: 1.75;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .header {
+      text-align: center;
+      padding: 25px 10px 40px;
+    }
+
+    .header h1 {
+      font-size: 43px;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #ff3030, #ff7a00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .header p {
+      color: #aaa;
+      font-size: 17px;
+    }
+
+    .section {
+      background: #111;
+      border: 1px solid #292929;
+      border-radius: 20px;
+      padding: 28px;
+      margin-bottom: 28px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+    }
+
+    h2 {
+      color: #ff5733;
+      font-size: 27px;
+      margin-top: 0;
+      border-bottom: 2px solid #2d2d2d;
+      padding-bottom: 10px;
+    }
+
+    h3 {
+      color: #ff9d00;
+      margin-top: 28px;
+      font-size: 21px;
+    }
+
+    p {
+      margin: 12px 0;
+    }
+
+    ul {
+      padding-left: 25px;
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    strong {
+      color: #ffb15c;
+    }
+
+    .definition {
+      background: #181818;
+      border-left: 4px solid #ff5733;
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin: 18px 0;
+    }
+
+    .fact {
+      background: linear-gradient(
+        135deg,
+        rgba(255, 48, 48, 0.08),
+        rgba(255, 122, 0, 0.08)
+      );
+      border: 1px solid #3a2920;
+      border-radius: 12px;
+      padding: 16px;
+      margin: 18px 0;
+    }
+
+    .important {
+      background: #0b0b0b;
+      border: 1px solid #333;
+      border-left: 5px solid #ff9d00;
+      border-radius: 10px;
+      padding: 15px 18px;
+      margin: 18px 0;
+    }
+
+    .formula {
+      background: #050505;
+      border: 1px solid #292929;
+      border-left: 5px solid #ff5733;
+      border-radius: 10px;
+      padding: 15px 20px;
+      margin: 18px 0;
+      font-size: 19px;
+      font-weight: bold;
+      overflow-x: auto;
+    }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 20px 0;
+    }
+
+    .comparison-card {
+      background: #181818;
+      border: 1px solid #333;
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .comparison-card h3 {
+      margin-top: 0;
+      color: #ff5733;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      margin: 20px 0;
+    }
+
+    table {
+      width: 100%;
+      min-width: 750px;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 1px solid #3d3d3d;
+      padding: 13px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #222;
+      color: #ff9d00;
+    }
+
+    td {
+      background: #121212;
+    }
+
+    .process-box {
+      background: #151515;
+      border: 1px solid #333;
+      border-radius: 14px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .process-step {
+      background: #0b0b0b;
+      border-radius: 8px;
+      padding: 11px 15px;
+      margin: 9px 0;
+    }
+
+    .revision-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .revision-card {
+      background: #181818;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .revision-card h3 {
+      margin-top: 0;
+      font-size: 19px;
+    }
+
+    footer {
+      text-align: center;
+      color: #777;
+      padding: 25px 10px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 10px;
+      }
+
+      .header h1 {
+        font-size: 32px;
+      }
+
+      .header p {
+        font-size: 15px;
+      }
+
+      .section {
+        padding: 19px;
+        border-radius: 15px;
+      }
+
+      h2 {
+        font-size: 23px;
+      }
+
+      h3 {
+        font-size: 19px;
+      }
+
+      p,
+      li {
+        font-size: 15px;
+      }
+
+      .comparison {
+        grid-template-columns: 1fr;
+      }
+
+      .revision-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .formula {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header class="header">
+      <h1>Our Environment</h1>
+      <p>Complete Class 10 Science Notes</p>
+    </header>
+
+    <!-- SECTION 1 -->
+    <section class="section">
+      <h2>I. Environment and Ecosystem Dynamics</h2>
+
+      <div class="definition">
+        The term <strong>environment</strong> refers to the surrounding physical and biological conditions in which organisms live, where all components interact continuously. Environmental issues are regularly discussed globally in summits involving both developed and developing countries due to the widespread impact of human activities on natural balances.
+      </div>
+
+      <h3>Definition and Components of an Ecosystem</h3>
+
+      <div class="definition">
+        An <strong>ecosystem</strong> is formed by all the interacting living organisms in a given area interacting together with the non-living physical constituents of the environment to maintain balance in nature.
+      </div>
+
+      <p>Ecosystems consist of two main categories of components:</p>
+
+      <ul>
+        <li>
+          <strong>Biotic Components:</strong> Comprise all living organisms, such as plants, animals, microorganisms, and human beings.
+        </li>
+        <li>
+          <strong>Abiotic Components:</strong> Comprise non-living physical factors, including temperature, rainfall, wind, soil, and minerals.
+        </li>
+      </ul>
+
+      <h3>Classification of Ecosystems</h3>
+
+      <div class="comparison">
+
+        <div class="comparison-card">
+          <h3>Natural Ecosystems</h3>
+          Naturally occurring ecosystems that function without human intervention, such as <strong>forests, ponds, and lakes</strong>.
+        </div>
+
+        <div class="comparison-card">
+          <h3>Human-Made (Artificial) Ecosystems</h3>
+          Man-made and artificially maintained systems, such as <strong>gardens, crop-fields, and aquariums</strong>.
+        </div>
+
+      </div>
+
+      <div class="fact">
+        <strong>Example — Garden Ecosystem:</strong> Contains various plants (grasses, trees, flower-bearing plants like rose, jasmine, and sunflower) and animals (frogs, insects, birds) whose growth, reproduction, and activities interact with abiotic factors like soil and weather.
+      </div>
+
+      <div class="important">
+        <strong>Example — Aquarium Ecosystem (Activity 13.1):</strong> Requires free swimming space, water, oxygen provided via an aerator (oxygen pump), and fish food. Adding aquatic plants and animals can turn it into a self-sustaining system. Unlike natural ponds and lakes, artificial aquariums require regular cleaning because dead fish and plants accumulate in the absence of complete natural decomposer cycles.
+      </div>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section class="section">
+      <h2>II. Functional Classification of Organisms</h2>
+
+      <div class="definition">
+        Organisms within an ecosystem are categorized into three main functional groups based on their mode of obtaining sustenance.
+      </div>
+
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Functional Group</th>
+            <th>Definition & Description</th>
+            <th>Examples</th>
+          </tr>
+
+          <tr>
+            <td>Producers (Autotrophs)</td>
+            <td>
+              Organisms that synthesize organic compounds (such as sugar and starch) from inorganic raw materials using radiant solar energy in the presence of chlorophyll via photosynthesis. They fix solar energy for all heterotrophs.
+            </td>
+            <td>All green plants, certain photosynthetic bacteria</td>
+          </tr>
+
+          <tr>
+            <td>Consumers (Heterotrophs)</td>
+            <td>
+              Organisms that depend directly or indirectly on producers for sustenance by consuming food made by producers or by feeding on other consumers.
+            </td>
+            <td>Divided into herbivores, carnivores, omnivores, and parasites</td>
+          </tr>
+
+          <tr>
+            <td>Decomposers</td>
+            <td>
+              Microorganisms that break down the dead remains and waste products of plants and animals. They convert complex organic substances into simple inorganic substances that return to the soil for reuse by plants.
+            </td>
+            <td>Microorganisms comprising bacteria and fungi</td>
+          </tr>
+        </table>
+      </div>
+
+      <h3>Role of Decomposers</h3>
+
+      <ul>
+        <li>
+          Decomposers are vital for the natural replenishment of soil nutrients.
+        </li>
+        <li>
+          In the absence of decomposers, garbage, dead animals, and dead plants would accumulate without decaying, preventing nutrient recycling back into the soil.
+        </li>
+      </ul>
+    </section>
+
+    <!-- SECTION 3 -->
+    <section class="section">
+      <h2>III. Food Chains, Food Webs, and Energy Flow</h2>
+
+      <div class="definition">
+        A <strong>food chain</strong> is a sequential series of organisms at various biotic levels feeding on one another.
+      </div>
+
+      <h3>Trophic Levels</h3>
+
+      <p>Each step or functional level in a food chain is called a trophic level:</p>
+
+      <ul>
+        <li><strong>First Trophic Level (T<sub>1</sub>):</strong> Occupied by producers (autotrophs) that fix solar energy.</li>
+        <li><strong>Second Trophic Level (T<sub>2</sub>):</strong> Occupied by primary consumers (herbivores).</li>
+        <li><strong>Third Trophic Level (T<sub>3</sub>):</strong> Occupied by secondary consumers (small carnivores).</li>
+        <li><strong>Fourth Trophic Level (T<sub>4</sub>):</strong> Occupied by tertiary consumers (larger carnivores).</li>
+      </ul>
+
+      <div class="process-box">
+        <div class="process-step">
+          [ Producers (Autotrophs) ] <span style="color:#ff9d00;">→</span> [ Primary Consumers (Herbivores) ] <span style="color:#ff9d00;">→</span> [ Secondary Consumers (Carnivores) ] <span style="color:#ff9d00;">→</span> [ Tertiary Consumers (Top Carnivores) ]
+        </div>
+      </div>
+
+      <h3>Energy Flow Dynamics and the 10% Law</h3>
+
+      <p>
+        Food serves as a chemical fuel to provide energy for metabolic activities and biological work.
+      </p>
+
+      <ul>
+        <li>
+          <strong>Solar Energy Capture:</strong> Green plants in a terrestrial ecosystem capture approximately <strong>1%</strong> of the solar energy falling on their leaves and convert it into food energy.
+        </li>
+        <li>
+          <strong>Energy Transformation & Loss:</strong> When primary consumers eat green plants, a significant amount of energy is lost as heat to the environment. Additional energy is used for internal processes like digestion, work, growth, and reproduction.
+        </li>
+      </ul>
+
+      <div class="important">
+        <strong>The 10% Law:</strong> On average, only 10% of the food consumed is converted into an organism's own body mass and made available for the next consumer level.
+      </div>
+
+      <h3>Limitations on Trophic Levels & Population Distribution</h3>
+
+      <ul>
+        <li>
+          Because only 10% of energy moves to each successive level, the energy available diminishes rapidly.
+        </li>
+        <li>
+          Food chains generally consist of only three or four steps, as very little usable energy remains after four trophic levels.
+        </li>
+        <li>
+          Lower trophic levels support a greater number of individual organisms. Ecosystems contain the greatest number of producers.
+        </li>
+      </ul>
+
+      <h3>Characteristics of Energy Flow</h3>
+
+      <ul>
+        <li>
+          <strong>Unidirectional Flow:</strong> Solar energy captured by autotrophs cannot revert back to the Sun, and energy passed to herbivores cannot return to autotrophs. Energy moves strictly forward through successive levels.
+        </li>
+        <li>
+          <strong>Progressive Diminution:</strong> Energy available at each higher trophic level diminishes progressively due to heat and energy losses at every stage.
+        </li>
+      </ul>
+
+      <h3>Food Web</h3>
+
+      <p>
+        Real-world feeding relationships are rarely simple straight lines; individual organisms are typically eaten by two or more types of organisms. A complex network of interconnected, branching feeding relationships is known as a <strong>food web</strong>.
+      </p>
+    </section>
+
+    <!-- SECTION 4 -->
+    <section class="section">
+      <h2>IV. Biological Magnification</h2>
+
+      <div class="definition">
+        <strong>Biological Magnification</strong> is the phenomenon of chemical concentration increasing progressively at successive trophic levels in a food chain.
+      </div>
+
+      <h3>Mechanism of Entry and Accumulation</h3>
+
+      <ul>
+        <li>
+          <strong>Mechanism of Entry:</strong> Agricultural chemicals, such as pesticides, are applied to protect crops from diseases and pests. These chemicals wash into the soil or water bodies. Soil chemicals are absorbed by plant roots alongside water and minerals, while aquatic plants and animals take up chemicals in water bodies.
+        </li>
+        <li>
+          <strong>Accumulation:</strong> Because these toxic chemicals are non-degradable, they cannot be broken down by biological organisms. Consequently, the concentration of these chemicals increases progressively at each higher trophic level.
+        </li>
+      </ul>
+
+      <div class="important">
+        <strong>Impact on Humans:</strong> Since human beings occupy the top position in most food chains, the maximum concentration of non-degradable pesticides accumulates in human bodies. Food grains (wheat, rice), fruits, vegetables, and meat contain varying pesticide residues that cannot be completely removed by washing or other ordinary means.
+      </div>
+    </section>
+
+    <!-- SECTION 5 -->
+    <section class="section">
+      <h2>V. Depletion of the Ozone Layer</h2>
+
+      <h3>Properties and Importance of Ozone</h3>
+
+      <div class="definition">
+        <strong>Ozone (O<sub>3</sub>)</strong> is a molecule formed by three oxygen atoms.
+      </div>
+
+      <ul>
+        <li>
+          Molecular oxygen (O<sub>2</sub>) is essential for aerobic life, whereas ground-level ozone is a deadly poison.
+        </li>
+        <li>
+          In the higher levels of the atmosphere (stratosphere), ozone performs an essential protective function by absorbing harmful ultraviolet (UV) radiation from the Sun.
+        </li>
+        <li>
+          Unfiltered UV radiation reaching the Earth's surface causes severe biological damage, including skin cancer in human beings.
+        </li>
+      </ul>
+
+      <h3>Mechanism of Ozone Formation</h3>
+
+      <p>
+        Ozone in the upper atmosphere is produced by high-energy UV radiation acting on molecular oxygen (O<sub>2</sub>):
+      </p>
+
+      <p>High-energy UV radiation splits molecular oxygen into free oxygen (O) atoms:</p>
+      <div class="formula">
+        O<sub>2</sub> <span style="color:#ff9d00;">→<sup>UV</sup></span> O + O
+      </div>
+
+      <p>Free oxygen atoms combine with molecular oxygen to synthesize ozone (O<sub>3</sub>):</p>
+      <div class="formula">
+        O + O<sub>2</sub> <span style="color:#ff9d00;">→</span> O<sub>3</sub> (Ozone)
+      </div>
+
+      <h3>Causes of Depletion and International Mitigation</h3>
+
+      <ul>
+        <li>
+          Atmospheric ozone levels began dropping sharply during the 1980s.
+        </li>
+        <li>
+          This depletion was directly linked to synthetic industrial chemicals such as <strong>chlorofluorocarbons (CFCs)</strong>, widely used as refrigerants and fire extinguishers.
+        </li>
+      </ul>
+
+      <div class="important">
+        <strong>UNEP Montreal Action (1987):</strong> In 1987, the United Nations Environment Programme (UNEP) forged an international agreement to freeze CFC production at 1986 levels. Today, it is legally mandatory for manufacturing companies worldwide to produce CFC-free refrigerators.
+      </div>
+    </section>
+
+    <!-- SECTION 6 -->
+    <section class="section">
+      <h2>VI. Waste Generation and Management</h2>
+
+      <h3>Enzyme Specificity and Biodegradability</h3>
+
+      <ul>
+        <li>
+          <strong>Enzyme Action:</strong> Enzymes are biological catalysts that exhibit strict specificity—specific enzymes are required to break down specific chemical bonds.
+        </li>
+        <li>
+          <strong>Explanation:</strong> Human enzymes cannot break down materials like coal to derive energy. Similarly, human-made synthetic materials like plastics cannot be broken down by the enzymes secreted by bacteria or saprophytes.
+        </li>
+        <li>
+          <strong>Environmental Persistence:</strong> Non-biodegradable synthetic materials can be altered by physical factors like heat and pressure, but under normal ambient environmental conditions, they persist for a very long time.
+        </li>
+      </ul>
+
+      <h3>Types of Waste Materials</h3>
+
+      <div class="comparison">
+
+        <div class="comparison-card">
+          <h3>Biodegradable Waste</h3>
+          Substances broken down by biological processes carried out by saprophytic microorganisms.<br><br>
+          <strong>Examples:</strong> Vegetable peels, spoilt food, paper, used tea leaves, and natural fabrics.
+        </div>
+
+        <div class="comparison-card">
+          <h3>Non-Biodegradable Waste</h3>
+          Substances that cannot be broken down by biological processes. They remain inert, persist in the environment for long periods, or cause toxicity.<br><br>
+          <strong>Examples:</strong> Plastics, glass, metal medicine strips, synthetic packaging, and e-waste.
+        </div>
+
+      </div>
+
+      <h3>Environmental Impact of Changing Lifestyles</h3>
+
+      <ul>
+        <li>Improvements in living standards have dramatically increased total daily waste generation.</li>
+        <li>Shift toward a "disposable culture" and increased reliance on non-biodegradable packaging have elevated environmental pollution risks.</li>
+      </ul>
+
+      <h3>Case Study: Disposable Tea Cups in Indian Railways</h3>
+
+      <div class="process-box">
+        <div class="process-step">
+          <strong>Historical Context:</strong> Tea on trains was originally served in reusable plastic glasses that were returned to vendors after use.
+        </div>
+        <div class="process-step">
+          <strong>Shift to Disposable Plastic Cups:</strong> Introduced to improve hygiene standards, but resulted in millions of non-biodegradable plastic cups being discarded daily, creating massive waste problems.
+        </div>
+        <div class="process-step">
+          <strong>Attempted Shift to Clay Cups (Kulhads):</strong> Clay cups were proposed as a natural alternative, but large-scale production would have resulted in severe loss of fertile top-soil.
+        </div>
+        <div class="process-step">
+          <strong>Current Solution:</strong> Disposable paper cups are now widely used because paper is biodegradable and avoids top-soil degradation.
+        </div>
+      </div>
+
+      <h3>Waste Disposal Practices</h3>
+
+      <ul>
+        <li>
+          Effective waste handling requires segregated processing of biodegradable and non-biodegradable solid waste by local civic bodies (panchayats, municipal corporations, resident welfare associations).
+        </li>
+        <li>
+          Sewage must undergo proper treatment before release to prevent contamination of local water bodies.
+        </li>
+        <li>
+          Industrial effluents and e-waste require specialized hazardous material treatment to prevent long-term soil and water toxicity.
+        </li>
+      </ul>
+    </section>
+
+    <!-- QUICK REVISION -->
+    <section class="section">
+      <h2>Quick Revision</h2>
+
+      <div class="revision-grid">
+
+        <div class="revision-card">
+          <h3>Ecosystem Components</h3>
+          Biotic (living) and Abiotic (non-living physical factors).
+        </div>
+
+        <div class="revision-card">
+          <h3>Functional Groups</h3>
+          Producers, Consumers, and Decomposers.
+        </div>
+
+        <div class="revision-card">
+          <h3>Solar Energy Capture</h3>
+          Green plants capture only ~1% of solar energy.
+        </div>
+
+        <div class="revision-card">
+          <h3>10% Law</h3>
+          Only 10% energy is transferred to the next trophic level.
+        </div>
+
+        <div class="revision-card">
+          <h3>Energy Flow</h3>
+          Unidirectional and progressively diminishes.
+        </div>
+
+        <div class="revision-card">
+          <h3>Biological Magnification</h3>
+          Toxic chemical concentration increases up the food chain; highest in humans.
+        </div>
+
+        <div class="revision-card">
+          <h3>Ozone Formula</h3>
+          O<sub>3</sub>, formed by UV action on molecular oxygen (O<sub>2</sub>).
+        </div>
+
+        <div class="revision-card">
+          <h3>Ozone Depletion Cause</h3>
+          Chlorofluorocarbons (CFCs) used in refrigeration & fire extinguishers.
+        </div>
+
+        <div class="revision-card">
+          <h3>Montreal Protocol (1987)</h3>
+          UNEP agreement to freeze CFC production at 1986 levels.
+        </div>
+
+        <div class="revision-card">
+          <h3>Enzyme Specificity</h3>
+          Enzymes break specific bonds; why plastics are non-biodegradable.
+        </div>
+
+        <div class="revision-card">
+          <h3>Waste Types</h3>
+          Biodegradable (organic/decomposable) and Non-Biodegradable (persistent/plastics).
+        </div>
+
+        <div class="revision-card">
+          <h3>Railway Cups Solution</h3>
+          Paper cups selected over plastic (pollution) and kulhads (top-soil loss).
+        </div>
+
+      </div>
+    </section>
+
+    <footer>
+      © SFALXO | Class 10 Science Notes
+    </footer>
+
+  </div>
+
+</body>
+</html>
