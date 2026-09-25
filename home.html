@@ -5,6 +5,51 @@
      <link rel="icon" href="SFALXO.png" type="image/png">
     <title>home</title>
     <style>
+       #loader {
+            position: fixed;
+            inset: 0;
+
+            background: #000;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            z-index: 9999;
+
+            animation: loaderDisappear 1s ease-in 2.5s forwards;
+        }
+        #loader img {
+            width: 180px;
+            height: auto;
+
+            opacity: 0;
+
+            animation: logoAppear 1s ease-out forwards;
+        }
+
+        @keyframes logoAppear {
+
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+   @keyframes loaderDisappear {
+
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+        }
       body {
             background-image: url("home-bb.jpg");
             background-size: cover;
@@ -38,7 +83,9 @@
   </head>
   
   <body link="red" alink="orange" vlink="red">
-  
+  <div id="loader">
+        <img src="home-top-logo.png" alt="SFALXO">
+    </div>
       <a class="image" href="index.html">
       <img width="500" height="200" src="home-top-logo.png" alt="SFALXO">
       </a>
