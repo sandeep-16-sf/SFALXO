@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Real Numbers | SFALXO</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;padding:20px;font-family:Arial,Helvetica,sans-serif;background:#080808;color:#f5f5f5;line-height:1.75}
+.container{max-width:1100px;margin:auto}.header{text-align:center;padding:25px 10px 40px}
+.header h1{font-size:43px;margin:0 0 10px;background:linear-gradient(90deg,#ff3030,#ff7a00);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.header p{color:#aaa;font-size:17px}.section{background:#111;border:1px solid #292929;border-radius:20px;padding:28px;margin-bottom:28px;box-shadow:0 8px 25px rgba(0,0,0,.35)}
+h2{color:#ff5733;font-size:27px;margin-top:0;border-bottom:2px solid #2d2d2d;padding-bottom:10px}
+h3{color:#ff9d00;margin-top:28px;font-size:21px}h4{color:#ffb15c}p{margin:12px 0}ul,ol{padding-left:25px}li{margin:8px 0}strong{color:#ffb15c}
+.definition{background:#181818;border-left:4px solid #ff5733;border-radius:10px;padding:16px 18px;margin:18px 0}
+.fact{background:linear-gradient(135deg,rgba(255,48,48,.08),rgba(255,122,0,.08));border:1px solid #3a2920;border-radius:12px;padding:16px;margin:18px 0}
+.important{background:#0b0b0b;border:1px solid #333;border-left:5px solid #ff9d00;border-radius:10px;padding:15px 18px;margin:18px 0}
+.formula{background:#050505;border:1px solid #292929;border-left:5px solid #ff5733;border-radius:10px;padding:15px 20px;margin:18px 0;font-size:18px;font-weight:bold;overflow-x:auto}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.card{background:#181818;border:1px solid #333;border-radius:14px;padding:20px}.card h3{margin-top:0}
+.table-container{overflow-x:auto;margin:20px 0}table{width:100%;min-width:650px;border-collapse:collapse}
+th,td{border:1px solid #3d3d3d;padding:13px;text-align:left;vertical-align:top}th{background:#222;color:#ff9d00}td{background:#121212}
+pre{background:#050505;border:1px solid #333;border-radius:12px;padding:18px;overflow-x:auto;color:#ffb15c}
+footer{text-align:center;color:#777;padding:25px 10px;font-size:14px}
+@media(max-width:700px){body{padding:10px}.header h1{font-size:32px}.header p{font-size:15px}.section{padding:19px;border-radius:15px}h2{font-size:23px}h3{font-size:19px}p,li{font-size:15px}.grid{grid-template-columns:1fr}.formula{font-size:15px}}
+</style>
+</head>
+<body>
+<div class="container">
+<header class="header"><h1>Chapter 1: Real Numbers</h1><p>Refined and Comprehensive Class 10 Mathematics Notes</p></header>
+
+<section class="section">
+<h2>Core Concepts</h2>
+
+<h3>1. Euclid’s Division Lemma</h3>
+<p>Given positive integers <em>a</em> and <em>b</em>, there exist unique integers <em>q</em> and <em>r</em> satisfying:</p>
+<div class="formula">a = bq + r, where 0 ≤ r < b</div>
+<p>This is extensively used to find the Highest Common Factor (HCF) of two positive integers.</p>
+
+<h3>2. Fundamental Theorem of Arithmetic</h3>
+<div class="definition">Every composite number can be expressed (factored) as a product of primes, and this factorisation is unique, apart from the order in which the prime factors occur.</div>
+
+<h3>3. Relation Between HCF and LCM</h3>
+<p>For any two positive integers <em>a</em> and <em>b</em>:</p>
+<div class="formula">HCF(a, b) × LCM(a, b) = a × b</div>
+
+<h3>4. Rational Numbers and Their Decimal Expansions</h3>
+<p>A rational number in the form <sup>p</sup>/<sub>q</sub> has a terminating decimal expansion if, in its lowest form, the prime factorisation of the denominator <em>q</em> is of the form:</p>
+<div class="formula">q = 2<sup>m</sup>5<sup>n</sup></div>
+<p>where <em>m</em> and <em>n</em> are non-negative integers. Otherwise, its decimal expansion is non-terminating recurring.</p>
+</section>
+
+<section class="section">
+<h2>Points to Remember</h2>
+<div class="important">
+<strong>Crucial Rule:</strong> Always reduce the fraction <sup>p</sup>/<sub>q</sub> to its lowest form by cancelling out common factors before checking the denominator's prime factorisation.
+</div>
+<div class="fact">
+<strong>Irrational Numbers:</strong> Numbers that cannot be written in the form <sup>p</sup>/<sub>q</sub> have decimal expansions that are non-terminating and non-recurring (e.g., √2, √3, √5, π).
+</div>
+</section>
+
+<section class="section">
+<h2>Important Practice Questions</h2>
+<ol>
+<li>Use Euclid’s division algorithm to find the HCF of <strong>135</strong> and <strong>225</strong>.</li>
+<li>Prove that <strong>√5</strong> is an irrational number.</li>
+<li>Without actual long division, determine whether the rational number <strong><sup>13</sup>/<sub>3125</sub></strong> will have a terminating decimal expansion or a non-terminating repeating decimal expansion.</li>
+</ol>
+</section>
+
+<section class="section">
+<h2>Quick Revision</h2>
+<div class="grid">
+<div class="card"><h3>Euclid's Division Lemma</h3><p>a = bq + r (0 ≤ r < b). Used for finding HCF step-by-step.</p></div>
+<div class="card"><h3>Fundamental Theorem</h3><p>Composite numbers have a unique prime factorisation.</p></div>
+<div class="card"><h3>HCF & LCM Property</h3><p>HCF × LCM = Product of two numbers.</p></div>
+<div class="card"><h3>Terminating Decimals</h3><p>Denominator prime factors are exclusively in powers of 2 and/or 5.</p></div>
+<div class="card"><h3>Non-Terminating Decimals</h3><p>Denominator contains prime factors other than 2 or 5.</p></div>
+<div class="card"><h3>Irrationality Proofs</h3><p>Proven using proof by contradiction technique.</p></div>
+</div>
+</section>
+
+<footer>© SFALXO | Class 10 Science & Mathematics Notes</footer>
+</div>
+</body>
+</html>
+
+
