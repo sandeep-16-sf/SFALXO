@@ -1,0 +1,85 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Triangles | SFALXO</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;padding:20px;font-family:Arial,Helvetica,sans-serif;background:#080808;color:#f5f5f5;line-height:1.75}
+.container{max-width:1100px;margin:auto}.header{text-align:center;padding:25px 10px 40px}
+.header h1{font-size:43px;margin:0 0 10px;background:linear-gradient(90deg,#ff3030,#ff7a00);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.header p{color:#aaa;font-size:17px}.section{background:#111;border:1px solid #292929;border-radius:20px;padding:28px;margin-bottom:28px;box-shadow:0 8px 25px rgba(0,0,0,.35)}
+h2{color:#ff5733;font-size:27px;margin-top:0;border-bottom:2px solid #2d2d2d;padding-bottom:10px}
+h3{color:#ff9d00;margin-top:28px;font-size:21px}h4{color:#ffb15c}p{margin:12px 0}ul,ol{padding-left:25px}li{margin:8px 0}strong{color:#ffb15c}
+.definition{background:#181818;border-left:4px solid #ff5733;border-radius:10px;padding:16px 18px;margin:18px 0}
+.fact{background:linear-gradient(135deg,rgba(255,48,48,.08),rgba(255,122,0,.08));border:1px solid #3a2920;border-radius:12px;padding:16px;margin:18px 0}
+.important{background:#0b0b0b;border:1px solid #333;border-left:5px solid #ff9d00;border-radius:10px;padding:15px 18px;margin:18px 0}
+.formula{background:#050505;border:1px solid #292929;border-left:5px solid #ff5733;border-radius:10px;padding:15px 20px;margin:18px 0;font-size:18px;font-weight:bold;overflow-x:auto}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.card{background:#181818;border:1px solid #333;border-radius:14px;padding:20px}.card h3{margin-top:0}
+.table-container{overflow-x:auto;margin:20px 0}table{width:100%;min-width:650px;border-collapse:collapse}
+th,td{border:1px solid #3d3d3d;padding:13px;text-align:left;vertical-align:top}th{background:#222;color:#ff9d00}td{background:#121212}
+pre{background:#050505;border:1px solid #333;border-radius:12px;padding:18px;overflow-x:auto;color:#ffb15c}
+footer{text-align:center;color:#777;padding:25px 10px;font-size:14px}
+@media(max-width:700px){body{padding:10px}.header h1{font-size:32px}.header p{font-size:15px}.section{padding:19px;border-radius:15px}h2{font-size:23px}h3{font-size:19px}p,li{font-size:15px}.grid{grid-template-columns:1fr}.formula{font-size:15px}}
+</style>
+</head>
+<body>
+<div class="container">
+<header class="header"><h1>Chapter 6: Triangles</h1><p>Refined and Comprehensive Class 10 Mathematics Notes</p></header>
+
+<section class="section">
+<h2>Similarity Criteria & Core Concepts</h2>
+<p>Two triangles are similar if their corresponding angles are equal and their corresponding sides are in the same ratio.</p>
+
+<h3>Similarity Criteria</h3>
+<ul>
+<li><strong>AAA (Angle-Angle-Angle):</strong> If corresponding angles of two triangles are equal, their corresponding sides are proportional and the triangles are similar. (AA criterion also applies)</li>
+<li><strong>SSS (Side-Side-Side):</strong> If corresponding sides of two triangles are in the same ratio, their corresponding angles are equal and the triangles are similar.</li>
+<li><strong>SAS (Side-Angle-Side):</strong> If one angle of a triangle is equal to one angle of another triangle and the sides including these angles are proportional, the triangles are similar.</li>
+</ul>
+
+<h3>Basic Proportionality Theorem (Thales Theorem)</h3>
+<div class="definition">If a line is drawn parallel to one side of a triangle to intersect the other two sides in distinct points, the other two sides are divided in the same ratio.</div>
+
+<h3>Important Results for Similar Triangles</h3>
+<p>If <strong>ΔABC ~ ΔDEF</strong>, then corresponding sides are proportional:</p>
+<div class="formula">AB / DE = BC / EF = AC / DF</div>
+
+<p>The ratio of the areas of two similar triangles is equal to the square of the ratio of their corresponding sides:</p>
+<div class="formula">Area(ΔABC) / Area(ΔDEF) = (AB / DE)² = (BC / EF)² = (AC / DF)²</div>
+</section>
+
+<section class="section">
+<h2>Points to Remember</h2>
+<div class="important">
+<strong>Converse of BPT:</strong> If a line divides any two sides of a triangle in the same ratio, then the line is parallel to the third side.
+</div>
+<div class="fact">
+<strong>Area Property:</strong> The ratio of areas of two similar triangles is also equal to the ratio of the squares of their corresponding medians, altitudes, or angle bisectors.
+</div>
+</section>
+
+<section class="section">
+<h2>Important Practice Questions</h2>
+<ol>
+<li>State and prove the <strong>Basic Proportionality Theorem (BPT)</strong>.</li>
+<li>Prove that two triangles are similar using <strong>SAS</strong> or <strong>AAA</strong> similarity criterion.</li>
+<li>If two similar triangles have a side ratio of <strong>3:5</strong>, find the ratio of their areas.</li>
+</ol>
+</section>
+
+<section class="section">
+<h2>Quick Revision</h2>
+<div class="grid">
+<div class="card"><h3>BPT (Thales Theorem)</h3><p>Line parallel to one side divides the other two sides proportionally.</p></div>
+<div class="card"><h3>Similarity Criteria</h3><p>AAA, SSS, and SAS establish similarity between triangles.</p></div>
+<div class="card"><h3>Side Ratio Result</h3><p>ΔABC ~ ΔDEF ⟹ AB/DE = BC/EF = AC/DF</p></div>
+<div class="card"><h3>Area Ratio Theorem</h3><p>Area(Δ1) / Area(Δ2) = (Side₁ / Side₂)²</p></div>
+</div>
+</section>
+
+<footer>© SFALXO | Class 10 Science & Mathematics Notes</footer>
+</div>
+</body>
+</html>
