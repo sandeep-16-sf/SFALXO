@@ -1,4 +1,4 @@
-```javascript
+javascript
 const input = document.getElementById("user-input");
 const chatBox = document.getElementById("chat-box");
 
@@ -145,4 +145,4 @@ input.addEventListener("keydown", event => {
         sendMessage();
     }
 });
-```
+
