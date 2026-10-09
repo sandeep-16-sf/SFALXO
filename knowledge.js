@@ -1,4 +1,4 @@
-javascript
+
 const sfalxoKnowledge = {
     class10: {
         science: {
