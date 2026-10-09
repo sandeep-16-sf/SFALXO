@@ -1,22 +1,37 @@
-javascript
+
 const input = document.getElementById("user-input");
 const chatBox = document.getElementById("chat-box");
 
-function sendMessage() {
-    const message = input.value.trim();
+console.log("SFALXO AI: ai.js loaded.");
 
+window.sendMessage = function () {
+    console.log("SFALXO AI: Send button clicked.");
+
+    if (!input || !chatBox) {
+        console.error("SFALXO AI: Input or chat box element not found.");
+        return;
+    }
+
+    const message = input.value.trim();
     if (!message) return;
 
     addMessage(message, "user-message");
     input.value = "";
     input.focus();
 
-    const response = getAIResponse(message);
+    let response;
+
+    try {
+        response = getAIResponse(message);
+    } catch (error) {
+        console.error("SFALXO AI response error:", error);
+        response = "Sorry, something went wrong. Please check the browser console.";
+    }
 
     setTimeout(() => {
         addMessage(response, "ai-message");
     }, 300);
-}
+};
 
 function addMessage(content, className) {
     const messageElement = document.createElement("div");
@@ -63,11 +78,8 @@ function getAIResponse(message) {
 
     const result = searchSFALXOKnowledge(query);
 
-    if (result) {
-        return result;
-    }
-
-    return "I couldn't find a relevant answer in the current SFALXO knowledge base. Try using a specific chapter name, subject or concept.";
+    return result ||
+        "I couldn't find a relevant answer in the current SFALXO knowledge base. Try using a specific chapter name, subject or concept.";
 }
 
 function searchSFALXOKnowledge(query) {
@@ -76,50 +88,17 @@ function searchSFALXOKnowledge(query) {
     }
 
     const topics = [
-        {
-            keywords: ["chemical reaction", "chemical equation", "oxidation", "reduction"],
-            path: ["science", "chemicalReactions"]
-        },
-        {
-            keywords: ["carbon", "covalent", "methane", "ethane"],
-            path: ["science", "carbonAndCompounds"]
-        },
-        {
-            keywords: ["electricity", "ohm", "current", "resistance"],
-            path: ["science", "electricity"]
-        },
-        {
-            keywords: ["light", "reflection", "refraction"],
-            path: ["science", "light"]
-        },
-        {
-            keywords: ["life process", "nutrition", "respiration"],
-            path: ["science", "lifeProcesses"]
-        },
-        {
-            keywords: ["real number", "euclid"],
-            path: ["mathematics", "realNumbers"]
-        },
-        {
-            keywords: ["polynomial", "zeroes", "zeros"],
-            path: ["mathematics", "polynomials"]
-        },
-        {
-            keywords: ["quadratic equation", "quadratic"],
-            path: ["mathematics", "quadraticEquations"]
-        },
-        {
-            keywords: ["html", "web page"],
-            path: ["computerScience", "html"]
-        },
-        {
-            keywords: ["css", "stylesheet"],
-            path: ["computerScience", "css"]
-        },
-        {
-            keywords: ["javascript", "js code"],
-            path: ["computerScience", "javascript"]
-        }
+        { keywords: ["chemical reaction", "chemical equation", "oxidation", "reduction"], path: ["science", "chemicalReactions"] },
+        { keywords: ["carbon", "covalent", "methane", "ethane"], path: ["science", "carbonAndCompounds"] },
+        { keywords: ["electricity", "ohm", "current", "resistance"], path: ["science", "electricity"] },
+        { keywords: ["light", "reflection", "refraction"], path: ["science", "light"] },
+        { keywords: ["life process", "nutrition", "respiration"], path: ["science", "lifeProcesses"] },
+        { keywords: ["real number", "euclid"], path: ["mathematics", "realNumbers"] },
+        { keywords: ["polynomial", "zeroes", "zeros"], path: ["mathematics", "polynomials"] },
+        { keywords: ["quadratic equation", "quadratic"], path: ["mathematics", "quadraticEquations"] },
+        { keywords: ["html", "web page"], path: ["computerScience", "html"] },
+        { keywords: ["css", "stylesheet"], path: ["computerScience", "css"] },
+        { keywords: ["javascript", "js code"], path: ["computerScience", "javascript"] }
     ];
 
     for (const topic of topics) {
@@ -139,10 +118,10 @@ function searchSFALXOKnowledge(query) {
     return null;
 }
 
-input.addEventListener("keydown", event => {
+input?.addEventListener("keydown", event => {
     if (event.key === "Enter" && !event.shiftKey) {
         event.preventDefault();
-        sendMessage();
+        window.sendMessage();
     }
 });
 
