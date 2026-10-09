@@ -1,4 +1,4 @@
-```javascript
+javascript
 const sfalxoKnowledge = {
     class10: {
         science: {
@@ -683,4 +683,4 @@ An event listener can run a function when a user clicks a button or presses a ke
         }
     }
 };
-```
+
