@@ -73,13 +73,36 @@
       .home-index{
         text-align: center;
       }
-      .p1{
-        text-align: center;
-      }
-      img .p1{
-        border-radius: 10px;
-        gap: 66px;
-      }
+     .p1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.p1 a {
+    display: block;
+}
+
+.p1 img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+    .p1 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .p1 {
+        grid-template-columns: 1fr;
+    }
+}
       </style> 
   </head>
   
@@ -113,7 +136,7 @@
 
 
       <a href="notes-class.html">
-        <img align="left" src="ncert-solutions.jpg" alt="NCERT SOLUTIONS" width="360" height="202">
+        <img src="ncert-solutions.jpg" alt="NCERT SOLUTIONS" width="360" height="202">
       </a>
 
 
