@@ -1,6 +1,7 @@
 <html>
   
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta charset="UTF-8">
      <link rel="icon" href="SFALXO.png" type="image/png">
     <title>home</title>
@@ -73,36 +74,54 @@
       .home-index{
         text-align: center;
       }
-     .p1 {
+    
+.p1 {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .p1 a {
     display: block;
+    min-width: 0;
 }
 
 .p1 img {
+    display: block;
     width: 100%;
     height: auto;
-    display: block;
     border-radius: 10px;
 }
 
-/* Tablet */
-@media (max-width: 991px) {
+/* Tablet: 2 tiles */
+@media (min-width: 577px) and (max-width: 991px) {
     .p1 {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
-/* Mobile */
-@media screen and (max-width: 576px) {
+/* Mobile: EXACTLY 1 tile */
+@media (max-width: 576px) {
     .p1 {
-        grid-template-columns: 1fr !important;
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .p1 > a {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .p1 > a > img {
+        width: 100%;
+        height: auto;
     }
 }
+
       </style> 
   </head>
   
