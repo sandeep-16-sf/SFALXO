@@ -1,0 +1,904 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SFALXO Scientific Calculator</title>
+
+<style>
+* { box-sizing: border-box; }
+
+:root {
+    --bg: #080d16;
+    --panel: #101a29;
+    --key: #1b293d;
+    --hover: #2c405c;
+    --line: #2a3c55;
+    --text: #f2f6ff;
+    --muted: #93a6c0;
+    --blue: #246bfd;
+}
+
+body {
+    margin: 0;
+    height: 100dvh;
+    overflow: hidden;
+    background: radial-gradient(ellipse at top, #172b49, var(--bg) 65%);
+    color: var(--text);
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.app {
+    height: 100%;
+    width: min(100%, 1000px);
+    margin: auto;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+header {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand {
+    color: #66a7ff;
+    font-size: clamp(19px, 3vh, 26px);
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.subtitle {
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    margin-top: 3px;
+}
+
+.header-tools {
+    display: flex;
+    gap: 7px;
+    align-items: center;
+}
+
+select, .small-btn {
+    background: var(--panel);
+    color: var(--text);
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    padding: 9px;
+    font-size: 13px;
+}
+
+.display {
+    flex: 0 0 auto;
+    min-height: 100px;
+    background: #080f1b;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#expression {
+    background: transparent;
+    color: #a9bdd7;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: clamp(17px, 3vh, 24px);
+    text-align: right;
+    padding: 4px 0;
+}
+
+#result {
+    display: block;
+    width: 100%;
+    min-height: 36px;
+    text-align: right;
+    overflow-wrap: anywhere;
+    font-size: clamp(26px, 5vh, 40px);
+    font-weight: 600;
+}
+
+#message {
+    height: 14px;
+    font-size: 10px;
+    color: #ffb6a5;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.keypad {
+    flex: 1;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-rows: repeat(5, minmax(0, 1fr));
+    gap: clamp(5px, 1vh, 9px);
+}
+
+button {
+    min-width: 0;
+    min-height: 0;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: var(--key);
+    color: var(--text);
+    font: inherit;
+    font-size: clamp(16px, 3vh, 23px);
+    cursor: pointer;
+    touch-action: manipulation;
+    transition: background .12s, transform .08s;
+}
+
+button:hover {
+    background: var(--hover);
+}
+
+button:active {
+    transform: scale(.97);
+}
+
+button:focus-visible, select:focus-visible {
+    outline: 2px solid #60a5fa;
+    outline-offset: 2px;
+}
+
+.op {
+    background: #193b65;
+    color: #cce3ff;
+}
+
+.clear {
+    background: #482b36;
+    color: #ffc5ce;
+}
+
+.delete {
+    background: #493829;
+    color: #ffe0b1;
+}
+
+.equal {
+    background: var(--blue);
+    color: white;
+    font-size: clamp(22px, 4vh, 30px);
+    font-weight: bold;
+}
+
+.equal:hover {
+    background: #4786ff;
+}
+
+.advanced-wrap {
+    position: relative;
+    flex: 0 0 auto;
+}
+
+#advancedMenu {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    bottom: calc(100% + 7px);
+    left: 0;
+    width: min(100%, 580px);
+    max-height: min(54dvh, 380px);
+    overflow-y: auto;
+    padding: 12px;
+    border: 1px solid #365171;
+    border-radius: 13px;
+    background: #101a29;
+    box-shadow: 0 12px 40px #000b;
+}
+
+#advancedMenu.open {
+    display: block;
+}
+
+.menu-top {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.menu-top select {
+    flex: 1;
+    min-width: 0;
+}
+
+.advanced-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 7px;
+}
+
+.advanced-grid button {
+    font-size: clamp(12px, 2vh, 15px);
+    min-height: 38px;
+    padding: 5px 3px;
+}
+
+.function { background: #1c304a; color: #c2dcff; }
+
+.bottom {
+    flex: 0 0 auto;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.bottom button {
+    min-height: 36px;
+    padding: 6px 10px;
+    font-size: 12px;
+}
+
+#advancedButton { flex: 1; text-align: left; }
+#historyButton { white-space: nowrap; }
+
+#historyPanel {
+    display: none;
+    position: absolute;
+    z-index: 20;
+    right: 12px;
+    bottom: 55px;
+    width: min(420px, calc(100vw - 24px));
+    max-height: 45dvh;
+    overflow: auto;
+    padding: 12px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: #101a29;
+    box-shadow: 0 10px 35px #0009;
+}
+
+#historyPanel.open { display: block; }
+
+.history-item {
+    display: block;
+    width: 100%;
+    text-align: right;
+    padding: 9px;
+    margin: 4px 0;
+    font-size: 13px;
+}
+
+.history-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.hint {
+    flex-shrink: 0;
+    text-align: center;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+@media (max-height: 600px) {
+    .app { padding: 7px; gap: 6px; }
+    .display { min-height: 70px; padding: 7px 12px; }
+    .keypad { gap: 5px; }
+    button { border-radius: 7px; }
+    .bottom button { min-height: 30px; }
+    #message { height: 10px; }
+}
+
+@media (max-width: 430px) {
+    .app { padding: 8px; gap: 8px; }
+    .subtitle { letter-spacing: .8px; }
+    .header-tools { gap: 4px; }
+    select, .small-btn { padding: 7px 5px; font-size: 12px; }
+    .display { min-height: 95px; }
+    .keypad { gap: 6px; }
+    button { border-radius: 8px; }
+    .hint { font-size: 9px; }
+}
+</style>
+</head>
+
+<body>
+<div class="app">
+
+<header>
+    <div>
+        <div class="brand">SFALXO</div>
+        <div class="subtitle">SCIENTIFIC CALCULATOR</div>
+    </div>
+    <div class="header-tools">
+        <select id="angleMode" aria-label="Angle mode">
+            <option value="DEG">DEG</option>
+            <option value="RAD">RAD</option>
+            <option value="GRAD">GRAD</option>
+        </select>
+        <button class="small-btn" id="themeButton" title="Toggle theme">☼</button>
+    </div>
+</header>
+
+<div class="display">
+    <input id="expression" type="text" autocomplete="off"
+           spellcheck="false" placeholder="Enter expression..."
+           aria-label="Mathematical expression">
+    <output id="result" aria-live="polite">0</output>
+</div>
+
+<div id="message" aria-live="polite"></div>
+
+<div class="keypad" id="keypad">
+    <button data-action="clear" class="clear">AC</button>
+    <button data-action="delete" class="delete">DEL</button>
+    <button data-insert="(">(</button>
+    <button data-insert=")">)</button>
+    <button data-insert="%" class="op">%</button>
+
+    <button data-insert="7">7</button>
+    <button data-insert="8">8</button>
+    <button data-insert="9">9</button>
+    <button data-insert="/" class="op">÷</button>
+    <button data-insert="sqrt(" class="op">√</button>
+
+    <button data-insert="4">4</button>
+    <button data-insert="5">5</button>
+    <button data-insert="6">6</button>
+    <button data-insert="*" class="op">×</button>
+    <button data-insert="^2" class="op">x²</button>
+
+    <button data-insert="1">1</button>
+    <button data-insert="2">2</button>
+    <button data-insert="3">3</button>
+    <button data-insert="-" class="op">−</button>
+    <button data-insert="^" class="op">xʸ</button>
+
+    <button data-insert="0">0</button>
+    <button data-insert="00">00</button>
+    <button data-insert=".">.</button>
+    <button data-insert="+" class="op">+</button>
+    <button data-action="calculate" class="equal">=</button>
+</div>
+
+<div class="advanced-wrap">
+    <div id="advancedMenu">
+        <div class="menu-top">
+            <select id="category" aria-label="Advanced function category">
+                <option value="trig">Trigonometry</option>
+                <option value="inverse">Inverse trigonometry</option>
+                <option value="hyper">Hyperbolic functions</option>
+                <option value="logs">Logs and powers</option>
+                <option value="roots">Roots and factorials</option>
+                <option value="constants">Constants and memory</option>
+                <option value="other">Other functions</option>
+            </select>
+            <button class="small-btn" id="closeMenu">Close</button>
+        </div>
+        <div class="advanced-grid" id="advancedGrid"></div>
+    </div>
+</div>
+
+<div class="bottom">
+    <button id="advancedButton">☷ Advanced functions ▾</button>
+    <button id="historyButton">History</button>
+    <button id="copyButton">Copy</button>
+</div>
+
+<div class="hint">
+    Keyboard: 0–9 · + − * / · Enter = · Backspace = DEL · Esc = AC · F2 = DEG/RAD
+</div>
+
+<div id="historyPanel">
+    <div class="history-heading">
+        <strong>History</strong>
+        <button class="small-btn" id="clearHistory">Clear</button>
+    </div>
+    <div id="historyList"></div>
+</div>
+
+</div>
+
+<script>
+"use strict";
+
+const input = document.getElementById("expression");
+const result = document.getElementById("result");
+const message = document.getElementById("message");
+const menu = document.getElementById("advancedMenu");
+const grid = document.getElementById("advancedGrid");
+
+let answer = 0;
+let memory = 0;
+let history = [];
+let angle = "DEG";
+
+const categories = {
+    trig: [
+        ["sin", "sin("], ["cos", "cos("], ["tan", "tan("],
+        ["csc", "csc("], ["sec", "sec("], ["cot", "cot("],
+        ["π", "pi"], ["°", "°"]
+    ],
+    inverse: [
+        ["sin⁻¹", "asin("], ["cos⁻¹", "acos("], ["tan⁻¹", "atan("],
+        ["csc⁻¹", "acsc("], ["sec⁻¹", "asec("], ["cot⁻¹", "acot("]
+    ],
+    hyper: [
+        ["sinh", "sinh("], ["cosh", "cosh("], ["tanh", "tanh("],
+        ["asinh", "asinh("], ["acosh", "acosh("], ["atanh", "atanh("]
+    ],
+    logs: [
+        ["log", "log("], ["ln", "ln("], ["log₂", "log2("],
+        ["10ˣ", "10^("], ["eˣ", "exp("], ["xʸ", "^"],
+        ["2ˣ", "2^("], ["EE", "e"]
+    ],
+    roots: [
+        ["√", "sqrt("], ["∛", "cbrt("], ["x²", "^2"],
+        ["x³", "^3"], ["xʸ", "^"], ["x!", "!"],
+        ["1/x", "1/("], ["|x|", "abs("]
+    ],
+    constants: [
+        ["π", "pi"], ["e", "e"], ["Ans", "Ans"],
+        ["M+", "@mplus"], ["M−", "@mminus"],
+        ["MR", "@mr"], ["MC", "@mc"]
+    ],
+    other: [
+        ["(", "("], [")", ")"], ["min", "min("],
+        ["max", "max("], ["pow", "pow("], ["root", "root("],
+        ["floor", "floor("], ["ceil", "ceil("],
+        ["round", "round("], ["rand", "rand("]
+    ]
+};
+
+function renderCategory() {
+    grid.replaceChildren();
+
+    for (const [label, value] of categories[document.getElementById("category").value]) {
+        const button = document.createElement("button");
+        button.className = "function";
+        button.textContent = label;
+        button.addEventListener("click", () => {
+            if (value.startsWith("@")) {
+                memoryAction(value);
+            } else if (value === "°") {
+                insert("pi/180");
+            } else {
+                insert(value);
+            }
+        });
+        grid.appendChild(button);
+    }
+}
+
+function insert(text) {
+    const start = input.selectionStart ?? input.value.length;
+    const end = input.selectionEnd ?? input.value.length;
+
+    input.setRangeText(text, start, end, "end");
+    input.focus();
+    preview();
+}
+
+function memoryAction(action) {
+    if (action === "@mc") {
+        memory = 0;
+        message.textContent = "Memory cleared";
+        return;
+    }
+
+    if (action === "@mr") {
+        insert(String(memory));
+        return;
+    }
+
+    try {
+        const value = evaluate(input.value);
+        memory += action === "@mplus" ? value : -value;
+        message.textContent = "Memory: " + format(memory);
+    } catch (error) {
+        message.textContent = error.message;
+    }
+}
+
+function radians(x) {
+    return angle === "DEG" ? x * Math.PI / 180 :
+           angle === "GRAD" ? x * Math.PI / 200 : x;
+}
+
+function degrees(x) {
+    return angle === "DEG" ? x * 180 / Math.PI :
+           angle === "GRAD" ? x * 200 / Math.PI : x;
+}
+
+function factorial(x) {
+    if (!Number.isInteger(x) || x < 0 || x > 170)
+        throw Error("Factorial requires an integer from 0 to 170");
+    let r = 1;
+    for (let i = 2; i <= x; i++) r *= i;
+    return r;
+}
+
+const funcs = {
+    sin: x => Math.sin(radians(x)),
+    cos: x => Math.cos(radians(x)),
+    tan: x => {
+        if (Math.abs(Math.cos(radians(x))) < 1e-14)
+            throw Error("Tangent is undefined at this angle");
+        return Math.tan(radians(x));
+    },
+    csc: x => 1 / Math.sin(radians(x)),
+    sec: x => 1 / Math.cos(radians(x)),
+    cot: x => 1 / Math.tan(radians(x)),
+    asin: x => degrees(Math.asin(x)),
+    acos: x => degrees(Math.acos(x)),
+    atan: x => degrees(Math.atan(x)),
+    acsc: x => degrees(Math.asin(1 / x)),
+    asec: x => degrees(Math.acos(1 / x)),
+    acot: x => degrees(Math.atan(1 / x)),
+    sinh: Math.sinh,
+    cosh: Math.cosh,
+    tanh: Math.tanh,
+    asinh: Math.asinh,
+    acosh: Math.acosh,
+    atanh: Math.atanh,
+    sqrt: Math.sqrt,
+    cbrt: Math.cbrt,
+    abs: Math.abs,
+    floor: Math.floor,
+    ceil: Math.ceil,
+    round: Math.round,
+    log: Math.log10,
+    ln: Math.log,
+    log2: Math.log2,
+    exp: Math.exp,
+    min: Math.min,
+    max: Math.max,
+    pow: Math.pow,
+    root: (x, n) => Math.pow(x, 1 / n),
+    rand: () => Math.random()
+};
+
+function tokenize(source) {
+    source = source.replace(/π/g, "pi")
+        .replace(/×/g, "*").replace(/÷/g, "/")
+        .replace(/[−–]/g, "-").replace(/Ans/gi, "ans")
+        .replace(/\s+/g, "");
+
+    const tokens = [];
+    let i = 0;
+
+    while (i < source.length) {
+        const rest = source.slice(i);
+        const num = rest.match(/^(?:\d+\.?\d*|\.\d+)(?:e[+-]?\d+)?/i);
+
+        if (num) {
+            tokens.push({t:"n", v:Number(num[0])});
+            i += num[0].length;
+            continue;
+        }
+
+        const id = rest.match(/^[a-zA-Z_]\w*/);
+        if (id) {
+            tokens.push({t:"id", v:id[0].toLowerCase()});
+            i += id[0].length;
+            continue;
+        }
+
+        if ("+-*/%^!(),".includes(source[i])) {
+            tokens.push({t:"op", v:source[i++]});
+            continue;
+        }
+
+        throw Error("Invalid character: " + source[i]);
+    }
+
+    const expanded = [];
+    for (const token of tokens) {
+        const p = expanded[expanded.length - 1];
+        if (p) {
+            const ends = p.t === "n" ||
+                (p.t === "id" && !funcs[p.v] && !["pi","e","ans"].includes(p.v)) ||
+                p.v === ")" || p.v === "!";
+            const starts = token.t === "n" || token.t === "id" || token.v === "(";
+            const functionCall = p.t === "id" && funcs[p.v] && token.v === "(";
+
+            if (ends && starts && !functionCall)
+                expanded.push({t:"op", v:"*"});
+        }
+        expanded.push(token);
+    }
+
+    return expanded;
+}
+
+function evaluate(source) {
+    const ts = tokenize(source);
+    let i = 0;
+    const peek = () => ts[i];
+    const take = v => {
+        if (peek() && peek().v === v) { i++; return true; }
+        return false;
+    };
+    const need = v => {
+        if (!take(v)) throw Error("Expected " + v);
+    };
+
+    function expr() {
+        let x = term();
+        while (peek() && ["+","-"].includes(peek().v)) {
+            const op = ts[i++].v, y = term();
+            x = op === "+" ? x + y : x - y;
+        }
+        return x;
+    }
+
+    function term() {
+        let x = unary();
+        while (peek() && ["*","/","%"].includes(peek().v)) {
+            const op = ts[i++].v, y = unary();
+            if ((op === "/" || op === "%") && y === 0)
+                throw Error("Division by zero");
+            x = op === "*" ? x*y : op === "/" ? x/y : x%y;
+        }
+        return x;
+    }
+
+    function unary() {
+        if (take("+")) return unary();
+        if (take("-")) return -unary();
+        return power();
+    }
+
+    function power() {
+        let x = postfix();
+        if (take("^")) x = Math.pow(x, unary());
+        return x;
+    }
+
+    function postfix() {
+        let x = primary();
+        while (peek() && (peek().v === "!" || peek().v === "%")) {
+            if (take("!")) x = factorial(x);
+            else if (take("%")) x /= 100;
+        }
+        return x;
+    }
+
+    function primary() {
+        if (take("(")) {
+            const x = expr();
+            need(")");
+            return x;
+        }
+
+        const token = peek();
+        if (!token) throw Error("Incomplete expression");
+
+        if (token.t === "n") {
+            i++;
+            return token.v;
+        }
+
+        if (token.t === "id") {
+            i++;
+            const name = token.v;
+
+            if (take("(")) {
+                if (!funcs[name]) throw Error("Unknown function: " + name);
+                const args = [];
+                if (!take(")")) {
+                    args.push(expr());
+                    while (take(",")) args.push(expr());
+                    need(")");
+                }
+                if (["pow","root"].includes(name) && args.length !== 2)
+                    throw Error(name + " requires two arguments");
+                if (["min","max"].includes(name) && !args.length)
+                    throw Error(name + " requires arguments");
+                if (args.length === 0 && name !== "rand")
+                    throw Error("Missing argument for " + name);
+                if (args.length > 1 && !["min","max","pow","root"].includes(name))
+                    throw Error(name + " accepts one argument");
+                return funcs[name](...args);
+            }
+
+            if (name === "pi") return Math.PI;
+            if (name === "e") return Math.E;
+            if (name === "ans") return answer;
+
+            throw Error("Unknown constant: " + name);
+        }
+
+        throw Error("Unexpected input");
+    }
+
+    if (!ts.length) throw Error("Enter an expression");
+    const value = expr();
+    if (i !== ts.length) throw Error("Check the expression");
+    if (!Number.isFinite(value)) throw Error("Result is outside the supported range");
+    return value;
+}
+
+function format(x) {
+    if (!Number.isFinite(x)) return "Error";
+    if (x !== 0 && (Math.abs(x) >= 1e12 || Math.abs(x) < 1e-9))
+        return x.toExponential(8);
+    return String(Number(x.toPrecision(12)));
+}
+
+function preview() {
+    message.textContent = "";
+    if (!input.value.trim()) {
+        result.textContent = "0";
+        return;
+    }
+    try {
+        result.textContent = format(evaluate(input.value));
+    } catch {
+        result.textContent = "…";
+    }
+}
+
+function calculate() {
+    try {
+        const source = input.value.trim();
+        if (!source) return;
+        const value = evaluate(source);
+        answer = value;
+        result.textContent = format(value);
+        history.unshift({source, value});
+        history = history.slice(0, 30);
+        renderHistory();
+        input.value = format(value);
+        input.focus();
+        input.setSelectionRange(input.value.length, input.value.length);
+        message.textContent = "Calculated";
+    } catch (error) {
+        result.textContent = "Error";
+        message.textContent = error.message;
+    }
+}
+
+function renderHistory() {
+    const list = document.getElementById("historyList");
+    list.replaceChildren();
+    history.forEach(item => {
+        const b = document.createElement("button");
+        b.className = "history-item";
+        b.textContent = item.source + " = " + format(item.value);
+        b.onclick = () => {
+            input.value = item.source;
+            preview();
+            input.focus();
+        };
+        list.appendChild(b);
+    });
+}
+
+document.querySelectorAll("[data-insert]").forEach(button => {
+    button.addEventListener("click", () => {
+        let text = button.dataset.insert;
+        if (text === "^2") text = "^2";
+        insert(text);
+    });
+});
+
+document.querySelectorAll("[data-action]").forEach(button => {
+    button.addEventListener("click", () => {
+        const action = button.dataset.action;
+
+        if (action === "clear") {
+            input.value = "";
+            result.textContent = "0";
+            message.textContent = "";
+            input.focus();
+        }
+
+        if (action === "delete") {
+            const s = input.selectionStart ?? input.value.length;
+            const e = input.selectionEnd ?? input.value.length;
+            if (s !== e) input.setRangeText("", s, e, "start");
+            else if (s > 0) input.setRangeText("", s-1, s, "start");
+            preview();
+            input.focus();
+        }
+
+        if (action === "calculate") calculate();
+    });
+});
+
+document.getElementById("angleMode").addEventListener("change", event => {
+    angle = event.target.value;
+    preview();
+});
+
+document.getElementById("advancedButton").addEventListener("click", () => {
+    menu.classList.toggle("open");
+    document.getElementById("advancedButton").textContent =
+        menu.classList.contains("open") ? "☷ Advanced functions ▴" : "☷ Advanced functions ▾";
+});
+
+document.getElementById("closeMenu").addEventListener("click", () => {
+    menu.classList.remove("open");
+});
+
+document.getElementById("category").addEventListener("change", renderCategory);
+
+document.getElementById("historyButton").addEventListener("click", () => {
+    document.getElementById("historyPanel").classList.toggle("open");
+});
+
+document.getElementById("clearHistory").addEventListener("click", () => {
+    history = [];
+    renderHistory();
+});
+
+document.getElementById("copyButton").addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(result.textContent);
+        message.textContent = "Result copied";
+    } catch {
+        message.textContent = "Clipboard unavailable in this context";
+    }
+});
+
+document.getElementById("themeButton").addEventListener("click", () => {
+    document.body.classList.toggle("light");
+});
+
+input.addEventListener("input", preview);
+
+document.addEventListener("keydown", event => {
+    const tag = event.target.tagName;
+
+    if (event.ctrlKey || event.altKey || event.metaKey) return;
+
+    if (event.key === "F2") {
+        event.preventDefault();
+        const select = document.getElementById("angleMode");
+        select.selectedIndex = (select.selectedIndex + 1) % 3;
+        angle = select.value;
+        preview();
+        return;
+    }
+
+    if (event.key === "F3") {
+        event.preventDefault();
+        menu.classList.toggle("open");
+        return;
+    }
+
+    if (event.key === "Escape") {
+        input.value = "";
+        preview();
+        menu.classList.remove("open");
+        document.getElementById("historyPanel").classList.remove("open");
+        return;
+    }
+
+    if (tag === "SELECT" || tag === "BUTTON") return;
+
+    if (event.key === "Enter" && tag !== "INPUT") {
+        event.preventDefault();
+        calculate();
+        return;
+    }
+
+    if (event.key === "Enter" && event.target === input) {
+        event.preventDefault();
+        calculate();
+    }
+});
+
+renderCategory();
+preview();
+</script>
+</body>
+</html>
