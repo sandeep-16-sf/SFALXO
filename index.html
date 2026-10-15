@@ -83,12 +83,66 @@
          background-attachment: fixed;
          min-height: 100vh;
           cursor: url('custom-cursor.png') 12.5 12.5, auto; 
+         transition: background-color 0.3s, color 0.3s;
+         color: #ffffff
         }
+     body.light-theme {
+  background-color: #ffffff;
+  color: #121212;
+}
 
 a, button {
 cursor: url('custom-cursor.png') 12.5 12.5, pointer;
 }
-     
+      #themeButton{
+    background: #00b4d8;
+    color: white;
+    border: none;
+    border-radius: 30px;
+
+    padding: 14px 32px;
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    /* Glow / shadow */
+    box-shadow: 0 0 15px rgba(255, 80, 30, 0.5);
+
+    /* Entrance animation */
+    opacity: 0;
+    animation: buttonAppear 0.25s ease forwards;
+    animation-delay: 0.25s;
+
+    /* Smooth hover transition */
+    transition: all 0.3s ease;
+}
+
+.get-started:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px rgba(255, 80, 30, 0.8);
+}
+
+/* Button entrance animation */
+@keyframes buttonAppear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .get-started {
+        padding: 12px 25px;
+        font-size: 16px;
+    }
+}
      .logo{
      width: 10%;
       margin: auto;
@@ -158,22 +212,31 @@ cursor: url('custom-cursor.png') 12.5 12.5, pointer;
  
     a:link {
         color: white;
+       transition: color 0.3s;
     }
 
     
     a:visited {
         color: white;
+       transition: color 0.3s;
     }
 
    
     a:hover {
         color: red; 
+       transition: color 0.3s;
     }
 
     
     a:active {
         color: cyan;
+       transition: color 0.3s;
     }
+
+     body.light-theme a {
+  color: #000000;
+}
+
     </style>
 
 </head>
@@ -184,6 +247,8 @@ cursor: url('custom-cursor.png') 12.5 12.5, pointer;
    <div id="loader">
         <img src="home-top-logo.png" alt="SFALXO">
     </div>
+<button title="" id="themeButton">Toggle THEME</button>
+
 
  <div class="logo">
 <img src="SFALXO.png" alt="SFALXO">
@@ -221,6 +286,19 @@ cursor: url('custom-cursor.png') 12.5 12.5, pointer;
     element.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
     element.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
   });
+
+  const button = document.getElementById('themeButton');
+
+button.addEventListener('click', () => {
+  document.body.classList.toggle('light-theme');
+  
+  if (document.body.classList.contains('light-theme')) {
+    button.textContent = 'Switch to Dark Mode';
+  } else {
+    button.textContent = 'Switch to Light Mode';
+  }
+});
+
 </script>
  
 </body>
