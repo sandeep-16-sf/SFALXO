@@ -54,23 +54,74 @@
 
         }
       body {
-            min-height: 100vh;
-    background: linear-gradient(
-        to bottom,
-        #FF3030 0%,
-        #C00000 1.5%,
-        #4A0000 5%,
-        #120000 12%,
-        #000000 25%,
-        #000000 75%,
-        #120000 88%,
-        #4A0000 95%,
-        #C00000 98.5%,
-        #FF3030 100%
-    );
-        background-attachment: fixed;
-       color: white;
-      }
+background-image: linear-gradient(135deg, #ffffff 0%, #fbeeed 50%, #fca5a5 100%);
+
+         background-attachment: fixed;
+         min-height: 100vh;
+          cursor: url('custom-cursor.png') 12.5 12.5, auto; 
+         transition: background-color 0.3s, color 0.3s;
+
+           color: #000000;
+        }
+     body.dark-theme {
+background-image: linear-gradient(135deg, #000000 0%, #050D14 45%, #1E6B52 100%);
+
+       background-attachment: fixed;
+         color: #ffffff
+}
+      .theme{
+      text-align: right;
+     }
+      #themeButton{
+ text-align: right;
+    background: #854D0E;
+    color: white;
+    border: none;
+    border-radius: 30px;
+
+    padding: 14px 32px;
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    /* Glow / shadow */
+    box-shadow: 0 0 15px rgba(255, 80, 30, 0.5);
+
+    /* Entrance animation */
+    opacity: 0;
+    animation: buttonAppear 0.25s ease forwards;
+    animation-delay: 0.25s;
+
+    /* Smooth hover transition */
+    transition: all 0.3s ease;
+}
+
+.get-started:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px rgba(255, 80, 30, 0.8);
+}
+
+/* Button entrance animation */
+@keyframes buttonAppear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .get-started {
+        padding: 12px 25px;
+        font-size: 16px;
+    }
+}
       .home-index{
         text-align: center;
       }
@@ -124,6 +175,9 @@
   <div id="loader">
         <img src="home-top-logo.png" alt="SFALXO">
     </div>
+     <div class="theme">
+<button title="toggle theme" id="themeButton">Toggle THEME</button>
+ </div>
     <div class="home-index">
       <a class="image" href="index.html">
       <img class="home-index" width="250" height="100" src="home-top-logo.png" alt="SFALXO">
@@ -160,6 +214,19 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+       const button = document.getElementById('themeButton');
+
+button.addEventListener('click', () => {
+  document.body.classList.toggle('dark-theme');
+  
+  if (document.body.classList.contains('dark-theme')) {
+    button.textContent = 'Switch to LIGHT Mode';
+  } else {
+    button.textContent = 'Switch to DARK Mode';
+  }
+});
+    </script>
     
   </body>
 </html>
