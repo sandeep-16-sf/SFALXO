@@ -10,39 +10,32 @@
  <link rel="icon" href="SFALXO.png" type="image/png">
     <style>
 .cursor-blob {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   position: fixed;
   top: 0;
   left: 0;
   border-radius: 50%;
   pointer-events: none;
-  z-index: 1; /* Put it ABOVE text so the blend mode works, pointer-events allows clicking through */
   
-  /* 
-    Creates a solid white center (0% to 20%) 
-    that fades out softly into transparency at the edges (70%)
-  */
+  /* Keeps it behind the text so dark text stays completely readable */
+  z-index: -1; 
+
+  /* 1. The Core: Solid white in the middle, fading slightly at the edge */
   background: radial-gradient(
     circle, 
     rgba(255, 255, 255, 1) 0%, 
-    rgba(255, 255, 255, 0.8) 20%, 
+    rgba(255, 255, 255, 1) 40%, 
     rgba(255, 255, 255, 0) 70%
   );
 
-  /* Optional additional outer blur to soften the outermost edge */
-  filter: blur(10px);
-
-  /* 
-    CRITICAL FOR LIGHT THEME: 
-    'difference' or 'exclusion' makes the solid white center invert the dark text 
-    underneath it, creating a high-end, visible magnifying-glow effect.
-    Alternatively, use 'overlay' or 'screen' if your light background is colorful.
-  */
-  mix-blend-mode: difference; 
+  /* 2. The Blur Edge: A soft ambient shadow makes the white pop on light mode */
+  filter: drop-shadow(0 0 25px rgba(0, 0, 0, 0.08));
   
   transform: translate(-50%, -50%);
-  transition: transform 0.1s ease-out;
+  
+  /* Adds a smooth elastic trail behind the cursor */
+  transition: transform 0.12s cubic-bezier(0.25, 1, 0.5, 1); 
 }
      
        #loader {
