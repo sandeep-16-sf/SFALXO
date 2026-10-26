@@ -54,20 +54,19 @@
 
             body {
     min-height: 100vh;
-    background: linear-gradient(
-        to bottom,
-        #FF8C00 0%,
-        #E05A00 1.5%,
-        #6B2800 5%,
-        #180800 12%,
-        #000000 25%,
-        #000000 75%,
-        #180800 88%,
-        #6B2800 95%,
-        #E05A00 98.5%,
-        #FF8C00 100% );
+ background-image: linear-gradient(135deg, #ffffff 0%, #e6f7f5 50%, #99e2d8 100%);
            background-attachment: fixed;
+                 transition: background-color 0.3s, color 0.3s;
+
+           color: #000000;
       }
+        body.dark-theme {
+
+    background-image: linear-gradient(135deg, #000000 0%, #0d0600 45%, #6b350f 100%);
+
+       background-attachment: fixed;
+         color: #ffffff
+}
       
       .image{
         display: flex;
@@ -95,7 +94,7 @@
         display: flex;
       }
       .class-10{
-        background-color: #F96815;
+        background-color: #E6C787;
         aspect-ratio: 16/9;
         width: 31%;
         height: auto;
@@ -139,6 +138,10 @@
     <div id="loader">
         <img src="home-top-logo.png" alt="SFALXO">
     </div>
+    <div class="theme">
+<button title="toggle theme" id="themeButton">Toggle THEME</button>
+ </div>
+
     <a class="image" href="index.html"><img src="home-top-logo.png" alt="SFALXO">
     </a><br><br><br>
     <h1 class="select-class">Select class</h1>
@@ -166,5 +169,19 @@
     <a class="ns" href="index.html"><h1 class="text-in-link">CLASS 12</h1></a>
     </nav>-->
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script> 
+    <script>
+      const button = document.getElementById('themeButton');
+
+button.addEventListener('click', () => {
+  document.body.classList.toggle('dark-theme');
+  
+  if (document.body.classList.contains('dark-theme')) {
+    button.textContent = 'Switch to LIGHT Mode';
+  } else {
+    button.textContent = 'Switch to DARK Mode';
+  }
+});
+
+</script>
   </body>
 </html>
