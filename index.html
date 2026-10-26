@@ -10,23 +10,39 @@
  <link rel="icon" href="SFALXO.png" type="image/png">
     <style>
 .cursor-blob {
-  width: 250px;
-  height: 250px;
-  background: #ffffff; /* Pure white glow */
-  border-radius: 50%;
+  width: 200px;
+  height: 200px;
   position: fixed;
   top: 0;
   left: 0;
-  filter: blur(70px);
-  opacity: 0.25;         /* Low opacity keeps it clean and subtle */
-  pointer-events: none; /* Prevents it from blocking clicks on links */
-  z-index: -1;          /* Keeps it underneath your content */
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1; /* Put it ABOVE text so the blend mode works, pointer-events allows clicking through */
   
-  /* Centers the blob precisely on the cursor coordinate */
-  transform: translate(-50%, -50%); 
+  /* 
+    Creates a solid white center (0% to 20%) 
+    that fades out softly into transparency at the edges (70%)
+  */
+  background: radial-gradient(
+    circle, 
+    rgba(255, 255, 255, 1) 0%, 
+    rgba(255, 255, 255, 0.8) 20%, 
+    rgba(255, 255, 255, 0) 70%
+  );
+
+  /* Optional additional outer blur to soften the outermost edge */
+  filter: blur(10px);
+
+  /* 
+    CRITICAL FOR LIGHT THEME: 
+    'difference' or 'exclusion' makes the solid white center invert the dark text 
+    underneath it, creating a high-end, visible magnifying-glow effect.
+    Alternatively, use 'overlay' or 'screen' if your light background is colorful.
+  */
+  mix-blend-mode: difference; 
   
-  /* Creates a smooth 'lag' or trailing effect as you move */
-  transition: transform 0.15s cubic-bezier(0.25, 1, 0.5, 1); 
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out;
 }
      
        #loader {
@@ -443,12 +459,12 @@
 
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
  <script>
- const blob = document.querySelector('.cursor-blob');
+const blob = document.querySelector('.cursor-blob');
 
 window.addEventListener('mousemove', (e) => {
-  // Updates the element's position globally on the page
   blob.style.transform = `translate(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%))`;
 });
+
 
 
   const button = document.getElementById('themeButton');
