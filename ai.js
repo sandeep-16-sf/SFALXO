@@ -79,51 +79,19 @@ function getAIResponse(message) {
         return "Goodbye! Keep exploring, learning and improving with SFALXO.";
     }
 
-    // Dynamic Knowledge Base Search
-    const result = searchSFALXOKnowledge(query);
-
-    return result || 
-        "I couldn't find a relevant answer in the current SFALXO knowledge base. Try searching for a specific chapter name, subject, or concept (e.g., 'Ohm's Law', 'Photosynthesis', 'Quadratic Equations').";
-}
-
-/**
- * Dynamically searches through sfalxoKnowledge.class10 without hardcoded keyword lists
- */
-function searchSFALXOKnowledge(query) {
-    if (typeof sfalxoKnowledge === "undefined" || !sfalxoKnowledge.class10) {
-        return "The SFALXO knowledge base hasn't loaded. Please check that knowledge.js is included before ai.js.";
+    // Call the search method defined in knowledge.js
+    if (typeof sfalxoKnowledge === "undefined" || !sfalxoKnowledge.search) {
+        return "The SFALXO knowledge base hasn't loaded properly. Please check that knowledge.js is included before ai.js.";
     }
 
-    const queryKeywords = query.split(/\s+/).filter(word => word.length > 2); // Filter out tiny words
-    let bestMatch = null;
-    let highestScore = 0;
+    const results = sfalxoKnowledge.search(query);
 
-    // Iterate through all subjects and chapters dynamically
-    const subjects = sfalxoKnowledge.class10;
-    
-    for (const subjectKey in subjects) {
-        const chapters = subjects[subjectKey];
-        
-        for (const chapterKey in chapters) {
-            const content = chapters[chapterKey];
-            const lowerContent = content.toLowerCase();
-            
-            // Calculate a simple match score based on keyword frequency in the text
-            let score = 0;
-            queryKeywords.forEach(keyword => {
-                if (chapterKey.toLowerCase().includes(keyword)) score += 3; // Bonus if keyword is in chapter name
-                if (lowerContent.includes(keyword)) score += 1;
-            });
-
-            if (score > highestScore) {
-                highestScore = score;
-                bestMatch = content.trim();
-            }
-        }
+    if (results && results.length > 0) {
+        // Return the full content of the best matching chapter
+        return results[0].content;
     }
 
-    // Return the best match only if a meaningful threshold is met
-    return highestScore > 0 ? bestMatch : null;
+    return "I couldn't find a relevant answer in the current SFALXO knowledge base. Try searching for a specific chapter name, subject, or concept (e.g., 'Ohm's Law', 'Photosynthesis', 'Quadratic Equations').";
 }
 
 // Event listener for Enter key
