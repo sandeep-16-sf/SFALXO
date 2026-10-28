@@ -10,14 +10,8 @@ body {
 
     font-family: Arial, sans-serif;
 
-    background:
-        linear-gradient(
-            135deg,
-            #020305,
-            #08111f,
-            #020305
-        );
-
+   background-image: linear-gradient(135deg, #000000 0%, #120202 45%, #6e0d0d 100%);
+    background-attachment: fixed;
     color: white;
 
     display: flex;
@@ -38,7 +32,7 @@ body {
 
     background: rgba(5, 8, 14, 0.96);
 
-    border: 1px solid #1d334d;
+    border: 1px solid #ff0000;
 
     border-radius: 18px;
 
@@ -185,7 +179,7 @@ body {
 
 #user-input:focus {
 
-    border-color: #3588d8;
+    border-color: #ff0000;
 
 }
 
@@ -198,12 +192,7 @@ button {
 
     border-radius: 10px;
 
-    background:
-        linear-gradient(
-            90deg,
-            #1677ff,
-            #00a8ff
-        );
+    background: #ff0000;
 
     color: white;
 
@@ -230,7 +219,7 @@ button:hover {
         width: 100%;
         height: 100vh;
 
-        border-radius: 0;
+        border-radius: 8px;
 
     }
 
