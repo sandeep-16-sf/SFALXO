@@ -1,31 +1,31 @@
+/**
+ * SFALXO AI - Optimized Chat Controller & Dynamic Knowledge Searcher
+ */
 
 const input = document.getElementById("user-input");
 const chatBox = document.getElementById("chat-box");
 
-console.log("SFALXO AI: ai.js loaded.");
+console.log("SFALXO AI: ai.js loaded successfully.");
 
 window.sendMessage = function () {
-    console.log("SFALXO AI: Send button clicked.");
+    const message = input.value.trim();
+    if (!message) return;
 
     if (!input || !chatBox) {
         console.error("SFALXO AI: Input or chat box element not found.");
         return;
     }
 
-    const message = input.value.trim();
-    if (!message) return;
-
     addMessage(message, "user-message");
     input.value = "";
     input.focus();
 
     let response;
-
     try {
         response = getAIResponse(message);
     } catch (error) {
         console.error("SFALXO AI response error:", error);
-        response = "Sorry, something went wrong. Please check the browser console.";
+        response = "Sorry, something went wrong while processing your request. Please check the browser console.";
     }
 
     setTimeout(() => {
@@ -42,6 +42,8 @@ function addMessage(content, className) {
         heading.textContent = "SFALXO AI";
 
         const paragraph = document.createElement("p");
+        // Preserve line breaks for structured study notes
+        paragraph.style.whiteSpace = "pre-line";
         paragraph.textContent = content;
 
         messageElement.append(heading, paragraph);
@@ -56,16 +58,17 @@ function addMessage(content, className) {
 function getAIResponse(message) {
     const query = message.toLowerCase().trim();
 
+    // Intent handling for conversational queries
     if (/^(hi|hello|hey|good morning|good afternoon|good evening)[!. ]*$/i.test(query)) {
         return "Hello! Welcome to SFALXO AI. How can I help you with your learning today?";
     }
 
     if (/who are you|what is sfalxo ai|what are you/.test(query)) {
-        return "I'm SFALXO AI, your student learning assistant. I can help you explore study material, understand concepts and revise academic topics.";
+        return "I'm SFALXO AI, your student learning assistant. I can help you explore study material, understand concepts and revise academic topics across Science, Mathematics, and Computer Science.";
     }
 
     if (/what can you do|how can you help/.test(query)) {
-        return "I can help you explore study notes, understand Mathematics and Science, learn Computer Science, revise concepts and find relevant material in the SFALXO knowledge base.";
+        return "I can help you explore study notes, understand formulas, revise academic concepts, and find relevant material across all Class 10 subjects in the SFALXO knowledge base.";
     }
 
     if (/^(thanks|thank you|thx)[!. ]*$/.test(query)) {
@@ -76,52 +79,57 @@ function getAIResponse(message) {
         return "Goodbye! Keep exploring, learning and improving with SFALXO.";
     }
 
+    // Dynamic Knowledge Base Search
     const result = searchSFALXOKnowledge(query);
 
-    return result ||
-        "I couldn't find a relevant answer in the current SFALXO knowledge base. Try using a specific chapter name, subject or concept.";
+    return result || 
+        "I couldn't find a relevant answer in the current SFALXO knowledge base. Try searching for a specific chapter name, subject, or concept (e.g., 'Ohm's Law', 'Photosynthesis', 'Quadratic Equations').";
 }
 
+/**
+ * Dynamically searches through sfalxoKnowledge.class10 without hardcoded keyword lists
+ */
 function searchSFALXOKnowledge(query) {
-    if (typeof sfalxoKnowledge === "undefined") {
+    if (typeof sfalxoKnowledge === "undefined" || !sfalxoKnowledge.class10) {
         return "The SFALXO knowledge base hasn't loaded. Please check that knowledge.js is included before ai.js.";
     }
 
-    const topics = [
-        { keywords: ["chemical reaction", "chemical equation", "oxidation", "reduction"], path: ["science", "chemicalReactions"] },
-        { keywords: ["carbon", "covalent", "methane", "ethane"], path: ["science", "carbonAndCompounds"] },
-        { keywords: ["electricity", "ohm", "current", "resistance"], path: ["science", "electricity"] },
-        { keywords: ["light", "reflection", "refraction"], path: ["science", "light"] },
-        { keywords: ["life process", "nutrition", "respiration"], path: ["science", "lifeProcesses"] },
-        { keywords: ["real number", "euclid"], path: ["mathematics", "realNumbers"] },
-        { keywords: ["polynomial", "zeroes", "zeros"], path: ["mathematics", "polynomials"] },
-        { keywords: ["quadratic equation", "quadratic"], path: ["mathematics", "quadraticEquations"] },
-        { keywords: ["html", "web page"], path: ["computerScience", "html"] },
-        { keywords: ["css", "stylesheet"], path: ["computerScience", "css"] },
-        { keywords: ["javascript", "js code"], path: ["computerScience", "javascript"] }
-    ];
+    const queryKeywords = query.split(/\s+/).filter(word => word.length > 2); // Filter out tiny words
+    let bestMatch = null;
+    let highestScore = 0;
 
-    for (const topic of topics) {
-        if (topic.keywords.some(keyword => query.includes(keyword))) {
-            let content = sfalxoKnowledge.class10;
+    // Iterate through all subjects and chapters dynamically
+    const subjects = sfalxoKnowledge.class10;
+    
+    for (const subjectKey in subjects) {
+        const chapters = subjects[subjectKey];
+        
+        for (const chapterKey in chapters) {
+            const content = chapters[chapterKey];
+            const lowerContent = content.toLowerCase();
+            
+            // Calculate a simple match score based on keyword frequency in the text
+            let score = 0;
+            queryKeywords.forEach(keyword => {
+                if (chapterKey.toLowerCase().includes(keyword)) score += 3; // Bonus if keyword is in chapter name
+                if (lowerContent.includes(keyword)) score += 1;
+            });
 
-            for (const key of topic.path) {
-                content = content?.[key];
-            }
-
-            if (typeof content === "string" && content.trim()) {
-                return content.trim();
+            if (score > highestScore) {
+                highestScore = score;
+                bestMatch = content.trim();
             }
         }
     }
 
-    return null;
+    // Return the best match only if a meaningful threshold is met
+    return highestScore > 0 ? bestMatch : null;
 }
 
+// Event listener for Enter key
 input?.addEventListener("keydown", event => {
     if (event.key === "Enter" && !event.shiftKey) {
         event.preventDefault();
         window.sendMessage();
     }
 });
-
