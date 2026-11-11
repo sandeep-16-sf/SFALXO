@@ -246,11 +246,15 @@ body, a, button {
       justify-content: center;
         align-items: center;
        text-align: center;
-       gap: 25px;
+
        display: flex;
   flex-direction: column; 
      }
- 
+ .talk-to-us a {
+  display: inline-block; /* Allows margin and padding to work on all 4 sides */
+  margin: 0 12.5px;      /* 12.5px left + 12.5px right = 25px space between links */
+  text-decoration: none;
+}
     a:link {
         color: #ffffff;
        transition: color 0.3s;
