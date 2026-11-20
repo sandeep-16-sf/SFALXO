@@ -80,25 +80,59 @@ const sfalxoKnowledge = {
 
     // Built-in search function that powers ai.js
     search(query) {
-        const lowerQuery = query.toLowerCase().trim();
-        const results = [];
+// ===== Search index (built once, reused for every query) =====
+(function () {
+    const STOP = new Set(["what","is","are","the","a","an","of","in","on","to","explain",
+        "tell","me","about","define","how","does","do","give","notes","and","for","with",
+        "please","why","who","chapter","topic"]);
 
-        for (const [subKey, subject] of Object.entries(this.subjects)) {
-            for (const [chapKey, chapter] of Object.entries(subject.chapters)) {
-                if (
-                    chapter.title.toLowerCase().includes(lowerQuery) ||
-                    chapter.content.toLowerCase().includes(lowerQuery) ||
-                    subKey.includes(lowerQuery)
-                ) {
-                    results.push({
-                        subject: subKey,
-                        title: chapter.title,
-                        content: chapter.content,
-                        snippet: chapter.content.substring(0, 100) + "..."
-                    });
-                }
-            }
+    // "Ohm's Laws" -> "ohm law"; stemming makes law/laws and circle/circles match
+    const stem = w => (w.length > 3 ? w.replace(/s$/, "") : w);
+    const words = s => s.toLowerCase().replace(/['’]/g, "").split(/[^a-z0-9]+/).filter(Boolean);
+    const tokenize = s => words(s).filter(w => !STOP.has(w)).map(stem);
+
+    // Build the index once
+    const index = [];
+    const subjectList = [];
+    for (const [key, subject] of Object.entries(sfalxoKnowledge.subjects)) {
+        const chapters = [];
+        for (const chapter of Object.values(subject.chapters)) {
+            const entry = {
+                subject: subject.title,
+                title: chapter.title,
+                content: chapter.content,
+                titleSet: new Set(tokenize(chapter.title)),
+                bodySet: new Set(tokenize(chapter.content))
+            };
+            index.push(entry);
+            chapters.push(entry.title);
         }
-        return results;
+        subjectList.push({ key: words(subject.title).join(""), title: subject.title, chapters });
     }
-};
+
+    // Ranked search: title hit = 5 points, content hit = 1 point
+    sfalxoKnowledge.search = function (query) {
+        const q = tokenize(query);
+        if (!q.length) return [];
+        return index
+            .map(e => {
+                let score = 0;
+                for (const t of q) {
+                    if (e.titleSet.has(t)) score += 5;
+                    else if (e.bodySet.has(t)) score += 1;
+                }
+                return { ...e, score };
+            })
+            .filter(r => r.score > 0)
+            .sort((a, b) => b.score - a.score);
+    };
+
+    // "science", "computer science", "maths" -> subject overview
+    const ALIASES = { maths: "mathematics", math: "mathematics", cs: "computerscience",
+                      sst: "socialscience", "social studies": "socialscience" };
+    sfalxoKnowledge.findSubject = function (query) {
+        let key = words(query).filter(w => !STOP.has(w)).join("");
+        key = ALIASES[key] || key;
+        return subjectList.find(s => s.key === key) || null;
+    };
+})();
